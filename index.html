@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using Bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet/index.css">
+    <script src="/stylesheet/index.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>한국메타버스미디어협회(KMMA)</title>
+</head>
+<body>
+  <header>
+      <nav class="navbar navbar-expand-md bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src="/img/logo.png" alt="" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    협회소개
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="greetings.html">인사말</a></li>
+                    <li><a class="dropdown-item" href="introAssociation.html">협회소개</a></li>
+                    <li><a class="dropdown-item" href="#">조직도</a></li>
+                    <li><a class="dropdown-item" href="#">정관</a></li>
+                    <li><a class="dropdown-item" href="route.html">오시는 길</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    주요사업
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">교육</a></li>
+                    <li><a class="dropdown-item" href="#">정책</a></li>
+                    <li><a class="dropdown-item" href="#">홍보</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    협회소식
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">공지사항</a></li>
+                    <li><a class="dropdown-item" href="#">활동소식/보도자료</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">자료실</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    가입안내
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">회원 등록</a></li>
+                    <li><a class="dropdown-item" href="#">가입 안내</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                  <button class="btn btn-outline-success" type="">로그인/회원가입</button>
+                </form>
+            </div>
+          </div>
+        </nav>
+  </header>
+  <div>
+    <!-- 이미지 슬라이드 -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/index/main1.jpg" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="main_text">KMMA</h2>
+            <p>어서오세요 한국메타버스미디어협회 입니다.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/index/main2.jpg" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/index/main3.jpg" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- 공지사항 및 활동소식 게시판 -->
+    <div class="notice_part">
+      <div class="notice_wrap">
+        <div class="notice_title_wrap">
+          <div class="notice_title">Notice</div>
+          <button type="button" class="btn btn-outline-secondary" id="notice_more">+</button>
+        </div>
+        <!-- 공지사항 내용 몇글자만 backend에서 받아올 것인지 회의하기 -->
+        <div class="notice_content_wrap">
+          <div class="notice_card">
+            <div class="notice_card_title">공지사항 1번입니다.</div>
+            <div class="notice_card_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias iusto, totam quas eius pariatur nam dolorem optio! Nemo illum aliquam laborum, ex, expedita nesciunt ducimus omnis a, dicta tempora voluptatem?</div>
+            <div class="notice_card_date">2022-07-01</div>
+          </div>
+          <div class="notice_card">
+            <div class="notice_card_title">공지사항 2번입니다.</div>
+            <div class="notice_card_content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur molestias debitis ipsa pariatur enim dolor, esse, possimus impedit iusto veniam soluta. Impedit optio ea odio fugit quam, vel natus quod!</div>
+            <div class="notice_card_date">2022-07-01</div>
+          </div>
+          <div class="notice_card">
+            <div class="notice_card_title">공지사항 3번입니다.</div>
+            <div class="notice_card_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex officia iste temporibus dolorem eveniet sit obcaecati ut sunt fugit molestiae laborum id assumenda incidunt ipsum, molestias libero aspernatur architecto alias.</div>
+            <div class="notice_card_date">2022-07-01</div>
+          </div>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- media 게시판 -->
+    <div class="media_part">
+      <div class="media_wrap">
+        <div class="media_title">KMMA <span style="color: gray;">BUSINESS</span></div>
+        <div class="media_content">
+          <div class="kmma_youtube">
+            <iframe width="100%" height="500px" allowfullscreen src=" https://www.youtube.com/embed/YTd4RirvEbo" frameborder="0"></iframe>
+          </div>
+          <div class="business">
+            <div class="business_card">
+              <img src="../img/index/1.png" class="card-img-top" alt="">
+              <div class="business_card_body">
+                <div class="business_card_text">교육</div>
+                <div class="business_more">더 알아보기</div>
+              </div>
+            </div>
+            <div class="business_card">
+              <img src="../img/index/2.png" class="card-img-top" alt="">
+              <div class="business_card_body">
+                <div class="business_card_text">정책</div>
+                <div class="business_more">더 알아보기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo_part">
+    <div class="logo_wrap">
+      <ul class="logoSlider">
+        <li><a href="#"><img src="../img/logos/모노버스.png"></a></li>
+        <li><a href="#"><img src="../img/logos/모핑아이.png"></a></li>
+        <li><a href="#"><img src="../img/logos/밀리터리메타버스.png"></a></li>
+        <li><a href="#"><img src="../img/logos/서울디자인재단.png"></a></li>
+        <li><a href="#"><img src="../img/logos/에이스엔터.png"></a></li>
+        <li><a href="#"><img src="../img/logos/에임브로드.png"></a></li>
+        <li><a href="#"><img src="../img/logos/차이나헤럴드.png"></a></li>
+        <li><a href="#"><img src="../img/logos/팬버스.png"></a></li>
+        <li><a href="#"><img src="../img/logos/힐스톤파트너스.png"></a></li>
+        <li><a href="#"><img src="../img/logos/IEOC(X).png"></a></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <div class="footer_wrap">
+      <div class="footer_add">
+        Email. mail@kmma.io <br>
+        Addr. 서울시 서초구 강남대로 359, 서초도씨에빛2차 909호 <br>
+        Tel. 02-598-6251
+      </div>
+      <div class="footer_img"></div>
+    </div>
+  </footer>
+</body>
+</html>
