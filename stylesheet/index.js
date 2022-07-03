@@ -23,3 +23,8 @@ $(document).ready(function() {
         });
     }
 });
+
+//정관 클릭 시 내용 변경
+$("#first_article").click(function(){
+    $(".first_article").css({"display" : "none"});
+});
