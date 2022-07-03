@@ -159,10 +159,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .organization_main_table_name{
-    margin-top: 50px;
+    margin-top: 25px;
     text-align: center;
     font-size: 2rem;
 }
