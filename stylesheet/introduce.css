@@ -159,15 +159,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
 }
 
-.first_table_name{
-    font-size: 30px;
+.organization_main_table_name{
+    margin-top: 50px;
     text-align: center;
+    font-size: 2rem;
 }
 
-.organization_content > table{
+.organization_main_table{
     margin-top: 30px;
     width: 80%;
     height: 400px;
@@ -175,64 +175,23 @@
     text-align: center;
     border-collapse: collapse;
     align-items: center;
+    margin-bottom: 50px;
 }
 
-.organization_table th{
+.organization_main_table th{
     font-size: 1.3rem;
     border: 1px solid;
     background-color: rgb(203, 223, 248);
     padding: 10px;
 }
 
-.organization_table tr{
+.organization_main_table tr{
     font-size: 1.2rem;
     border: 1px solid;
     padding: 5px;
 }
 
-.organization_table td{
-    font-size: 1.2rem;
-    border: 1px solid;
-}
-
-.sec_organization_content{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.second_table_name{
-    font-size: 30px;
-    text-align: center;
-}
-
-.sec_organization_content > table{
-    margin-top: 30px;
-    width: 80%;
-    height: 400px;
-    font-size: 1rem;
-    border-collapse: collapse;
-    text-align: center;
-    margin-bottom: 60px;
-    align-items: center;
-}
-
-.organ_intro_table th{
-    font-size: 1.3rem;
-    border: 1px solid;
-    background-color: rgb(203, 223, 248);
-    padding: 15px;
-}
-
-.organ_intro_table tr{
-    font-size: 1.2rem;
-    border: 1px solid;
-    padding: 10px;
-}
-
-.organ_intro_table td{
+.organization_main_table td{
     font-size: 1.2rem;
     border: 1px solid;
 }
@@ -283,10 +242,9 @@
 
 .article_table > ul > li > div{
     width: 80%;
-    overflow: auto;
+    overflow-y: scroll;
     padding: 30px;
 }
-
 
 .second_article, .third_article, .fourth_article, .fifth_article, .sixth_article, .seventh_article, .eighth_article{
     display: none;
@@ -332,7 +290,7 @@
 
 /* 주요사업 - 교육 */
 .education_body{
-    height: 1000px;
+    height: 100%;
 }
 
 .education_wrap{
@@ -349,7 +307,6 @@
 }
 
 .education_content{
-    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -365,6 +322,7 @@
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
     width: 80%;
     padding: 50px;
+    margin-top: 50px;
 }
 
 .education_name{
@@ -375,4 +333,87 @@
 .education_content_box img{
     margin-top: 30px;
     width: 90%;
+}
+
+.research_fellow_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.fellow_table_name{
+    font-size: 30px;
+    text-align: center;
+}
+
+.research_fellow_content > table{
+    margin-top: 30px;
+    width: 80%;
+    height: 400px;
+    font-size: 1rem;
+    text-align: center;
+    border-collapse: collapse;
+    align-items: center;
+}
+
+.research_fellow_table th{
+    font-size: 1.3rem;
+    border: 1px solid;
+    background-color: rgb(203, 223, 248);
+    padding: 10px;
+}
+
+.research_fellow_table tr{
+    font-size: 1.2rem;
+    border: 1px solid;
+    padding: 5px;
+}
+
+.research_fellow_table td{
+    font-size: 1.2rem;
+    border: 1px solid;
+}
+
+.fellow_intro_content{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fellow_intro_table_name{
+    font-size: 30px;
+    text-align: center;
+}
+
+.fellow_intro_content > table{
+    margin-top: 30px;
+    width: 80%;
+    height: 400px;
+    font-size: 1rem;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.fellow_intro_table th{
+    font-size: 1.3rem;
+    border: 1px solid;
+    background-color: rgb(203, 223, 248);
+    padding: 15px;
+}
+
+.fellow_intro_table tr{
+    font-size: 1.2rem;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.fellow_intro_table td{
+    font-size: 1.2rem;
+    border: 1px solid;
 }
