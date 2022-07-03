@@ -170,12 +170,11 @@
 .organization_main_table{
     margin-top: 30px;
     width: 80%;
-    height: 400px;
     font-size: 1rem;
     text-align: center;
     border-collapse: collapse;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .organization_main_table th{
