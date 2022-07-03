@@ -123,6 +123,7 @@
         margin-top: 30px;
     }
 }
+
 .content_title{
     font-size: 2rem;
     font-weight: 400;
@@ -215,42 +216,6 @@
     align-items: center;
     height: 350px;
     background-image: url(../img/subImage/1.jpg);
-}
-
-.article_content{
-    height: 950px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.article_table{
-    height: 800px;
-    border: 1px solid rgba(66, 65, 65, 0.2);
-    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
-}
-
-.article_table > ul > li{
-    display: flex;
-}
-
-.article_table > ul > li > a{
-    width: 20%;
-    text-decoration: none;
-    font-size: 1.5rem; 
-    color: black;   
-    padding: 30px;
-}
-
-.article_table > ul > li > div{
-    width: 80%;
-    overflow-y: scroll;
-    padding: 30px;
-}
-
-.second_article, .third_article, .fourth_article, .fifth_article, .sixth_article, .seventh_article, .eighth_article{
-    display: none;
 }
 
 /* 오시는 길 */
@@ -435,4 +400,30 @@
 .fellow_intro_table td{
     font-size: 1.2rem;
     border: 1px solid;
+}
+
+/* 홍보 */
+
+.promotion_body{
+    height: 100%;
+}
+
+.promotion_wrap{
+    width: 100%;
+}
+
+.promotion_content_wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.promotion_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-image: url(../img/subImage/1.jpg);
 }
