@@ -127,6 +127,38 @@
     font-weight: 200;
 }
 
+/* 조직도 */
+.organization_body{
+    height: 1000px;
+}
+
+.organization_wrap{
+    width: 100%;
+}
+
+.organization_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-image: url(../img/subImage/1.jpg);
+}
+
+.organization_content{
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.organization_content img{
+    width: 800px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
 /* 오시는 길 */
 .route_body{
     height: 1000px;
@@ -148,11 +180,17 @@
 .route_content{
     height: 650px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.route_address{
+    font-size: 25px;
+}
+
 .route_content_box{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     border: 1px solid rgba(66, 65, 65, 0.2);
