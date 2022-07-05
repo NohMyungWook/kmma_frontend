@@ -43,10 +43,17 @@
     flex-direction: row;
     justify-content: space-around;
     width: 70%;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    padding: 70px;
 }
 
 .greetings_img img{
     width: 300px;
+}
+
+.greetings_text{
+    margin-left: 10px;
 }
 
 .greetings_ment{
@@ -60,6 +67,25 @@
     height: 10%;
     font-size: 1.4rem;
     text-align: right;
+}
+
+@media(max-width: 1013px){
+    .greetings_content_box{
+        padding: 90px;
+        width: 100%;
+    }
+
+    .greetings_img{
+        display: none;
+    }
+
+    .greetings_text{
+        margin-left: 0;
+    }
+
+    .greetings_ment, .greetings_name{
+        text-align: center;
+    }
 }
 
 /* 협회소개 - 협회소개 */
@@ -89,34 +115,30 @@
     align-items: center;
 }
 
-.introduce_content_box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
 .first_intro_content, .second_intro_content{
     display: flex;
     flex-direction: column;
     padding: 60px 60px;
+    width: 50%;
+    height: 500px;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .second_intro_content{
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
-@media(max-width: 840px){
-    .introduce_content_box{
+@media(max-width: 1156px){
+    .introduce_content{
         display: flex;
         flex-direction: column;
     }
 
     .first_intro_content, .second_intro_content{
         margin-left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .second_intro_content{
@@ -133,7 +155,7 @@
 
 .content_body{
     margin-top: 1rem;
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight: 200;
 }
 
@@ -476,7 +498,6 @@
 
 /* 로그인 */
 .login_body{
-    background-image: url(/img/index/main4.jpg);
     width: 100%;
     height: 100%;
 }
@@ -491,7 +512,6 @@
 
 .login_body_title{
     font-size: 2.5rem;
-    color: white;
     margin-top: 60px;
 }
 
@@ -500,13 +520,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
-    border-radius: 10px;
     margin-top: 50px;
     margin-bottom: 60px;
     height: 450px;
     text-align: left;
     padding: 40px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .login_main_id h4{
@@ -558,7 +578,6 @@
 /* 회원가입 */
 .signup_body{
     width: 100%;
-    background-image: url(/img/index/main1.jpg);
 }
 
 .signup_body_content{
@@ -569,7 +588,6 @@
 
 .signup_body_title{
     font-size: 2.5rem;
-    color: white;
     margin-top: 60px;
 }
 
@@ -581,10 +599,12 @@
     height: 850px;
     width: 40%;
     text-align: left;
-    padding: 40px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .signup_address_wrap{
@@ -642,11 +662,19 @@
 
 .signup_main_bt{
     margin-top: 20px;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: center;
     text-decoration: none;
     color: black;
+    padding: auto 50px;
+}
+
+#signup_main_bt{
+    height: 50px;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-left: 0;
 }
 
 @media(max-width: 1000px){
