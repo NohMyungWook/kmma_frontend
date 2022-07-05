@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-md">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" href="index.html" target="_blank">
                 <img src="/img/logo.png" alt="" width="100">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,26 +89,29 @@
         <div class="signup_body_content">
             <div class="signup_body_title">회원가입</div>
             <div class="signup_wrap">
+                  <fieldset class="essential_input">
                     <div class="signup_id">
-                        <h4>아이디</h4>
-                        <input type="text" placeholder="아이디" required>
-                    </div>
+                        <label for="id">아이디</label>
+                        <input type="text" id ="id" placeholder="아이디" required>
+                      </div>
                     <div class="signup_pw">
-                        <h4>비밀번호</h4>
-                        <input type="password" name="" id="" placeholder="비밀번호" required>
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" placeholder="비밀번호" required>
                     </div>
                     <div class="signup_pw_check">
-                        <h4>비밀번호 재입력</h4>
-                        <input type="password" name="" id="" placeholder="비밀번호" required>
+                        <label for="pw_check">비밀번호 재입력</label>
+                        <input type="password" id="pw_check" placeholder="비밀번호" required>
                     </div>
                     <div class="signup_email">
-                        <h4>이메일</h4>
+                        <label for="email">이메일</label>
                         <input type="email" placeholder="이메일" required>
                     </div>
                     <div class="signup_tel">
-                        <h4>전화번호</h4>
+                        <label for="signup_tel">전화번호</label>
                         <input type="tel" placeholder="전화번호" required>
                     </div>
+                  </fieldset>
+                  <div class="select_input">
                     <div class="signup_along">
                         <h4>소속</h4>
                         <input type="text" placeholder="소속">
@@ -133,9 +136,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="signup_sub_bt">
-                        <button type="button" id="signup_sub_bt" class="btn btn-outline-dark">회원가입</button>
-                    </div>
+                  </div>
+                  <div class="signup_sub_bt">
+                    <button type="button" id="signup_sub_bt" class="btn btn-outline-dark">회원가입</button>
+                  </div>
             </div>
         </div>
     </div>

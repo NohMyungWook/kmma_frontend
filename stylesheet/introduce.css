@@ -58,7 +58,7 @@
 
 .greetings_ment{
     height: 90%;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     text-align: left;
     font-weight: 300;
 }
@@ -66,7 +66,7 @@
 .greetings_name{
     height: 10%;
     font-size: 1.4rem;
-    text-align: right;
+    text-align: left;
 }
 
 @media(max-width: 1013px){
@@ -284,6 +284,15 @@
     overflow-y: scroll;
     color: rgba(48, 48, 48, 0.8);
     height: 720px;
+}
+
+.tab_content_margin h3{
+    color: rgb(210, 19, 19);
+    font-size: 1.5rem;
+}
+
+.tab_content_margin h4{
+    color: black;
 }
 
 /* 오시는 길 */
@@ -521,8 +530,16 @@
     justify-content: space-between;
 }
 
+.promotion1, .promotion2, .promotion3{
+    width: 30%; 
+    padding: 20px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
 .promotion_content img{
-    width: 30%;
+    width: 100%;
+    height: 100%;
 }
 
 /* 로그인 */
@@ -665,7 +682,11 @@
     padding: 0 10px;
 }
 
-.signup_pw h4, .signup_pw_check h4, .signup_email h4, .signup_tel h4, .signup_along h4, .signup_address h4{
+.signup_id label{
+    font-size: 1.3rem;
+}
+
+.signup_pw label, .signup_pw_check label, .signup_email label, .signup_tel label, .signup_along h4, .signup_address h4{
     margin-top: 15px;
     font-size: 1.3rem;
 }
