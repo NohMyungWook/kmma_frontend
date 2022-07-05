@@ -8,7 +8,7 @@ var interval;
 $(document).ready(function(){
     $(".rolling_wrap a").each(function(){
         $(this).css("left", banner_left);
-        banner_left += $(this).width()+10;
+        banner_left += $(this).width()+30;
         $(this).attr("id", "content"+(++img_cnt));
     });
 
@@ -30,7 +30,7 @@ function startAction(){
         var last_content = $("#content"+last);
 
         if(first_content.position().left < "-"+$(first_content).width()){
-            first_content.css("left", last_content.position().left+last_content.width()+10);
+            first_content.css("left", last_content.position().left+last_content.width()+30);
             first++;
             last++;
             if(last > img_cnt) { last = 1; }
