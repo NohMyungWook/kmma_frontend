@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="/stylesheet/index.js"></script>
+    <script src="/stylesheet/address.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -121,8 +123,8 @@
                     <div class="signup_address">
                         <h4>주소</h4>
                         <div class="signup_address_wrap">        
-                            <input type="text" placeholder="주소">
-                            <button type="button" id="signup_address_bt" class="btn btn-outline-dark">주소찾기</button>
+                            <input type="text" id="PROFILE_TITLE" placeholder="주소">
+                            <button type="button" id="signup_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcode()">주소찾기</button>
                         </div>
                     </div>
                     <div class="signup_enterprise">
