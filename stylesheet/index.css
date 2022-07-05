@@ -194,7 +194,7 @@ body{
     width: 100%;
     min-height: 70px;
     height: 70px;
-    margin: 5px auto;
+    margin: 30px auto 0px;
     overflow: hidden;
 }
 
@@ -210,30 +210,4 @@ body{
 .rolling_wrap a img{
     width: 100%;
     height: 100%;
-}
-
-/* footer */
-footer{
-    height: 150px;
-    background-color: rgb(57, 63, 77);
-    display: flex;
-    justify-content: flex-end;
-}
-
-.footer_wrap{
-    margin-top: 40px;
-    display: flex;
-    margin-right: 110px;
-}
-
-.footer_add{
-    color: white;
-    margin-right: 50px;
-}
-
-.footer_img{
-    background-image: url(/img/logo.png);
-    background-size: cover;
-    width: 170px;
-    height: 75px;
 }
