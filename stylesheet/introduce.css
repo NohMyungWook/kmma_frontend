@@ -634,7 +634,7 @@
 
 .signup_body_title{
     font-size: 2.5rem;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .signup_wrap{
@@ -648,14 +648,35 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.essential_input{
+    margin-top: 40px;
+    padding: 30px;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
+.essential_input h3, .select_input h3{
+    font-size: 1.6rem;
+    text-align: center;
 }
 
 .signup_address_wrap{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.signup_id{
+    margin-top: 20px;
+}
+
+.select_input{
+    margin-top: 20px;
+    padding: 30px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .signup_address_wrap input{
@@ -681,11 +702,7 @@
     padding: 0 10px;
 }
 
-.signup_id label{
-    font-size: 1.3rem;
-}
-
-.signup_pw label, .signup_pw_check label, .signup_email label, .signup_tel label, .signup_along h4, .signup_address h4{
+.signup_pw h4, .signup_pw_check h4, .signup_email h4, .signup_tel h4, .signup_along h4, .signup_address h4{
     margin-top: 15px;
     font-size: 1.3rem;
 }
