@@ -217,7 +217,7 @@
 .article_content{
     display: flex;
     width: 90%;
-    margin: 50px auto 30px;
+    margin: 50px auto 50px;
 }
 
 .article_content_tabname{
@@ -247,8 +247,6 @@
     font-size: 1.3rem;
     color: rgba(48, 48, 48, 0.8);
 }
-
-
 
 .article_content_tab_content{
     flex: 8;
@@ -474,4 +472,203 @@
     align-items: center;
     height: 350px;
     background-image: url(../img/subImage/1.jpg);
+}
+
+/* 로그인 */
+.login_body{
+    background-image: url(/img/index/main4.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.login_body_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_body_title{
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 60px;
+}
+
+.login_wrap{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    height: 450px;
+    text-align: left;
+    padding: 40px;
+}
+
+.login_main_id h4{
+    font-size: 1.3rem;
+}
+
+.login_main_id input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+}
+
+.login_main_pw{
+    margin-top: 40px;
+}
+
+.login_main_pw h4{
+    font-size: 1.3rem;
+}
+
+.login_main_pw input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+}
+
+.login_main_bt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#login_main_bt{
+    width: 200px;
+    height: 40px;
+}
+
+#signup_main_bt{
+    width: 200px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+/* 회원가입 */
+.signup_body{
+    width: 100%;
+    background-image: url(/img/index/main1.jpg);
+}
+
+.signup_body_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup_body_title{
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 60px;
+}
+
+.signup_wrap{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    height: 850px;
+    width: 40%;
+    text-align: left;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup_address_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.signup_address_wrap input{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+    width: 70%;
+}
+
+#signup_address_bt{
+    height: 40px;
+    margin-left: 10px;
+    font-size: 1em;
+    width: 30%;
+}
+
+.signup_id input, .signup_pw input, .signup_pw_check input, .signup_email input, .signup_tel input, .signup_along input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+}
+
+.signup_pw h4, .signup_pw_check h4, .signup_email h4, .signup_tel h4, .signup_along h4, .signup_address h4{
+    margin-top: 15px;
+    font-size: 1.3rem;
+}
+
+.signup_enterprise{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.signup_enterprise h4{
+    font-size: 1.3rem;
+}
+
+.signup_enterprise_check{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-check{
+    margin-left: 35px;
+}
+
+.signup_main_bt{
+    margin-top: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 1000px){
+    .signup_address_wrap{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signup_address_wrap input{
+        width: 100%;
+    }
+
+    #signup_address_bt{
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .signup_enterprise{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #_yes_check{
+        margin-left: 0;
+    }
 }
