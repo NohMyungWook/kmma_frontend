@@ -105,10 +105,6 @@ body{
 .notice_part > nav{
     margin: 10px auto 0;
 }
-
-.page-item{
-    text-decoration: none;
-}
 /* */
 .media_part{
     background-color: rgb(240, 240, 240);
@@ -193,30 +189,27 @@ body{
 }
 
 /* logo slide */
-.logo_part{
-    margin-bottom: 0px;
-}
-
-.logo_wrap{
-    padding-top: 10px;
+.rolling_wrap{
+    position: relative;
     width: 100%;
-    overflow: hidden;
-}
-
-.logoSlider{
-    display: flex;
-    overflow: hidden;
-}
-
-.logoSlider > li{
-    float: left;
-    margin-right: 40px;
-}
-
-.logoSlider img{
-    width: 200px;
+    min-height: 70px;
     height: 70px;
-    padding: auto 0;
+    margin: 5px auto;
+    overflow: hidden;
+}
+
+.rolling_wrap a{
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.rolling_wrap a img{
+    width: 100%;
+    height: 100%;
 }
 
 /* footer */

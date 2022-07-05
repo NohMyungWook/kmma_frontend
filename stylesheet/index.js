@@ -1,26 +1,44 @@
 // 이미지 배너 슬라이딩 효과
-$(document).ready(function() {
-    var $banner = $(".logoSlider");
+var banner_left = 0;
+var img_cnt = 0;
+var first = 1;
+var last;
+var interval;
 
-    var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
-    var $bannerHeight = $banner.children().outerHeight(); // 높이
-    var $length = $banner.children().length;//이미지의 갯수
-    var rollingId;
+$(document).ready(function(){
+    $(".rolling_wrap a").each(function(){
+        $(this).css("left", banner_left);
+        banner_left += $(this).width()+10;
+        $(this).attr("id", "content"+(++img_cnt));
+    });
 
-    //정해진 초마다 함수 실행
-    rollingId = setInterval(
-        function() { 
-            rollingStart();
-        });
+    last = img_cnt;
+    startAction();
 
-    function rollingStart() {
-        $banner.css("width", $bannerWidth * $length + "px");
-        $banner.css("height", $bannerHeight + "px");
-        $banner.animate({left: - $bannerWidth + "px"}, 3000, function() {
-            $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
-            $(this).find("li:first").remove();
-            $(this).css("left", 0);
-        });
-    }
+    $(".content").hover(
+        function() {stopAction();},
+        function() {startAction();});
 });
 
+function startAction(){
+    interval = setInterval(function(){
+        $(".rolling_wrap a").each(function(){
+            $(this).css("left", $(this).position().left-1);
+        });
+        
+        var first_content = $("#content"+first);
+        var last_content = $("#content"+last);
+
+        if(first_content.position().left < "-"+$(first_content).width()){
+            first_content.css("left", last_content.position().left+last_content.width()+10);
+            first++;
+            last++;
+            if(last > img_cnt) { last = 1; }
+            if(first > img_cnt) { first = 1; }
+        }
+    }, 15);
+}
+
+function stopAction(){
+    clearInterval(interval);
+}
