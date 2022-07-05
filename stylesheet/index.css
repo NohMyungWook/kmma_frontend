@@ -3,6 +3,7 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+
 body{
     width: 90%;
     margin: 0 auto;
@@ -28,10 +29,9 @@ body{
 }
 
 .carousel-item > div{
-    bottom: 7.5rem;
+    bottom: 9.5rem;
     background-color: rgba(0, 0, 0, 0.532);
 }
-
 
 .main_text{
     font-weight: bold;
@@ -46,12 +46,10 @@ body{
     width: 100%;
 }
 
-
 .notice_wrap{
     display: flex;
     flex-direction: column;
 }
-
 
 .notice_sub_title{
     font-size: 1rem;
@@ -107,6 +105,10 @@ body{
 .notice_part > nav{
     margin: 10px auto 0;
 }
+
+.page-item{
+    text-decoration: none;
+}
 /* */
 .media_part{
     background-color: rgb(240, 240, 240);
@@ -147,10 +149,11 @@ body{
 }
 
 .business_card{
-    margin: 20px auto;
+    margin: 0px auto 30px;
     width: 80%;
     height: 40%;
     display: flex;
+    justify-content: space-between;
     border-radius: 30%;
 }
 
@@ -180,6 +183,13 @@ body{
     cursor: pointer;
     text-decoration: underline;
     text-underline-position: under;
+}
+
+.card_hr{
+    margin: 0 auto;
+    width: 80%;
+    height: 30px;
+    border-top: 2px solid rgba(128, 128, 128, 0.2);
 }
 
 /* logo slide */
