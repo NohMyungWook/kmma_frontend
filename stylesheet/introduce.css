@@ -480,13 +480,6 @@
     width: 100%;
 }
 
-.promotion_content_wrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .promotion_title{
     display: flex;
     flex-direction: column;
@@ -494,6 +487,18 @@
     align-items: center;
     height: 350px;
     background-image: url(../img/subImage/1.jpg);
+}
+
+.promotion_content{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.promotion_content img{
+    width: 30%;
 }
 
 /* 로그인 */
