@@ -470,8 +470,32 @@
     border: 1px solid;
 }
 
-/* 홍보 */
+/* 정책 */
+.policy_body{
+    height: 100%;
+}
+.policy_wrap{
+    width: 100%;
+}
 
+.policy_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-image: url(../img/subImage/1.jpg);
+}
+
+.policy_content{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* 홍보 */
 .promotion_body{
     height: 100%;
 }
