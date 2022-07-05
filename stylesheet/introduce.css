@@ -660,7 +660,7 @@
     margin-left: 35px;
 }
 
-.signup_main_bt{
+.signup_sub_bt{
     margin-top: 20px;
     height: 50px;
     display: flex;
@@ -670,7 +670,7 @@
     padding: auto 50px;
 }
 
-#signup_main_bt{
+#signup_sub_bt{
     height: 50px;
     width: 100%;
     font-size: 1.1rem;
