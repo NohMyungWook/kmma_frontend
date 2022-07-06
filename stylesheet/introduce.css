@@ -566,8 +566,8 @@
 }
 
 .notice_content{
-    margin-top: 40px;
-    width: 100%;
+    margin: 40px auto 0px auto;
+    width: 90%;
 }
 
 .notice_search{
@@ -655,8 +655,8 @@
 }
 
 .news_content{
-    margin-top: 40px;
-    width: 100%;
+    margin: 40px auto 0px auto;
+    width: 90%;
 }
 
 .news_search{
@@ -702,7 +702,7 @@
 }
 
 .news_list_header{
-    padding: 20px 10px 0px 10px;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -710,7 +710,7 @@
 
 .news_list_title{
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .news_list_time{
@@ -721,7 +721,7 @@
 .news_list_content{
     display: flex;
     flex-direction: column;
-    padding: 0px 10px 20px 10px;
+    padding-bottom: 20px;
     border-bottom: 1px solid black;
     padding-top: 10px;
     font-weight: 200;
@@ -733,7 +733,6 @@
     display: flex;
     justify-content: center;
 }
-
 /* 로그인 */
 .login_body{
     width: 100%;
