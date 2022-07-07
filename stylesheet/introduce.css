@@ -735,6 +735,171 @@
     justify-content: center;
 }
 
+/* 회원 등록 */
+.registration_body{
+    width: 100%;
+    height: 100%;
+}
+
+.registration_body_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 100%;
+    background-image: url(../img/subImage/1.jpg);
+}
+
+.registration_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration_input{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.registration_first_input{
+    width: 48%;
+    padding: 40px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
+.member_name input, .member_email input, .member_telnum input, .member_phonenum input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.registration_input h4{
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.member_type{
+    display: flex;
+    flex-direction: row;
+}
+
+.member_type h4{
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.member_name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.member_name h4{
+    width: 20%;
+}
+
+.member_name_input{
+    padding-top: 8px;
+    width: 80%;
+}
+
+#member_name_eng{
+    margin-top: 7px;
+}
+
+.member_birth{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.member_birth h4{
+    width: 20%;
+}
+
+.member_birth_select{
+    width: 80%;
+    padding-top: 10px;
+}
+
+.member_birth select{ 
+    width: 25%;
+    height: 40px;
+    border-radius: 7px;
+}
+
+
+.registration_second_input{
+    width: 48%;
+    padding: 40px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
+.member_house_address_wrap, .member_company_address_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.member_house_address h4{
+    margin-top: 0px;
+}
+
+.member_house_address_wrap input, .member_company_address_wrap input{
+    width: 68%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.member_house_address_wrap button, .member_company_address_wrap button{
+    width: 30%;
+}
+
+.business_number h4, .member_rank h4, .member_company_address h4, .member_company_address h4, .member_main_career h4{
+    margin-top: 20px;
+}
+
+.company_name input, .business_number input, .member_rank input, .member_main_career input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.registration_sub_bt{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.registration_sub_bt button{
+    width: 30%;
+    height: 50px;
+    font-size: 1.3rem;
+}
+
+
+
 /* 로그인 */
 .login_body{
     width: 100%;
@@ -870,6 +1035,7 @@
 
 .select_input{
     width: 48%;
+    height: 100%;
     padding: 30px;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
@@ -1018,4 +1184,19 @@
         margin: 10px auto 0px auto;
         font-size: 1.1rem;
     }
+}
+
+/* 공지사항 게시물 */
+.notice_details_body{
+    width: 100%;
+    height: 100%;
+}
+
+.notice_details_wrap{
+    width: 100%;
+    height: 100%;
+}
+
+.notice_details_title{
+    
 }
