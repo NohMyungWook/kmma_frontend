@@ -1214,19 +1214,40 @@
 }
 
 .post_details_title{
-    height: 100px;
+    height: 100%;
     width: 80%;
-    padding: auto 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 2px solid rgb(127, 126, 126);
+    border-bottom: 2px solid rgb(127, 126, 126);
 }
 
-.post_details_title h4{
-    margin-bottom: 0px;
+.post_user_name{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post_user_name_picture{
+    display: flex;
+    padding-right: 30px;
+}
+
+.post_upload_time{
+    padding-left: 30px;
+}
+.post_user_name_picture img{
+    width: 20px;
+    height: 20px;
+}
+
+.post_user_name_picture > div{
+    margin-left: 10px;
 }
 
 .post_details_content{
@@ -1234,3 +1255,88 @@
     width: 75%;
 }
 
+.post_list_link{
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.before_post_link{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid rgb(184, 184, 184);
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px; 
+}
+
+.before_post_link_bt_wrap{
+    display: flex;
+    flex-direction: row;
+}
+
+.before_post_link_bt{
+    display: flex;
+    flex-direction: row;
+}
+
+.before_post_link_bt img{
+    width: 30px;
+    height: 30px;
+}
+
+.before_post_link_name{
+    padding: 0px 0px 0px 5px;
+}
+
+.before_post_title{
+    padding-left: 30px;
+}
+
+.before_post_time{
+    padding-left: 30px;
+}
+
+.next_post_link{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid rgb(184, 184, 184);
+    border-bottom: 1px solid rgb(184, 184, 184);
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px; 
+}
+
+.next_post_link_bt_wrap{
+    display: flex;
+    flex-direction: row;
+}
+
+.next_post_link_bt{
+    display: flex;
+    flex-direction: row;
+}
+
+.next_post_link_bt img{
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+}
+
+.next_post_link_name{
+    padding: 0px 0px 0px 5px;
+}
+
+.next_post_title{
+    padding-left: 30px;
+}
+
+.next_post_time{
+    padding-left: 30px;
+}
