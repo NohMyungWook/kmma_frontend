@@ -1340,3 +1340,41 @@
 .next_post_time{
     padding-left: 30px;
 }
+
+@media(max-width: 772px){
+    .before_post_time{
+        display: none;
+    }
+
+    .next_post_time{
+        display: none;
+    }
+}
+
+@media(max-width: 585px){
+    .post_user_name{
+        display: none;
+    }
+
+    .post_details_title{
+        padding-top: 10px;
+    }
+}
+
+@media(max-width: 575px){
+    .before_post_link{
+        justify-content: center;
+    }
+
+    .before_post_title{
+        display: none;
+    }
+
+    .next_post_link{
+        justify-content: center;
+    }
+
+    .next_post_title{
+        display: none;
+    }
+}
