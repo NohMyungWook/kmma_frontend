@@ -1218,6 +1218,7 @@
     width: 80%;
     padding: auto 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: 1px solid black;
