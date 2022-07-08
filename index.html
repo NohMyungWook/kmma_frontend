@@ -23,7 +23,7 @@
       <nav class="navbar navbar-expand-md">
           <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-              <img src="/img/logo.png" alt="" width="100">
+              <img src="/img/logo.png" alt="" width="150">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -139,71 +139,40 @@
       </button>
     </div>
     <!-- 공지사항 및 활동소식 게시판 -->
-    <div class="notice_part">
-      <div class="notice_wrap">
-        <div class="notice_title_wrap">
-          <div class="notice_title">Notice</div>
-          <button type="button" class="btn btn-outline-secondary" id="notice_more">+</button>
-        </div>
-        <!-- 공지사항 내용 몇글자만 backend에서 받아올 것인지 회의하기 -->
-        <div class="notice_content_wrap">
-          <div class="notice_card">
-            <div class="notice_card_title">아직 준비중인 기능입니다.</div>
-            <div class="notice_card_content">This feature is still being prepared.</div>
-            <div class="notice_card_date">2022-07-01</div>
+    <div class="content_part">
+      <div class="notice_part">
+        <div class="notice_wrap">
+          <div class="notice_title_wrap">
+            <div class="notice_title">Notice</div>
+            <button onclick="location.href='notice.html'" type="button" class="btn btn-outline-secondary" id="notice_more">+</button>
           </div>
-          <div class="notice_card">
-            <div class="notice_card_title">아직 준비중인 기능입니다.</div>
-            <div class="notice_card_content">This feature is still being prepared.</div>
-            <div class="notice_card_date">2022-07-01</div>
-          </div>
-          <div class="notice_card">
-            <div class="notice_card_title">아직 준비중인 기능입니다.</div>
-            <div class="notice_card_content">This feature is still being prepared.</div>
-            <div class="notice_card_date">2022-07-01</div>
+          <!-- 공지사항 내용 몇글자만 backend에서 받아올 것인지 회의하기 -->
+          <div class="notice_content_wrap">
+            <div class="notice_card">
+              <div class="notice_card_title">아직 준비중인 기능입니다.</div>
+              <div class="notice_card_content">This feature is still being prepared.</div>
+              <div class="notice_card_date">2022-07-01</div>
+            </div>
+            <div class="notice_card">
+              <div class="notice_card_title">아직 준비중인 기능입니다.</div>
+              <div class="notice_card_content">This feature is still being prepared.</div>
+              <div class="notice_card_date">2022-07-01</div>
+            </div>
+            <div class="notice_card">
+              <div class="notice_card_title">아직 준비중인 기능입니다.</div>
+              <div class="notice_card_content">This feature is still being prepared.</div>
+              <div class="notice_card_date">2022-07-01</div>
+            </div>
           </div>
         </div>
       </div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item disabled" id="main_page_item_prev" onclick="notice_page(0)" href="javascript:void(0)">
-            <a class="page-link" href="javascript:void(0)" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item active" id="main_page_item_1"><a class="page-link" onclick="notice_page(1)" href="javascript:void(0)">1</a></li>
-          <li class="page-item" id="main_page_item_2"><a class="page-link" onclick="notice_page(2)" href="javascript:void(0)">2</a></li>
-          <li class="page-item" id="main_page_item_3"><a class="page-link" onclick="notice_page(3)" href="javascript:void(0)">3</a></li>
-          <li class="page-item" id="main_page_item_next" onclick="notice_page(4)" href="javascript:void(0)">
-            <a class="page-link" href="javascript:void(0)" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-      </nav>
-    </div>
-    <!-- media 게시판 -->
-    <div class="media_part">
-      <div class="media_wrap">
-        <div class="media_title">KMMA <span style="color: gray;">BUSINESS</span></div>
-        <div class="media_content">
-          <div class="kmma_youtube">
-            <iframe width="100%" height="500px" allowfullscreen src=" https://www.youtube.com/embed/YTd4RirvEbo" frameborder="0"></iframe>
-          </div>
-          <div class="business">
-            <div class="business_card">
-              <img src="../img/index/1.png" class="card-img-top" alt="">
-              <div class="business_card_body">
-                <div class="business_card_text">교육</div>
-                <div class="business_more">더 알아보기</div>
-              </div>
-            </div>
-            <div class="card_hr"></div>
-            <div class="business_card">
-              <img src="../img/index/2.png" class="card-img-top" alt="">
-              <div class="business_card_body">
-                <div class="business_card_text">정책</div>
-                <div class="business_more">더 알아보기</div>
-              </div>
+      <!-- media 게시판 -->
+      <div class="media_part">
+        <div class="media_wrap">
+          <div class="media_title">KMMA <span style="color: gray;">YOUTUBE</span></div>
+          <div class="media_content">
+            <div class="kmma_youtube">
+              <iframe width="100%" height="300px" allowfullscreen src=" https://www.youtube.com/embed/YTd4RirvEbo" frameborder="0"></iframe>
             </div>
           </div>
         </div>
