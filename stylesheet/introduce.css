@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -102,7 +102,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -173,7 +173,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -232,7 +232,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -309,7 +309,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -355,7 +355,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -494,7 +494,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -521,7 +521,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -560,7 +560,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -649,7 +649,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -754,7 +754,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -787,6 +787,7 @@
     height: 40px;
     border-radius: 7px;
     border: 1px solid black;
+    padding: 0 10px;
 }
 
 .registration_input h4{
@@ -868,6 +869,7 @@
     height: 40px;
     border-radius: 7px;
     border: 1px solid black;
+    padding: 0 10px;
 }
 
 .member_house_address_wrap button, .member_company_address_wrap button{
@@ -883,6 +885,7 @@
     height: 40px;
     border-radius: 7px;
     border: 1px solid black;
+    padding: 0 10px;
 }
 
 .registration_sub_bt{
@@ -1183,7 +1186,7 @@
     }
 }
 
-/*게시물 세부사항 */
+/*공지사항 게시물 세부사항 */
 .post_details_body{
     height: 100%;
 }
@@ -1197,7 +1200,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
+    height: 250px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -1377,4 +1380,79 @@
     .next_post_title{
         display: none;
     }
+}
+
+/* 마이페이지 */
+
+.mypage_body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mypage_body_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mypage_body_title{
+    font-size: 2.5rem;
+    margin-top: 60px;
+}
+
+.mypage_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    margin-top: 40px;
+    padding: 40px;
+}
+
+.mypage_basic_information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/* .mypage_member_img{
+    height: 300px;
+} */
+
+.mypage_member_img img{
+    width: 100px;
+    padding-right: 20px;
+}
+
+.mypage_member_name{
+    padding-left: 20px;
+}
+
+.mypage_member_name_kor{
+    font-size: 1.6rem;
+}
+
+.mypage_sub_information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.mypage_member_type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
