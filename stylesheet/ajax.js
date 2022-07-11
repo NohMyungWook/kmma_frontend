@@ -33,7 +33,7 @@ $(document).ready(function(){
 
     /*회원가입 정보*/
     $('#signup_sub_bt').click(function(){
-        // var domain = "http://kmma.io";
+        var domain = "http://kmma.io";
         var signup_id = $('#signup_id').val();
         var signup_pw = $('#signup_pw').val();
         var signup_email = $('#signup_email').val();
@@ -158,25 +158,23 @@ $(document).ready(function(){
     });
 
     // /*ID 중복 검사 */
-    // $('#signup_check_bt').click(function(){
-    //     var signup_id = $('#signup_id').val();
+    $('#signup_check_bt').click(function(){
+        var domain = "http://kmma.io/kmma";
+        var signup_id = $('#signup_id').val();
 
-    //     /* 아이디 중복 검사 */
-    //     $.ajax({
-    //         type: "GET",
-    //         url: domain + "/validation" + signup_id,
-    //         contentType : "application/json",
-    //         data : JSON.stringify({
-    //             "id" : signup_id
-    //         }),
-    //         success: function(data, textStatus, xhr){
-    //             console.log("아이디 값 전송 완료");
-    //         },
-    //         error: function(request, status, error){
-    //             console.log("아이디값 전송 실패");
-    //         }
-    //     })
-    // })
+        /* 아이디 중복 검사 */
+        $.ajax({
+            type: "GET",
+            url: domain + "/validation/" + signup_id,
+            success: function(data, textStatus, xhr){
+                document.getElementById('#signup_id').disabled = true;
+            },
+            error: function(request, status, error){
+                $('#signup_id').css('border', '1.5px solid red');
+                $('#signup_id_inform').html('아이디를 다시입력하세요');
+            }
+        })
+    })
 
 
 
