@@ -37,6 +37,7 @@ $(document).ready(function(){
         var signup_along = $('#signup_along').val();
         var signup_address = $('#signup_address').val();
         var signup_detail_address = $('#signup_detail_address').val();
+        var signup_enterprise  = $("input[name=exampleRadios]:checked").val();
     
         $.ajax({
             type: "POST",
@@ -48,7 +49,8 @@ $(document).ready(function(){
                 "signup_email" : signup_email,
                 "signup_tel" : signup_tel,
                 "signup_along" : signup_along,
-                "signup_address" : signup_address + " " +signup_detail_address
+                "signup_address" : signup_address + " " +signup_detail_address,
+                "signup_enterprise" : signup_enterprise
             },
             dataType : "application/json",
             success: function(data, textStatus, xhr){
@@ -56,6 +58,7 @@ $(document).ready(function(){
             },
             error: function(request, status, error){
                 console.log("회원가입 정보 전송 실패");
+                console.log(signup_enterprise);
             },
             complete: function(){
                 console.log("어쨋든 전송이 되긴 함..");
