@@ -41,27 +41,23 @@ $(document).ready(function(){
     
         $.ajax({
             type: "POST",
-            url: "",
-            data:{
-                "signup_id" : signup_id,
-                "signup_pw" : signup_pw,
+            url: "http://localhost:8080/kmma/signup",
+            data: JSON.stringify({
+                "id" : signup_id,
+                "pw" : signup_pw,
                 "signup_pw_check" : signup_pw_check,
-                "signup_email" : signup_email,
-                "signup_tel" : signup_tel,
-                "signup_along" : signup_along,
-                "signup_address" : signup_address + " " +signup_detail_address,
-                "signup_enterprise" : signup_enterprise
-            },
-            dataType : "application/json",
+                "email" : signup_email,
+                "phone" : signup_tel,
+                "department" : signup_along,
+                "address" : signup_address + " " +signup_detail_address,
+                "companyYn" : signup_enterprise
+            }),
+            contentType : "application/json",
             success: function(data, textStatus, xhr){
                 console.log("회원가입 정보 전송 완료");
             },
             error: function(request, status, error){
                 console.log("회원가입 정보 전송 실패");
-                console.log(signup_enterprise);
-            },
-            complete: function(){
-                console.log("어쨋든 전송이 되긴 함..");
             }
         })
     });
