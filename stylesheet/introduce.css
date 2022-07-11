@@ -107,9 +107,8 @@
 }
 
 .introduce_content{
-    margin-top: 70px;
-    margin-bottom: 70px;
-    width: 100%;
+    margin: 70px auto 70px auto;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -761,6 +760,7 @@
 
 .registration_wrap{
     width: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -769,6 +769,7 @@
 
 .registration_input{
     width: 100%;
+    height: 100%;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -805,6 +806,11 @@
     font-size: 1.4rem;
 }
 
+.member_division{
+    display: flex;
+    flex-direction: row;
+
+}
 .member_name{
     display: flex;
     flex-direction: row;
