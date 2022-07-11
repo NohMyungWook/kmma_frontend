@@ -39,6 +39,7 @@ $(document).ready(function(){
         var signup_email = $('#signup_email').val();
         var signup_tel = $('#signup_tel').val();
         var signup_along, signup_address, signup_detail_address, signup_enterprise;
+       
         if($('#signup_along').val() == ''){
             signup_along = null;
         }else{
@@ -185,12 +186,26 @@ $(document).ready(function(){
          var signup_pw = $('#signup_pw').val();
          var signup_email = $('#signup_email').val();
          var signup_tel = $('#signup_tel').val();
-         var idValid = /^[0-9|a-z|A-Z]$/;
-         var pwValid = /^(?=.[A-Za-z])(?=.\\d)(?=.[$@$!%#?&])[A-Za-z\\d$@$!%#?&]{8,20}$/;
-         var emailValid = /^0-9a-zA-Z@0-9a-zA-Z\\.[a-zA-Z]{2,3}$/;
-         var phoneValid = /^\\d{2,3}[-]\\d{3,4}[-]\\d{4}$/;
+         var idValid = new RegExp(/^([a-z0-9]{5,})$/);
+         var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
+         var emailValid = new RegExp(/^0-9a-zA-Z@0-9a-zA-Z\\.[a-zA-Z]{2,3}$/);
+         var phoneValid = new RegExp(/^\\d{2,3}[-]\\d{3,4}[-]\\d{4}$/);
 
-         if (idValid.test(signup_id) == false){
+         var mystring = "heh11@@";
+         console.log("엥" + /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(mystring));
+         
+         console.log(pwValid);
+         console.log(signup_pw);
+         console.log(signup_id);
+         console.log(signup_pw);
+         console.log(signup_email);
+         console.log(signup_tel);
+         console.log(idValid.test(signup_id));
+         console.log(pwValid.test(signup_pw));
+         console.log(emailValid.test(signup_email));
+         console.log(phoneValid.test(signup_tel));
+
+         if (!(idValid.test(signup_id))){
             $('#signup_id').css('border', '1.5px solid red');
             $('#signup_id_inform').html('아이디를 다시입력하세요');
          } else{
@@ -198,7 +213,7 @@ $(document).ready(function(){
             $('#signup_id_inform').css('display', 'none');
          }
 
-         if(pwValid.test(signup_pw) == false){
+         if(!(pwValid.test(signup_pw))){
             $('#signup_pw').css('border', '1.5px solid red');
             $('#signup_pw_check').css('border', '1.5px solid red');
             $('#signup_pw_inform').html('비밀번호를 다시입력하세요');
@@ -209,7 +224,7 @@ $(document).ready(function(){
             $('#signup_check_pw_inform').css('display', 'none');
          }
 
-         if(emailValid.test(signup_email) == false){
+         if(!(emailValid.test(signup_email))){
             $('#signup_email').css('border', '1.5px solid red');
             $('#signup_email_inform').html('이메일을 다시입력하세요');
          } else{
@@ -217,7 +232,7 @@ $(document).ready(function(){
             $('#signup_email_inform').css('display', 'none');
          }
 
-         if(phoneValid.test(signup_tel) == false){
+         if(!(phoneValid.test(signup_tel))){
             $('#signup_tel').css('border', '1.5px solid red');
             $('#signup_tel_inform').html('전화번호를 다시입력하세요');
          } else{
