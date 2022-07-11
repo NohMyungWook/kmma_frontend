@@ -15,6 +15,7 @@
     <script src="/stylesheet/address.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="/stylesheet/ajax.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -122,31 +123,31 @@
                   <div class="member_name">
                       <h4>성명</h4>
                       <div class="member_name_input">
-                        <input type="text" placeholder="한글">
+                        <input type="text" id="member_name_kor" placeholder="한글">
                         <input type="text" id="member_name_eng" placeholder="영문">
                       </div>
                   </div>
 
                   <div class="member_birth">
                     <h4>생년월일</h4>
-                    <input type="date" id="birth_start" name="trip-start"
-                    value="2022-07-11"
-                    min="1920-01-01" max="2022-12-31" >
+                    <input type="date" id="member_birth" name="trip-start"
+                    value="연도. 월. 일.ㅇ"
+                    min="1920-01-01" >
                   </div>
                   
                   <div class="member_email">
                     <h4>E-mail</h4>
-                    <input type="email" placeholder="이메일">
+                    <input type="email" id="member_email" placeholder="이메일">
                   </div>
 
                   <div class="member_telnum">
                     <h4>전화번호</h4>
-                    <input type="tel" placeholder="전화번호">
+                    <input type="tel" id="member_telnum" placeholder="전화번호">
                   </div>
 
                   <div class="member_phonenum">
                     <h4>휴대폰번호</h4>
-                    <input type="tel" placeholder="휴대폰번호">
+                    <input type="tel" id="member_phonenum" placeholder="휴대폰번호">
                   </div>
                 </div>
                 <div class="registration_second_input">
