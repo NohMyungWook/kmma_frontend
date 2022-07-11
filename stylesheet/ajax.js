@@ -1,16 +1,18 @@
 $(document).ready(function(){
+
     /*로그인 정보*/
     $('#login_main_bt').click(function(){
+        var domain = "http://kmma.io";
         var login_id = $('#login_id').val();
         var login_pw = $('#login_pw').val();
         $.ajax({
             type: "POST",
-            url: "",
-            data:{
-                "login_id" : login_id,
-                "login_pw" : login_pw
-            },
-            dataType : "text",
+            url: domain + "/kmma/login",
+            data: JSON.stringify({
+                "id" : login_id,
+                "pw" : login_pw
+            }),
+            contentType : "application/JSON",
             success: function(data, textStatus, xhr){
                 console.log("아이디: " + login_id + ", 비밀번호: " + login_pw);
                 if (data == 'loginFail'){
@@ -27,47 +29,66 @@ $(document).ready(function(){
         })
     });
     
+
+
     /*회원가입 정보*/
     $('#signup_sub_bt').click(function(){
+        // var domain = "http://kmma.io";
         var signup_id = $('#signup_id').val();
         var signup_pw = $('#signup_pw').val();
-        var signup_pw_check = $('#signup_pw_check').val();
         var signup_email = $('#signup_email').val();
         var signup_tel = $('#signup_tel').val();
         var signup_along = $('#signup_along').val();
         var signup_address = $('#signup_address').val();
         var signup_detail_address = $('#signup_detail_address').val();
-        var signup_enterprise  = $("input[name=exampleRadios]:checked").val();
-    
+        var signup_enterprise  = $("input[name=exampleRadios]:checked").val();/*validation*/
+
+        console.log(signup_pw);
+        /* 데이터 전송 */
         $.ajax({
             type: "POST",
-            url: "",
-            data:{
-                "signup_id" : signup_id,
-                "signup_pw" : signup_pw,
-                "signup_pw_check" : signup_pw_check,
-                "signup_email" : signup_email,
-                "signup_tel" : signup_tel,
-                "signup_along" : signup_along,
-                "signup_address" : signup_address + " " +signup_detail_address,
-                "signup_enterprise" : signup_enterprise
-            },
-            dataType : "application/json",
+            // url: domain + "/kmma/signup",
+            contentType : "application/json",
+            data: JSON.stringify({
+                "id" : signup_id,
+                "pw" : signup_pw,
+                "email" : signup_email,
+                "phone" : signup_tel,
+                "department" : signup_along,
+                "address" : signup_address + " " +signup_detail_address,
+                "companyYn" : signup_enterprise
+            }),
             success: function(data, textStatus, xhr){
                 console.log("회원가입 정보 전송 완료");
             },
             error: function(request, status, error){
                 console.log("회원가입 정보 전송 실패");
                 console.log(signup_enterprise);
-            },
-            complete: function(){
-                console.log("어쨋든 전송이 되긴 함..");
             }
         })
     });
     
+
+
+    /* 비밀번호 일치한지 확인 + 빈 칸 안됨 */
+    $('#signup_sub_bt').click(function(){
+         // //비밀번호가 같지 않을 시 alert 창으로 사용자에게 알림
+         if(signup_pw == signup_pw_check){
+            console.log(signup_pw + ' -> ' + signup_pw_check);
+            return true;
+        } else{
+            if(signup_pw.length == 0 && signup_pw_check == null){
+                $('#signup_pw').focus();
+                alert('비밀번호를 입력하지 않았습니다.');
+            }
+            alert('비밀번호를 다시 입력하세요');
+            return false;
+        }
+    })
+    
     /*회원등록 정보*/
     $('#registration_bt').click(function(){
+        var domain = "http://kmma.io";
         var member_type  = $("input[name=flexRadioDefault]:checked").val();
         var member_name_kor = $('#member_name_kor').val();
         var member_name_eng = $('#member_name_eng').val();
@@ -87,12 +108,14 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: "",
+            contentType : "application/json",
             data:{
                 "member_type" : member_type,
                 "member_name_kor" : member_name_kor,
                 "member_name_eng" : member_name_eng,
                 "member_birth" : member_birth, 
                 "member_email" : member_email,
+                "member_telnum" : member_telnum,
                 "member_phonenum" : member_phonenum, 
                 "member_house_address" : member_house_address + member_house_detail_address,
                 "company_name" : company_name,
@@ -101,19 +124,85 @@ $(document).ready(function(){
                 "member_company_address" : member_company_address + member_company_detail_address,
                 "member_main_career" : member_main_career
             },
-            dataType : "application/json",
             success: function(data, textStatus, xhr){
                 console.log("회원등록 정보 전송 완료");
             },
             error: function(request, status, error){
                 console.log("회원등록 정보 전송 실패");
                 console.log(member_type);
-            },
-            complete: function(){
-                console.log("어쨋든ㅋㅋ 전송이 되긴 함..");
             }
         })
     });
-    
-    
+
+    // /*ID 중복 검사 */
+    // $('#signup_check_bt').click(function(){
+    //     var signup_id = $('#signup_id').val();
+
+    //     /* 아이디 중복 검사 */
+    //     $.ajax({
+    //         type: "GET",
+    //         url: domain + "/validation" + signup_id,
+    //         contentType : "application/json",
+    //         data : JSON.stringify({
+    //             "id" : signup_id
+    //         }),
+    //         success: function(data, textStatus, xhr){
+    //             console.log("아이디 값 전송 완료");
+    //         },
+    //         error: function(request, status, error){
+    //             console.log("아이디값 전송 실패");
+    //         }
+    //     })
+    // })
+
+
+
+    /*정규식*/
+    $('#signup_sub_bt').click(function(){
+         var signup_id = $('#signup_id').val();
+         var signup_pw = $('#signup_pw').val();
+         var signup_pw_check = $('#signup_pw_check').val();
+         var signup_email = $('#signup_email').val();
+         var signup_tel = $('#signup_tel').val();
+         var idValid = /^[0-9|a-z|A-Z]$/;
+         var pwValid = /^(?=.[A-Za-z])(?=.\\d)(?=.[$@$!%#?&])[A-Za-z\\d$@$!%#?&]{8,20}$/;
+         var emailValid = /^0-9a-zA-Z@0-9a-zA-Z\\.[a-zA-Z]{2,3}$/;
+         var phoneValid = /^\\d{2,3}[-]\\d{3,4}[-]\\d{4}$/;
+
+         if (idValid.test(signup_id) == false){
+            $('#signup_id').css('border', '1.5px solid red');
+            $('#signup_id_inform').html('아이디를 다시입력하세요');
+         } else{
+            $('#signup_id').css('border', '1px solid black');
+            $('#signup_id_inform').css('display', 'none');
+         }
+
+         if(pwValid.test(signup_pw) == false){
+            $('#signup_pw').css('border', '1.5px solid red');
+            $('#signup_pw_check').css('border', '1.5px solid red');
+            $('#signup_pw_inform').html('비밀번호를 다시입력하세요');
+            $('#signup_check_pw_inform').html('비밀번호를 다시입력하세요');
+         } else{
+            $('#signup_pw').css('border', '1px solid black');
+            $('#signup_id_inform').css('display', 'none');
+            $('#signup_check_pw_inform').css('display', 'none');
+         }
+
+         if(emailValid.test(signup_email) == false){
+            $('#signup_email').css('border', '1.5px solid red');
+            $('#signup_email_inform').html('이메일을 다시입력하세요');
+         } else{
+            $('#signup_email').css('border', '1px solid black');
+            $('#signup_email_inform').css('display', 'none');
+         }
+
+         if(phoneValid.test(signup_tel) == false){
+            $('#signup_tel').css('border', '1.5px solid red');
+            $('#signup_tel_inform').html('전화번호를 다시입력하세요');
+         } else{
+            $('#signup_tel').css('border', '1px solid black');
+            $('#signup_tel_inform').css('display', 'none');
+         }
+    });
 });
+

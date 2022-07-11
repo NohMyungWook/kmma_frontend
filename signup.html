@@ -97,25 +97,32 @@
                   <h3>필수항목</h3>
                   <div class="signup_id">
                     <h4>아이디</h4>
+                    <div id="signup_id_inform"></div>
                     <div class="signup_id_wrap">
                       <input type="text" id ="signup_id" placeholder="아이디" required>
-                      <button type="button" id="signup_id_bt" class="btn btn-outline-dark">중복확인</button>
+                      <button type="button" id="signup_check_bt" class="btn btn-outline-dark">중복확인</button>
                     </div>
                   </div>
                   <div class="signup_pw">
                     <h4>비밀번호</h4>
+                    <div id="signup_pw_inform"></div>
+                    <div id="signup_check_false"></div>
                       <input type="password" id="signup_pw" placeholder="비밀번호" required>
                   </div>
                   <div class="signup_pw_check">
                     <h4>비밀번호 재입력</h4>
+                    <div id="signup_check_pw_inform"></div>
+                    <div id="signup_check_false"></div>
                     <input type="password" id="signup_pw_check" placeholder="비밀번호" required>
                   </div>
                   <div class="signup_email">
                     <h4>이메일</h4>
+                    <div id="signup_email_inform"></div>
                     <input type="email" id="signup_email" placeholder="이메일" required>
                   </div>
                   <div class="signup_tel">
                     <h4>전화번호</h4>
+                    <div id="signup_tel_inform"></div>
                     <input type="tel" id="signup_tel" placeholder="전화번호" required>
                   </div>
                 </div>
@@ -138,11 +145,11 @@
                     <h4>기업여부</h4>
                     <div class="signup_enterprise_check">
                       <div class="form-check" id="_yes_check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Yes" checked>
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y">
                         <label class="form-check-label" for="exampleRadios1">YES</label>
                       </div>
                       <div class="form-check" id="_no_check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="No">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="N">
                         <label class="form-check-label" for="exampleRadios2">NO</label>
                       </div>
                     </div>
