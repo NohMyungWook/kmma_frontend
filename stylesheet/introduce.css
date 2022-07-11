@@ -1154,6 +1154,10 @@
     font-size: 1.1rem;
 }
 
+#signup_id_inform, #signup_pw_inform, #signup_check_pw_inform, #signup_email_inform, #signup_tel_inform{
+    color: red;
+}
+
 @media(max-width: 905px){
     .signup_address_wrap{
         display: flex;
