@@ -91,24 +91,6 @@ $(document).ready(function(){
         })
     });
     
-
-
-    /* 비밀번호 일치한지 확인 + 빈 칸 안됨 */
-    $('#signup_sub_bt').click(function(){
-         // //비밀번호가 같지 않을 시 alert 창으로 사용자에게 알림
-         if(signup_pw == signup_pw_check){
-            console.log(signup_pw + ' -> ' + signup_pw_check);
-            return true;
-        } else{
-            if((signup_pw).length == 0 && (signup_pw).length == 0){
-                $('#signup_pw').focus();
-                alert('비밀번호를 입력하지 않았습니다.');
-            }
-            alert('비밀번호를 다시 입력하세요');
-            return false;
-        }
-    })
-    
     /*회원등록 정보*/
     $('#registration_bt').click(function(){
         var domain = "http://kmma.io";
@@ -182,23 +164,13 @@ $(document).ready(function(){
     $('#signup_sub_bt').click(function(){
          var signup_id = $('#signup_id').val();
          var signup_pw = $('#signup_pw').val();
+         var signup_pw_check = $('#signup_pw_check').val();
          var signup_email = $('#signup_email').val();
          var signup_tel = $('#signup_tel').val();
          var idValid = new RegExp(/^[0-9|a-z|A-Z]{4,15}$/);
          var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
          var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
          var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
-         
-         console.log(pwValid);
-         console.log(signup_pw);
-         console.log(signup_id);
-         console.log(signup_pw);
-         console.log(signup_email);
-         console.log(signup_tel);
-         console.log(idValid.test(signup_id));
-         console.log(pwValid.test(signup_pw));
-         console.log(emailValid.test(signup_email));
-         console.log(phoneValid.test(signup_tel));
 
          if (!(idValid.test(signup_id))){
             $('#signup_id').css('border', '1.5px solid red');
@@ -207,17 +179,23 @@ $(document).ready(function(){
             $('#signup_id').css('border', '1px solid black');
             $('#signup_id_inform').css('display', 'none');
          }
-
-         if(!(pwValid.test(signup_pw))){
-            $('#signup_pw').css('border', '1.5px solid red');
+         if(signup_pw != signup_pw_check){
             $('#signup_pw_check').css('border', '1.5px solid red');
-            $('#signup_pw_inform').html('비밀번호를 다시입력하세요');
-            $('#signup_check_pw_inform').html('비밀번호를 다시입력하세요');
-         } else{
-            $('#signup_pw').css('border', '1px solid black');
-            $('#signup_id_inform').css('display', 'none');
-            $('#signup_check_pw_inform').css('display', 'none');
+            $('#signup_check_pw_inform').html('비밀번호가 일치하지 않습니다');
+         }else{
+            alert("진입");
+            if(!(pwValid.test(signup_pw))){
+                $('#signup_pw').css('border', '1.5px solid red');
+                $('#signup_pw_check').css('border', '1.5px solid red');
+                $('#signup_pw_inform').html('비밀번호를 다시입력하세요');
+                $('#signup_check_pw_inform').html('비밀번호를 다시입력하세요');
+             } else{
+                $('#signup_pw').css('border', '1px solid black');
+                $('#signup_id_inform').css('display', 'none');
+                $('#signup_check_pw_inform').css('display', 'none');
+             }
          }
+         
 
          if(!(emailValid.test(signup_email))){
             $('#signup_email').css('border', '1.5px solid red');
