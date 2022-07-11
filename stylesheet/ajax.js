@@ -158,8 +158,6 @@ $(document).ready(function(){
         })
     })
 
-
-
     /*정규식*/
     $('#signup_sub_bt').click(function(){
          var signup_id = $('#signup_id').val();
@@ -180,10 +178,13 @@ $(document).ready(function(){
             $('#signup_id_inform').css('display', 'none');
          }
          if(signup_pw != signup_pw_check){
+            $('#signup_pw').css('border', '1px solid black');
+            $('#signup_pw_check').css('border', '1px solid black');
+            $('#signup_pw_inform').html('');
+            $('#signup_check_pw_inform').html('');
             $('#signup_pw_check').css('border', '1.5px solid red');
             $('#signup_check_pw_inform').html('비밀번호가 일치하지 않습니다');
          }else{
-            alert("진입");
             if(!(pwValid.test(signup_pw))){
                 $('#signup_pw').css('border', '1.5px solid red');
                 $('#signup_pw_check').css('border', '1.5px solid red');
@@ -191,8 +192,9 @@ $(document).ready(function(){
                 $('#signup_check_pw_inform').html('비밀번호를 다시입력하세요');
              } else{
                 $('#signup_pw').css('border', '1px solid black');
-                $('#signup_id_inform').css('display', 'none');
-                $('#signup_check_pw_inform').css('display', 'none');
+                $('#signup_pw_check').css('border', '1px solid black');
+                $('#signup_pw_inform').html('');
+                $('#signup_check_pw_inform').html('');
              }
          }
          
