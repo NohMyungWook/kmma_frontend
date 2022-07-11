@@ -77,7 +77,7 @@ $(document).ready(function(){
             console.log(signup_pw + ' -> ' + signup_pw_check);
             return true;
         } else{
-            if(signup_pw.length == 0 && signup_pw_check == null){
+            if((signup_pw).length == 0 && (signup_pw).length == 0){
                 $('#signup_pw').focus();
                 alert('비밀번호를 입력하지 않았습니다.');
             }
@@ -161,7 +161,6 @@ $(document).ready(function(){
     $('#signup_sub_bt').click(function(){
          var signup_id = $('#signup_id').val();
          var signup_pw = $('#signup_pw').val();
-         var signup_pw_check = $('#signup_pw_check').val();
          var signup_email = $('#signup_email').val();
          var signup_tel = $('#signup_tel').val();
          var idValid = /^[0-9|a-z|A-Z]$/;
