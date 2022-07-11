@@ -1053,6 +1053,16 @@
     justify-content: space-between;
 }
 
+.signup_id_input_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.signup_id_wrap button{
+    width: 40%;
+    height: 40px;
+}
 .select_input{
     width: 48%;
     height: 100%;

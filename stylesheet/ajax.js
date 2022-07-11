@@ -175,8 +175,9 @@ $(document).ready(function(){
             $('#signup_id_inform').html('아이디를 다시입력하세요');
          } else{
             $('#signup_id').css('border', '1px solid black');
-            $('#signup_id_inform').css('display', 'none');
+            $('#signup_id_inform').html('');
          }
+
          if(signup_pw != signup_pw_check){
             $('#signup_pw').css('border', '1px solid black');
             $('#signup_pw_check').css('border', '1px solid black');
@@ -198,13 +199,12 @@ $(document).ready(function(){
              }
          }
          
-
          if(!(emailValid.test(signup_email))){
             $('#signup_email').css('border', '1.5px solid red');
             $('#signup_email_inform').html('이메일을 다시입력하세요');
          } else{
             $('#signup_email').css('border', '1px solid black');
-            $('#signup_email_inform').css('display', 'none');
+            $('#signup_email_inform').html('');
          }
 
          if(!(phoneValid.test(signup_tel))){
@@ -212,7 +212,7 @@ $(document).ready(function(){
             $('#signup_tel_inform').html('전화번호를 다시입력하세요');
          } else{
             $('#signup_tel').css('border', '1px solid black');
-            $('#signup_tel_inform').css('display', 'none');
+            $('#signup_tel_inform').html('');
          }
     });
 });
