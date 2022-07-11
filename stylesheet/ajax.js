@@ -38,12 +38,35 @@ $(document).ready(function(){
         var signup_pw = $('#signup_pw').val();
         var signup_email = $('#signup_email').val();
         var signup_tel = $('#signup_tel').val();
-        var signup_along = $('#signup_along').val();
-        var signup_address = $('#signup_address').val();
-        var signup_detail_address = $('#signup_detail_address').val();
-        var signup_enterprise  = $("input[name=exampleRadios]:checked").val();/*validation*/
+        var signup_along, signup_address, signup_detail_address, signup_enterprise;
+        if($('#signup_along').val() == ''){
+            signup_along = null;
+        }else{
+            signup_along = $('#signup_along').val();
+        }
 
-        console.log(signup_pw);
+        if($('#signup_address').val() == ''){
+            signup_address = null;
+        }else{
+            signup_address = $('#signup_address').val();
+        }
+        
+        if($('#signup_detail_address').val() == ''){
+            signup_detail_address = null;
+        }else{
+            signup_detail_address = $('#signup_detail_address').val();
+        }
+        
+        if($("input[name=exampleRadios]:checked").val() == undefined){
+            signup_enterprise = null;
+        }else{
+            signup_enterprise = $("input[name=exampleRadios]:checked").val();
+        }
+        
+        console.log('소속 ' + signup_along);
+        console.log('주소 ' + signup_address +',' + signup_detail_address);
+        console.log('기업여부 ' + signup_enterprise);
+        
         /* 데이터 전송 */
         $.ajax({
             type: "POST",
@@ -63,7 +86,6 @@ $(document).ready(function(){
             },
             error: function(request, status, error){
                 console.log("회원가입 정보 전송 실패");
-                console.log(signup_enterprise);
             }
         })
     });
