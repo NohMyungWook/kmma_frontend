@@ -867,6 +867,15 @@
     padding: 0 10px;
 }
 
+#member_house_detail_address, #member_company_detail_address{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid black;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
 .member_birth input{
     width: 80%;
     height: 40px;
@@ -1060,6 +1069,14 @@
     width: 70%;
 }
 
+#signup_detail_address{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+    width: 100%;
+    margin-top: 10px;
+}
 #signup_address_bt{
     height: 40px;
     margin-left: 10px;
