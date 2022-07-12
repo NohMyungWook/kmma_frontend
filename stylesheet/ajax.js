@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     /*로그인 정보*/
     $('#login_main_bt').click(function(){
-        var domain = "http://kmma.io";
+        var domain = "http://kmma.io:8080";
         var login_id = $('#login_id').val();
         var login_pw = $('#login_pw').val();
         $.ajax({
@@ -16,15 +16,11 @@ $(document).ready(function(){
             success: function(data, textStatus, xhr){
                 console.log("아이디: " + login_id + ", 비밀번호: " + login_pw);
                 if (data == 'loginFail'){
-                    alert("아이디와 비밀번호를 다시 입력하세요");
+                    console.log("아이디와 비밀번호를 다시 입력하세요");
                 } 
             },
             error: function(request, status, error){
                 console.log("아이디: " + login_id + ", 비밀번호: " + login_pw);
-                alert("데이터 전송 실패!");
-            },
-            complete: function(){
-                console.log("어쨋든 전송이 되긴 함..");
             }
         })
     });
@@ -33,7 +29,7 @@ $(document).ready(function(){
 
     /*회원가입 정보*/
     $('#signup_sub_bt').click(function(){
-        var domain = "http://kmma.io";
+        var domain = "http://kmma.io:8080";
         var signup_id = $('#signup_id').val();
         var signup_pw = $('#signup_pw').val();
         var signup_email = $('#signup_email').val();
@@ -71,7 +67,7 @@ $(document).ready(function(){
         /* 데이터 전송 */
         $.ajax({
             type: "POST",
-            // url: domain + "/kmma/signup",
+            url: domain + "/kmma/signup",
             contentType : "application/json",
             data: JSON.stringify({
                 "id" : signup_id,
@@ -110,38 +106,40 @@ $(document).ready(function(){
         var member_company_detail_address = $('#member_company_detail_address').val();
         var member_main_career = $('#member_main_career').val();
     
-        $.ajax({
-            type: "POST",
-            url: "",
-            contentType : "application/json",
-            data:{
-                "member_type" : member_type,
-                "member_name_kor" : member_name_kor,
-                "member_name_eng" : member_name_eng,
-                "member_birth" : member_birth, 
-                "member_email" : member_email,
-                "member_telnum" : member_telnum,
-                "member_phonenum" : member_phonenum, 
-                "member_house_address" : member_house_address + member_house_detail_address,
-                "company_name" : company_name,
-                "business_number" : business_number,
-                "member_rank" : member_rank,
-                "member_company_address" : member_company_address + member_company_detail_address,
-                "member_main_career" : member_main_career
-            },
-            success: function(data, textStatus, xhr){
-                console.log("회원등록 정보 전송 완료");
-            },
-            error: function(request, status, error){
-                console.log("회원등록 정보 전송 실패");
-                console.log(member_type);
-            }
-        })
+        // $.ajax({
+        //     type: "POST",
+        //     url: "",
+        //     contentType : "application/json",
+        //     data:{
+        //         "member_type" : member_type,
+        //         "member_name_kor" : member_name_kor,
+        //         "member_name_eng" : member_name_eng,
+        //         "member_birth" : member_birth, 
+        //         "member_email" : member_email,
+        //         "member_telnum" : member_telnum,
+        //         "member_phonenum" : member_phonenum, 
+        //         "member_house_address" : member_house_address + member_house_detail_address,
+        //         "company_name" : company_name,
+        //         "business_number" : business_number,
+        //         "member_rank" : member_rank,
+        //         "member_company_address" : member_company_address + member_company_detail_address,
+        //         "member_main_career" : member_main_career
+        //     },
+        //     success: function(data, textStatus, xhr){
+        //         console.log("회원등록 정보 전송 완료");
+        //     },
+        //     error: function(request, status, error){
+        //         console.log("회원등록 정보 전송 실패");
+        //         console.log(member_type);
+        //     }
+        // })
     });
 
     // /*ID 중복 검사 */
     $('#signup_check_bt').click(function(){
-        var domain = "http://kmma.io/kmma";
+        $('#signup_id').css('border', '1.5px solid black');
+        $('#signup_id_inform').html('');
+        var domain = "http://kmma.io:8080/kmma";
         var signup_id = $('#signup_id').val();
 
         /* 아이디 중복 검사 */
