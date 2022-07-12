@@ -1051,18 +1051,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 .signup_id_input_wrap{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 67%;
+}
+
+.signup_id_input_wrap p, .signup_pw p, .signup_pw_check p, .signup_tel p{
+    padding-left: 10px;
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
 }
 
 .signup_id_wrap button{
-    width: 40%;
     height: 40px;
+    width: 30%;
 }
+
 .select_input{
     width: 48%;
     height: 100%;
@@ -1095,7 +1103,6 @@
 }
 
 .signup_id input{
-    width: 80%;
     height: 40px;
     border-radius: 7px;
     border: 1px solid rgb(65, 65, 65);
