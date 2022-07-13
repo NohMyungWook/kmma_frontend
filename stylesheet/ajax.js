@@ -14,13 +14,10 @@ $(document).ready(function(){
             }),
             contentType : "application/JSON",
             success: function(data, textStatus, xhr){
-                console.log("아이디: " + login_id + ", 비밀번호: " + login_pw);
-                if (data == 'loginFail'){
-                    console.log("아이디와 비밀번호를 다시 입력하세요");
-                } 
+                window.location.href="index.html";
             },
             error: function(request, status, error){
-                console.log("아이디: " + login_id + ", 비밀번호: " + login_pw);
+                alert('일치하는 회원 정보가 없습니다');
             }
         })
     });
@@ -60,10 +57,6 @@ $(document).ready(function(){
             signup_enterprise = $("input[name=exampleRadios]:checked").val();
         }
         
-        console.log('소속 ' + signup_along);
-        console.log('주소 ' + signup_address +',' + signup_detail_address);
-        console.log('기업여부 ' + signup_enterprise);
-        
         /* 데이터 전송 */
         $.ajax({
             type: "POST",
@@ -78,11 +71,11 @@ $(document).ready(function(){
                 "address" : signup_address + " " +signup_detail_address,
                 "companyYn" : signup_enterprise
             }),
-            success: function(data, textStatus, xhr){
-                console.log("회원가입 정보 전송 완료");
+            success: function(data){
+                window.location.href="login.html";
             },
             error: function(request, status, error){
-                console.log("회원가입 정보 전송 실패");
+                
             }
         })
     });
@@ -148,6 +141,7 @@ $(document).ready(function(){
             url: domain + "/validation/" + signup_id,
             success: function(data, textStatus, xhr){
                 document.getElementById('#signup_id').disabled = true;
+                alert('사용 가능한 아이디입니다');
             },
             error: function(request, status, error){
                 $('#signup_id').css('border', '1.5px solid red');
@@ -158,60 +152,64 @@ $(document).ready(function(){
 
     /*정규식*/
     $('#signup_sub_bt').click(function(){
-         var signup_id = $('#signup_id').val();
-         var signup_pw = $('#signup_pw').val();
-         var signup_pw_check = $('#signup_pw_check').val();
-         var signup_email = $('#signup_email').val();
-         var signup_tel = $('#signup_tel').val();
-         var idValid = new RegExp(/^[0-9|a-z|A-Z]{4,15}$/);
-         var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
-         var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
-         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
+        var signup_id = $('#signup_id').val();
+        var signup_pw = $('#signup_pw').val();
+        var signup_pw_check = $('#signup_pw_check').val();
+        var signup_email = $('#signup_email').val();
+        var signup_tel = $('#signup_tel').val();
+        var idValid = new RegExp(/^[0-9|a-z|A-Z]{4,15}$/);
+        var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
+        var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
+        var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
 
-         if (!(idValid.test(signup_id))){
+        if(!(getElementById('#signup_id').disabled)){
+            alert('아이디 중복확인을 진행해주세요');
+        }else{
+            if (!(idValid.test(signup_id))){
             $('#signup_id').css('border', '1.5px solid red');
             $('#signup_id_inform').html('아이디를 다시입력하세요');
-         } else{
+            } else{
             $('#signup_id').css('border', '1px solid black');
             $('#signup_id_inform').html('');
-         }
+            }
 
-         if(signup_pw != signup_pw_check){
+            if(signup_pw != signup_pw_check){
             $('#signup_pw').css('border', '1px solid black');
             $('#signup_pw_check').css('border', '1px solid black');
             $('#signup_pw_inform').html('');
             $('#signup_check_pw_inform').html('');
             $('#signup_pw_check').css('border', '1.5px solid red');
             $('#signup_check_pw_inform').html('비밀번호가 일치하지 않습니다');
-         }else{
+            }else{
             if(!(pwValid.test(signup_pw))){
                 $('#signup_pw').css('border', '1.5px solid red');
                 $('#signup_pw_check').css('border', '1.5px solid red');
                 $('#signup_pw_inform').html('비밀번호를 다시입력하세요');
                 $('#signup_check_pw_inform').html('비밀번호를 다시입력하세요');
-             } else{
+                } else{
                 $('#signup_pw').css('border', '1px solid black');
                 $('#signup_pw_check').css('border', '1px solid black');
                 $('#signup_pw_inform').html('');
                 $('#signup_check_pw_inform').html('');
-             }
-         }
-         
-         if(!(emailValid.test(signup_email))){
+                }
+            }
+            
+            if(!(emailValid.test(signup_email))){
             $('#signup_email').css('border', '1.5px solid red');
             $('#signup_email_inform').html('이메일을 다시입력하세요');
-         } else{
+            } else{
             $('#signup_email').css('border', '1px solid black');
             $('#signup_email_inform').html('');
-         }
+            }
 
-         if(!(phoneValid.test(signup_tel))){
+            if(!(phoneValid.test(signup_tel))){
             $('#signup_tel').css('border', '1.5px solid red');
             $('#signup_tel_inform').html('전화번호를 다시입력하세요');
-         } else{
+            } else{
             $('#signup_tel').css('border', '1px solid black');
             $('#signup_tel_inform').html('');
-         }
+            }
+        }
     });
 });
 
