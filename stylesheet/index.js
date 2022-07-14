@@ -42,3 +42,4 @@ function startAction(){
 function stopAction(){
     clearInterval(interval);
 }
+

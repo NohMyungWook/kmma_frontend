@@ -224,3 +224,7 @@ body{
     text-decoration: none;
     color: gray;
 }
+
+.mypage-bt{
+    display: none;
+}

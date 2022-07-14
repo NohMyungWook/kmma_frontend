@@ -68,15 +68,17 @@ $(document).ready(function(){
                 "pw" : login_pw
             }),
             contentType : "application/JSON",
-            success: function(data, textStatus, xhr){
-                window.location.href="index.html";
+            success: function(data, textStatus, xhr){ 
+                sessionStorage.setItem('loginId', login_id);
+                window.location.href="index.html"; 
             },
             error: function(request, status, error){
-                alert('일치하는 회원 정보가 없습니다');
+                $('.login_main_warning').html('일치하는 정보가 없습니다.');
+                $('.login_main_id input').css('border', '1.5px solid red');
+                $('.login_main_pw input').css('border', '1.5px solid red');
             }
         })
     });
-    
 
 
     /*회원가입 정보*/
@@ -223,7 +225,8 @@ $(document).ready(function(){
         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
 
         if(!$("#signup_id").is(":disabled")){
-            alert('아이디 중복확인을 진행해주세요');
+            $('#signup_id').css('border', '1.5px solid red');
+            $('#signup_id_inform').html('중복확인을 해주세요');
         }else{
             if(!(pwValid.test(signup_pw))){
                 $('#signup_pw').css('border', '1.5px solid red');

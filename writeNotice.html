@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/stylesheet/mypage.js"></script>
     <!-- include summernote css/js-->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
@@ -84,9 +85,13 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" style="color: gray; cursor:pointer;">
+            <form class="d-flex" style="font-size: large; color: gray; cursor:pointer;">
                 <!-- <button class="btn btn-outline-secondary" type="">로그인/회원가입</button> -->
-                <a href="login.html">로그인/회원가입</a>
+                <a href="login.html" class="login-signup-bt">로그인/회원가입</a>
+                <div class="mypage-bt" style="text-align: right; padding-top: 10px;">
+                  <a href="mypage.html" class="name-mypage-bt"></a>
+                  <a href="index.html" class="main-logout-bt" style="font-size: 1rem;" onclick="logout();"><br>로그아웃</a>
+                </div>
               </form>
           </div>
         </div>
