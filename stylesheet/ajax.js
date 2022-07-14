@@ -197,7 +197,7 @@ $(document).ready(function(){
             /* 아이디 중복 검사 */
             $.ajax({
                 type: "GET",
-                url: domain + "/validation/" + signup_id,
+                url: domain + "validation/" + signup_id,
                 success: function(data, textStatus, xhr){
                     document.getElementById('signup_id').disabled = true;
                     document.getElementById('signup_check_bt').disabled = true;
