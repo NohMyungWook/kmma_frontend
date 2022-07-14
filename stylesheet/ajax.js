@@ -1,5 +1,6 @@
+var domain = "http://api.kmma.io:8080/kmma/";
+
 function signUp(){
-    var domain = "http://api.kmma.io:8080";
     var signup_id = $('#signup_id').val();
     var signup_pw = $('#signup_pw').val();
     var signup_email = $('#signup_email').val();
@@ -33,7 +34,7 @@ function signUp(){
     /* 데이터 전송 */
     $.ajax({
         type: "POST",
-        url: domain + "/kmma/signup",
+        url: domain + "signup",
         contentType : "application/json",
         data: JSON.stringify({
             "id" : signup_id,
@@ -57,12 +58,11 @@ $(document).ready(function(){
 
     /*로그인 정보*/
     $('#login_main_bt').click(function(){
-        var domain = "http://api.kmma.io:8080";
         var login_id = $('#login_id').val();
         var login_pw = $('#login_pw').val();
         $.ajax({
             type: "POST",
-            url: domain + "/kmma/login",
+            url: domain + "login",
             data: JSON.stringify({
                 "id" : login_id,
                 "pw" : login_pw
@@ -81,7 +81,6 @@ $(document).ready(function(){
 
     /*회원가입 정보*/
     // $('#signup_sub_bt').click(function(){
-    //     var domain = "http://api.kmma.io:8080";
     //     var signup_id = $('#signup_id').val();
     //     var signup_pw = $('#signup_pw').val();
     //     var signup_email = $('#signup_email').val();
@@ -115,7 +114,7 @@ $(document).ready(function(){
     //     /* 데이터 전송 */
     //     $.ajax({
     //         type: "POST",
-    //         url: domain + "/kmma/signup",
+    //         url: domain + "signup",
     //         contentType : "application/json",
     //         data: JSON.stringify({
     //             "id" : signup_id,
@@ -137,7 +136,6 @@ $(document).ready(function(){
     
     /*회원등록 정보*/
     $('#registration_bt').click(function(){
-        var domain = "http://api.kmma.io:8080";
         var member_type  = $("input[name=flexRadioDefault]:checked").val();
         var member_name_kor = $('#member_name_kor').val();
         var member_name_eng = $('#member_name_eng').val();
@@ -195,7 +193,6 @@ $(document).ready(function(){
         } else{
             $('#signup_id').css('border', '1px solid black');
             $('#signup_id_inform').html('');
-            var domain = "http://api.kmma.io:8080/kmma";
 
             /* 아이디 중복 검사 */
             $.ajax({
