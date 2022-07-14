@@ -17,7 +17,7 @@ body{
 /* header */
 .navbar-nav{
     margin-left: 50px;
-    font-size: large;
+    font-size: 1.3rem;
 }
 
 .navbar-nav > li{
