@@ -1,6 +1,6 @@
 /* 협회소개 - 인사말 */
 .greetings_body{
-    height: 1000px;
+    height: 850px;
 }
 
 .greetings_wrap{
@@ -12,12 +12,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     background-image: url(../img/subImage/1.jpg);
 }
 
 .title_text{
-    font-size: 45px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -102,7 +102,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -172,7 +172,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -231,7 +231,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     background-image: url(../img/subImage/1.jpg);
 }
 
@@ -308,7 +308,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -354,7 +354,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -493,7 +493,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -520,7 +520,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -559,7 +559,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -648,7 +648,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -753,7 +753,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -1256,7 +1256,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 150px;
     width: 100%;
     background-image: url(../img/subImage/1.jpg);
 }
@@ -1511,4 +1511,9 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+
+input:disabled {
+    background: #e2e2e2;
 }
