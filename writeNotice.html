@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    \
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Using Bootstrap -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-    <!-- include libraries(jQuery, bootstrap) -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
+
     <!-- include summernote css/js-->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-      
+    <script>
+      $(document).ready(function() {
+        $('#summernote').summernote({
+		      height: 400     
+        });
+      });
+    </script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -85,7 +87,7 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" style="font-size: large; color: gray; cursor:pointer;">
+            <form class="d-flex">
                 <!-- <button class="btn btn-outline-secondary" type="">로그인/회원가입</button> -->
                 <a href="login.html" class="login-signup-bt">로그인/회원가입</a>
                 <div class="mypage-bt" style="text-align: right; padding-top: 10px;">
@@ -98,15 +100,22 @@
       </nav>
 </header>
   <div>
-    <div class="container">
-        <textarea class="summernote" name="editordata"></textarea>    
+    <div class="writeNotice_body">
+      <div class="title_out_wrap">
+        <div class="title_text">공지사항</div>
+        <div class="title_under"></div>
       </div>
-      <script>
-      $('.summernote').summernote({
-            height: 500,
-            lang: "ko-KR"
-          });
-      </script>
+      <div class="make_notice_wrap">
+        <div class="make_notice_title">
+          <p>제목 : </p>
+          <input type="text">
+        </div>
+        <div id="summernote"></div> 
+        <div class="make_notice_bt">
+          <button type="button" id="login_main_bt" class="btn btn-outline-dark">등록하기</button>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- footer -->
   <footer class="row justify-content-between row-cols-7 py-5 my-5 border-top">

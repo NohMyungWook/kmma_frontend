@@ -5,6 +5,7 @@ $(document).ready(function(){
         $('.login-signup-bt').css('display', 'none');
         $('.mypage-bt').css('display', 'block');
         $('.name-mypage-bt').html('[' + loginId + ']님 환영합니다');
+        $('.mypage_member_name_id').html(loginId+' 님');
     } else{
         $('.login-signup-bt').css('display', 'block');
         $('.mypage-bt').css('display', 'none');

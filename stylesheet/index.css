@@ -24,6 +24,12 @@ body{
     margin-right: 25px;
 }
 
+.d-flex{
+    font-size: large; 
+    color: gray; 
+    cursor:pointer;
+}
+
 /* main image */
 .carousel-inner{
     background-color: rgba(0, 0, 0, 0.744);
