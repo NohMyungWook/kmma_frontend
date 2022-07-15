@@ -1431,6 +1431,9 @@
     align-items: center;
 }
 
+.mypage_edit_bt{
+    margin-top: 30px;
+}
 
 input:disabled {
     background: #f0f0f0;
