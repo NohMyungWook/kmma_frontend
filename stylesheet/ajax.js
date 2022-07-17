@@ -1,4 +1,4 @@
-var domain = "https://api.kmma.io:8080/kmma/";
+var domain = "http://api.kmma.io:8080/kmma/";
 
 function signUp(){
     var signup_id = $('#signup_id').val();
