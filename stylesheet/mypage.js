@@ -25,19 +25,21 @@ $(document).ready(function(){
 
  
     // 로그아웃
-    $.ajax({
-        type: "GET",
-        url: domain + "logout",
-        contentType : "application/json",
-        success: function(data){
-            $('.main-logout-bt').click(function(){
-                sessionStorage.clear();
-            })
-        },
-        error: function(data){
-
-        }
-    })
+    $('.main-logout-bt'.click(function(){
+        $.ajax({
+            type: "GET",
+            url: domain + "logout",
+            contentType : "application/json",
+            success: function(data){
+                $('.main-logout-bt').click(function(){
+                    sessionStorage.clear();
+                })
+            },
+            error: function(data){
+    
+            }
+        })
+    }))
 
     $('.name-mypage-bt').mouseover(function(){
         $('.name-mypage-bt').css('text-decoration', 'underline'); $
@@ -45,6 +47,28 @@ $(document).ready(function(){
     $('.name-mypage-bt').mouseout(function(){
         $('.name-mypage-bt').css('text-decoration', 'none');
     });
+
+     
+    //세션 검증(비밀번호)
+    $('#mypage_edit_bt').click(function(){
+
+        var inputPw = prompt('비밀번호를 입력하세요');
+        //사용자가 비밀번호 입력하기 
+        //사용자가 입력한 비밀번호가 맞으면
+        $.ajax({
+            type: "GET", 
+            url: domain + 'validation/password',
+            contentType: 'application/JSON',
+            success: function(data){
+                if(data.pw == inputPw){
+                    window.location.href='editMyPage.html';
+                }
+            },
+            error: function(data){
+
+            }
+        })
+    })
 })
 
 

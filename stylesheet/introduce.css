@@ -1722,3 +1722,7 @@ input:disabled {
 #signup_id_inform, #signup_pw_inform, #signup_check_pw_inform, #signup_email_inform, #signup_tel_inform{
     color: red;
 }
+
+.notice_write_bt{
+    display: none;
+}
