@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
+    <script src=".vscode/myinfo.json" type="text/javascript"></script>
     <script src="/stylesheet/edit_mypage.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
@@ -90,23 +91,85 @@
       </nav>
 </header>
   <div>
-    <div class="mypage_body">
-        <div class="mypage_body_content">
-            <div class="mypage_body_title">마이페이지</div>
+    <div class="edit_mypage_body">
+        <div class="edit_mypage_body_content">
+            <div class="edit_mypage_body_title">마이페이지</div>
         </div>
-        <div class="mypage_wrap">
-          <div class="mypage_basic_information">
-            <div class="mypage_member_img"><img src="/img/subImage/notice_user_name.png"></div>
-            <div class="mypage_member_name">
-              <div class="mypage_member_name_id"></div>
+        <div class="edit_mypage_wrap">
+          <div class="edit_mypage_basic_information">
+            <div class="edit_mypage_member_img"><img src="/img/subImage/notice_user_name.png"></div>
+            <div class="edit_mypage_member_name">
+              <div class="edit_mypage_member_name_id"></div>
             </div>
           </div>
-          <div class="mypage_content">
-            <div class="mypage_email"></div>
-            <div class="mypage_phone"></div>
-            <div class="mypage_department"></div>
-            <div class="mypage_address"></div>
-            <div class="mypage_companyYn"></div>
+
+          <div class="edit_mypage_wrap_content">
+            <div class="edit_essential_input">
+              <h3>필수항목</h3>
+              <div class="edit_id">
+                <h4>아이디</h4>
+                <div id="edit_id_inform"></div>
+                <div class="edit_id_wrap">
+                  <div class="edit_id_input_wrap">
+                    <input type="text" id ="edit_id" placeholder="아이디" required>
+                    <p>* 4~15자리</p>
+                  </div>
+                </div>
+              </div>
+              <div class="edit_pw">
+                <h4>비밀번호</h4>
+                <div id="edit_pw_inform"></div>
+                <div id="edit_check_false"></div>
+                  <input type="password" id="edit_pw" placeholder="비밀번호" required>
+                  <p>* 8~20자리, 영어, 숫자, 특수문자 포함</p>
+              </div>
+              <div class="edit_pw_check">
+                <h4>비밀번호 재입력</h4>
+                <div id="edit_check_pw_inform"></div>
+                <div id="edit_check_false"></div>
+                <input type="password" id="edit_pw_check" placeholder="비밀번호" required>
+              </div>
+              <div class="edit_email">
+                <h4>이메일</h4>
+                <div id="edit_email_inform"></div>
+                <input type="email" id="edit_email" placeholder="이메일" required>
+              </div>
+              <div class="edit_tel">
+                <h4>전화번호</h4>
+                <div id="edit_tel_inform"></div>
+                <input type="tel" id="edit_tel" placeholder="전화번호" required>
+                <p>* -(하이픈) 포함</p>
+              </div>
+            </div>
+
+            <div class="edit_select_input">
+              <h3>선택항목</h3>
+              <div class="edit_along">
+                <h4>소속</h4>
+                <input type="text" id="edit_along" placeholder="소속">
+              </div>
+              <div class="edit_address">
+                <h4>주소</h4>
+                <div class="edit_address_wrap">        
+                  <input type="text" id="edit_address" placeholder="주소" disabled>
+                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcode()">주소찾기</button>
+                </div>
+                <input type="text" id="edit_detail_address" placeholder="상세 주소">
+              </div>
+              <div class="edit_enterprise">
+                <h4>기업여부</h4>
+                <div class="edit_enterprise_check">
+                  <div class="form-check" id="_yes_check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y">
+                    <label class="form-check-label" for="exampleRadios1">YES</label>
+                  </div>
+                  <div class="form-check" id="_no_check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="N">
+                    <label class="form-check-label" for="exampleRadios2">NO</label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="mypage_edit_bt">
             <button type="button" onclick="location.href = 'editMyPage.html'" class="btn btn-outline-dark">내 정보 수정하기</button>

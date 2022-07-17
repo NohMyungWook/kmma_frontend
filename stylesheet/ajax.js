@@ -42,7 +42,7 @@ function signUp(){
             "email" : signup_email,
             "phone" : signup_tel,
             "department" : signup_along,
-            "address" : signup_address + " " +signup_detail_address,
+            "address" : signup_address + " " + signup_detail_address,
             "companyYn" : signup_enterprise
         }),
         success: function(data){

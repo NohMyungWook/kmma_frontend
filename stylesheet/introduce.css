@@ -1385,7 +1385,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 60%;
+    height: 100%;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
     margin-top: 40px;
@@ -1398,10 +1399,6 @@
     justify-content: center;
     flex-direction: row;
 }
-
-/* .mypage_member_img{
-    height: 300px;
-} */
 
 .mypage_member_img img{
     width: 100px;
@@ -1416,23 +1413,47 @@
     font-size: 1.6rem;
 }
 
-.mypage_sub_information{
+.mypage_content{
+    width: 60%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    width: 100%;
 }
 
-.mypage_member_type{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.mypage_email{
+    margin-top: 30px;
+    height: 100%;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 10px;
+    background-color: #f7f5f5bc;
+    width: 100%;
+    padding: 10px 70px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.mypage_phone, .mypage_department, .mypage_address, .mypage_companyYn{
+    margin-top: 20px;
+    height: 100%;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 10px;
+    background-color: #f7f5f5bc;
+    width: 100%;
+    padding: 10px 70px;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .mypage_edit_bt{
     margin-top: 30px;
+    width: 60%;
+}
+
+.mypage_edit_bt button{
+    width: 100%;
+    height: 40px;
+    font-size: 1.1rem;
 }
 
 input:disabled {
@@ -1484,4 +1505,220 @@ input:disabled {
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
+}
+
+
+/* 마이페이지 수정 */
+.edit_mypage_body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit_mypage_body_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_mypage_body_title{
+    font-size: 2.5rem;
+    margin-top: 60px;
+}
+
+.edit_mypage_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    margin-top: 40px;
+    padding: 40px;
+}
+
+.edit_mypage_basic_information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.edit_mypage_member_img img{
+    width: 100px;
+    padding-right: 20px;
+}
+
+.edit_mypage_member_name{
+    padding-left: 20px;
+}
+
+.edit_mypage_member_name_id{
+    font-size: 1.6rem;
+}
+
+
+.edit_mypage_content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.essential_input{
+    width: 48%;
+    padding: 30px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
+.essential_input h3, .select_input h3{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.edit_address_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit_id{
+    margin-top: 20px;
+}
+
+.edit_id_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.edit_id_input_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+}
+
+.edit_id_input_wrap p, .edit_pw p, .edit_pw_check p, .edit_tel p{
+    padding-left: 10px;
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
+}
+
+.edit_id_wrap button{
+    height: 40px;
+    width: 30%;
+}
+
+.select_input{
+    width: 48%;
+    height: 100%;
+    padding: 30px;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+}
+
+.edit_address_wrap input{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+    width: 70%;
+}
+
+#edit_detail_address{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+#edit_address_bt{
+    height: 40px;
+    margin-left: 10px;
+    font-size: 1em;
+    width: 30%;
+}
+
+.edit_id input{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+}
+
+.edit_pw input, .edit_pw_check input, .edit_email input, .edit_tel input, .edit_along input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+}
+
+.edit_pw h4, .edit_pw_check h4, .edit_email h4, .edit_tel h4{
+    margin-top: 15px;
+    font-size: 1.3rem;
+}
+
+.edit_along h4, .edit_address h4{
+    margin-top: 14px;
+    font-size: 1.3rem;
+}
+
+.edit_enterprise{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.edit_enterprise h4{
+    font-size: 1.3rem;
+}
+
+.edit_enterprise_check{
+    display: flex;
+    flex-direction: column;
+}
+
+#_no_check{
+    margin-top: 10px;
+}
+
+.form-check{
+    margin-left: 35px;
+}
+
+.signup_sub_bt{
+    height: 50px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    color: black;
+    padding: auto 50px;
+}
+
+#nonsignup_sub_bt{
+    height: 50px;
+    width: 48%;
+}
+
+#signup_sub_bt{
+    height: 50px;
+    width: 48%;
+    font-size: 1.1rem;
+}
+
+#signup_id_inform, #signup_pw_inform, #signup_check_pw_inform, #signup_email_inform, #signup_tel_inform{
+    color: red;
 }
