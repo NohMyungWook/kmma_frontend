@@ -1,27 +1,50 @@
+var domain = "http://api.kmma.io:8080/kmma/";
+
 $(document).ready(function(){
     var loginId = sessionStorage.getItem('loginId');
 
-    if(loginId != null){
-        $('.login-signup-bt').css('display', 'none');
-        $('.mypage-bt').css('display', 'block');
-        $('.name-mypage-bt').html('[' + loginId + ']님 환영합니다');
-        $('.mypage_member_name_id').html(loginId+' 님');
-        $('.edit_mypage_member_name_id').html(loginId+' 님');
-    } else{
-        $('.login-signup-bt').css('display', 'block');
-        $('.mypage-bt').css('display', 'none');
-    }
+    // 세션 검증
+    $.ajax({
+        type: "GET",
+        url: domain + "validation/session",
+        contentType : "application/json",
+        success: function(data){
+            if(data.loginId == loginId){
+                $('.login-signup-bt').css('display', 'none');
+                $('.mypage-bt').css('display', 'block');
+                $('.name-mypage-bt').html('[' + loginId + ']님 환영합니다');
+                $('.mypage_member_name_id').html(loginId+' 님');
+                $('.edit_mypage_member_name_id').html(loginId+' 님');
+            }
+        },
+        error: function(data){
+            $('.login-signup-bt').css('display', 'block');
+            $('.mypage-bt').css('display', 'none');
+        }
+    })
 
+ 
+    // 로그아웃
+    $.ajax({
+        type: "GET",
+        url: domain + "logout",
+        contentType : "application/json",
+        success: function(data){
+            $('.main-logout-bt').click(function(){
+                sessionStorage.clear();
+            })
+        },
+        error: function(data){
+
+        }
+    })
 
     $('.name-mypage-bt').mouseover(function(){
-        $('.name-mypage-bt').css('text-decoration', 'underline');
+        $('.name-mypage-bt').css('text-decoration', 'underline'); $
     });
     $('.name-mypage-bt').mouseout(function(){
         $('.name-mypage-bt').css('text-decoration', 'none');
     });
 })
 
-function logout(){
-    sessionStorage.clear();
-}
 
