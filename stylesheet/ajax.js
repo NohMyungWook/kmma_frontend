@@ -70,7 +70,6 @@ $(document).ready(function(){
             contentType : "application/JSON",
             success: function(data, textStatus, xhr){ 
                 sessionStorage.setItem('loginId', login_id);
-                sessionStorage.setItem('loginPw', login_pw);
                 window.location.href="index.html"; 
             },
             error: function(request, status, error){

@@ -1,4 +1,5 @@
 var domain = "http://api.kmma.io:8080/kmma/";
+// var domain = "http://localhost:8080/kmma/"
 
 $(document).ready(function(){
     var loginId = sessionStorage.getItem('loginId');
@@ -8,6 +9,7 @@ $(document).ready(function(){
         type: "GET",
         url: domain + "validation/session",
         contentType : "application/json",
+        dataType : "json",
         success: function(data){
             if(data.loginId == loginId){
                 $('.login-signup-bt').css('display', 'none');
@@ -24,8 +26,8 @@ $(document).ready(function(){
     })
 
  
-    // 로그아웃
-    $('.main-logout-bt'.click(function(){
+    //로그아웃
+    $('.main-logout-bt').click(function(){
         $.ajax({
             type: "GET",
             url: domain + "logout",
@@ -39,7 +41,7 @@ $(document).ready(function(){
     
             }
         })
-    }))
+    })
 
     $('.name-mypage-bt').mouseover(function(){
         $('.name-mypage-bt').css('text-decoration', 'underline'); $
