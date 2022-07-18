@@ -96,7 +96,8 @@ function editMyPageComplete(){
             "email" : edit_email,
             "phone" : edit_tel,
             "department" : edit_department,
-            "address" : edit_address + " " + edit_detail_address,
+            "address" : edit_address,
+            "address_detail": edit_detail_address,
             "companyYn" : edit_enterprise
         }),
         success: function(data){
@@ -133,61 +134,6 @@ $(document).ready(function(){
     });
 
 
-    /*회원가입 정보*/
-    // $('#signup_sub_bt').click(function(){
-    //     var signup_id = $('#signup_id').val();
-    //     var signup_pw = $('#signup_pw').val();
-    //     var signup_email = $('#signup_email').val();
-    //     var signup_tel = $('#signup_tel').val();
-    //     var signup_along, signup_address, signup_detail_address, signup_enterprise;
-       
-    //     if($('#signup_along').val() == ''){
-    //         signup_along = null;
-    //     }else{
-    //         signup_along = $('#signup_along').val();
-    //     }
-
-    //     if($('#signup_address').val() == ''){
-    //         signup_address = null;
-    //     }else{
-    //         signup_address = $('#signup_address').val();
-    //     }
-        
-    //     if($('#signup_detail_address').val() == ''){
-    //         signup_detail_address = null;
-    //     }else{
-    //         signup_detail_address = $('#signup_detail_address').val();
-    //     }
-        
-    //     if($("input[name=exampleRadios]:checked").val() == undefined){
-    //         signup_enterprise = null;
-    //     }else{
-    //         signup_enterprise = $("input[name=exampleRadios]:checked").val();
-    //     }
-        
-    //     /* 데이터 전송 */
-    //     $.ajax({
-    //         type: "POST",
-    //         url: domain + "signup",
-    //         contentType : "application/json",
-    //         data: JSON.stringify({
-    //             "id" : signup_id,
-    //             "pw" : signup_pw,
-    //             "email" : signup_email,
-    //             "phone" : signup_tel,
-    //             "department" : signup_along,
-    //             "address" : signup_address + " " +signup_detail_address,
-    //             "companyYn" : signup_enterprise
-    //         }),
-    //         success: function(data){
-    //             window.location.href="login.html";
-    //         },
-    //         error: function(request, status, error){
-                
-    //         }
-    //     })
-    // });
-    
     /*회원등록 정보*/
     $('#registration_bt').click(function(){
         var member_type  = $("input[name=flexRadioDefault]:checked").val();
