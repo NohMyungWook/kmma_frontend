@@ -1,6 +1,5 @@
 var domain = "https://kmma.io/kmma/";
 
-
 $(document).ready(function(){
     var loginId = sessionStorage.getItem('loginId');
 
@@ -62,6 +61,8 @@ $(document).ready(function(){
             }
         })
     })
+
+    
 })
 
 
