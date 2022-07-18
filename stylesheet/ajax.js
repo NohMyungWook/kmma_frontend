@@ -1,4 +1,5 @@
-var domain = "https://api.kmma.io:8080/kmma/";
+var domain = "https://kmma.io/kmma/";
+//var domain = "http://localhost:8080/kmma/";
 
 function signUp(){
     var signup_id = $('#signup_id').val();
@@ -114,11 +115,11 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: domain + "login",
+            contentType : "application/JSON",
             data: JSON.stringify({
                 "id" : login_id,
                 "pw" : login_pw
             }),
-            contentType : "application/JSON",
             success: function(data, textStatus, xhr){ 
                 sessionStorage.setItem('loginId', login_id);
                 window.location.href="index.html"; 
@@ -325,20 +326,20 @@ $(document).ready(function(){
     });
 
     //마이페이지 수정 정보 가져오기
-    $.ajax({
-        type: "GET",
-        url: domain + 'myinfo',
-        contentType: "application/JSON",
-        success: function(data){
-            $('.editPage_id').html(data.Id);
-            $('.editPage_email').val(data.email);
-            $('.editPage_phone').val(data.phone);
-            $('.editPage_department').val(data.department);
-            $('.editPage_address').val(data.address);
-            $('.editPage_detail_address').val(data.address_detail);
-            $('#' + data.companyYn).prop("checked", true);
-        } 
-    })
+    // $.ajax({
+    //     type: "GET",
+    //     url: domain + 'myinfo',
+    //     contentType: "application/JSON",
+    //     success: function(data){
+    //         $('.editPage_id').html(data.Id);
+    //         $('.editPage_email').val(data.email);
+    //         $('.editPage_phone').val(data.phone);
+    //         $('.editPage_department').val(data.department);
+    //         $('.editPage_address').val(data.address);
+    //         $('.editPage_detail_address').val(data.address_detail);
+    //         $('#' + data.companyYn).prop("checked", true);
+    //     } 
+    // })
 
     //마이페이지 수정 정보 보내기
     $('#edit_complete_bt').click(function(){
