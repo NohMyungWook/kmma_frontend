@@ -6,6 +6,7 @@ function getMyInfo(){
         url: domain + "myinfo",
         contentType: 'application/JSON',
         success: function(data){
+            $('.mypage_id').html('아이디 : ' + data.id);
             $('.mypage_email').html('이메일 : ' + data.email);
             $('.mypage_phone').html('전화번호 : ' + data.phone);
             $('.mypage_department').html('소속 : ' + data.department);
