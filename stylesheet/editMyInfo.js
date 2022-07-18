@@ -7,8 +7,6 @@ function editMyInfo(){
         contentType: 'application/JSON',
         success: function(data){
             $('#editPage_id').html(data.id);
-            $('#editPage_pw').value(data.pw);
-            $('#editPage_pw_check').value(data.pw);
             $('#editPage_email').value(data.email)
             $('#editPage_tel').value(data.phone);
             $('#editPage_department').value(data.department);
@@ -23,3 +21,4 @@ function editMyInfo(){
 $(document).ready(function(){
     editMyInfo();
 })
+

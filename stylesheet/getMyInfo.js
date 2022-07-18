@@ -19,3 +19,4 @@ function getMyInfo(){
 $(document).ready(function(){
     getMyInfo();
 })
+

@@ -55,9 +55,25 @@ function signUp(){
     })
 }
 
+function logout(){
+    //로그아웃
+    $('.main-logout-bt').click(function(){
+        $.ajax({
+            type: "GET",
+            url: domain + "logout",
+            contentType : "application/json",
+            success: function(data){
+                sessionStorage.clear();
+            },
+            error: function(data){
+    
+            }
+        })
+    })
+}
+
 function editMyPageComplete(){
     var edit_id = $('#editPage_id').val();
-    var edit_pw = $('#editPage_pw').val();
     var edit_email = $('#editPage_email').val();
     var edit_tel = $('#editPage_tel').val();
     var edit_department, edit_address, edit_detail_address, edit_enterprise;
@@ -87,12 +103,11 @@ function editMyPageComplete(){
     }
 
     $.ajax({
-        type: 'POST',
-        url: domain,
+        type: 'PUT',
+        url: domain + 'user',
         contentType: 'application/JSON',
         data: JSON.stringify({
             "id" : edit_id,
-            "pw" : edit_pw,
             "email" : edit_email,
             "phone" : edit_tel,
             "department" : edit_department,
@@ -101,7 +116,8 @@ function editMyPageComplete(){
             "companyYn" : edit_enterprise
         }),
         success: function(data){
-            window.location.href="mypage.html"
+            logout();
+            window.location.href="login.html"
         }
 
     });

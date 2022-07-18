@@ -97,85 +97,56 @@
             <div class="edit_mypage_body_title">정보 수정</div>
         </div>
         <div class="edit_mypage_wrap">
-            <table width="600px" align="center">
-                <tr>
-                    <td>
-                        
-                        <table width="100%" class="table">
-                            <tr align="center">
-                                <td><b style="font-size: 1.7rem">회원정보 수정</b></td>
-                            </tr>
-                        </table>
-                            
-                        <table class="table2" width="100%">
-                                <tr class="table2Tr">
-                                    <td width="35%">아이디</td>
-                                    <td width="65%" id="editPage_id">rinlee2001</td>
-                                </tr>			
-                                <tr>
-                                    <td>비밀번호</td>
-                                    <td>
-                                        <div id="edit_check_pw_inform"></div>
-                                        <input type="password" size="50" id="editPage_pw" required /></td>
-                                </tr>			
-                                <tr>
-                                    <td>비밀번호 확인</td>
-                                    <td><input type="password" size="50" id="editPage_pw_check" required /></td>
-                                </tr>
-                                <tr>
-                                    <td>이메일</td>
-                                    <td width="65%">
-                                        <div id="editPage_email_inform"></div>
-                                        <input type="text" size="50" id="editPage_email" required /></td>
-                                </tr>
-                                <tr>
-                                    <td>전화번호</td>
-                                    <td>
-                                        <div id="edit_tel_inform"></div>
-                                        <input type="text" size="50" id="editPage_tel" required /></td>
-                                </tr>
-                                <tr>
-                                    <td>소속</td>
-                                    <td><input type="text" size="50" id="editPage_department" required /></td>
-                                </tr>
-                                <tr>
-                                    <td>주소</td>
-                                    <td>
-                                        <div class="editPage_address_wrap">
-                                          <input type="text" size="35" id="editPage_address" disabled>
-                                          <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()">주소찾기</button>
-                                        </div>
-                                        <input type="text" size="50"  id="editPage_detail_address">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>기업 여부</td>
-                                    <td>
-                                        <div class="edit_enterprise">
-                                          <div class="form-check" id="yes_check">
-                                            <input class="form-check-input" type="radio" name="exampleRadio" id="Y-check" value="Y">
-                                            <label class="form-check-label" for="exampleRadios3">YES</label>
-                                          </div>
-                                          <div class="form-check" id="no_check">
-                                            <input class="form-check-input" type="radio" name="exampleRadio" id="N-check" value="N">
-                                            <label class="form-check-label" for="exampleRadios4">NO</label>
-                                          </div>
-                                        </div>
-                                    </td>
-                                </tr>	                                
-                                </table>		
-                                <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">저장하기</button>				
-                                													
-                            </form>
-                        </table>
-                    </td>
-                </tr>
-            </table>
+          <div class="edit_mypage_title">
+            <b style="font-size: 1.7rem">회원정보 수정</b>
           </div>
+          <div class="edit_my_page_wrap">
+            <div class="editPage_id_wrap">
+              <div class="editPage_wrap_title">아이디</div>
+              <div id="editPage_id"></div>
+            </div>
+            <div class="editPage_email_wrap">
+              <div class="editPage_wrap_title">이메일</div>
+              <div id="editPage_email_inform"></div>
+              <input type="text" size="50" id="editPage_email" required />
+            </div>
+            <div class="editPage_tel_wrap">
+              <div class="editPage_wrap_title">전화번호</div>
+              <div id="edit_tel_inform"></div>
+              <input type="text" size="50" id="editPage_tel" required />
+            </div>
+            <div class="editPage_department_wrap">
+              <div class="editPage_wrap_title">소속</div>
+              <input type="text" size="50" id="editPage_department" required />
+            </div>
+            <div class="editPage_address_wrap">
+              <div class="editPage_wrap_title">주소</div>
+              <div class="editPage_address_wrap_content">
+                <div class="editPage_address_input_wrap">
+                  <input type="text" size="35" id="editPage_address" disabled>
+                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()">주소찾기</button>
+                </div>
+                <input type="text" size="50"  id="editPage_detail_address">
+              </div>
+            </div>
+            <div class="editPage_enterprise_wrap">
+              <div class="editPage_wrap_title">기업여부</div>
+              <div class="edit_enterprise">
+                <div class="form-check" id="yes_check">
+                  <input class="form-check-input" type="radio" name="exampleRadio" id="Y-check" value="Y">
+                  <label class="form-check-label" for="exampleRadios3">YES</label>
+                </div>
+                <div class="form-check" id="no_check">
+                  <input class="form-check-input" type="radio" name="exampleRadio" id="N-check" value="N">
+                  <label class="form-check-label" for="exampleRadios4">NO</label>
+                </div>
+              </div>
+            </div>
 
-    
-    
-   
+            <div class="edit_complete_bt_wrap">
+              <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">수정하기</button>				
+            </div>
+          </div>             
   </div>
   <!-- footer -->
   <footer class="row justify-content-between row-cols-7 py-5 my-5 border-top">

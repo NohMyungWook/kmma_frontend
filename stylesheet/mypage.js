@@ -1,5 +1,6 @@
 var domain = "https://kmma.io/kmma/";
 
+
 $(document).ready(function(){
     var loginId = sessionStorage.getItem('loginId');
 
@@ -22,23 +23,8 @@ $(document).ready(function(){
             $('.mypage-bt').css('display', 'none');
         }
     })
-
  
-    //로그아웃
-    $('.main-logout-bt').click(function(){
-        $.ajax({
-            type: "GET",
-            url: domain + "logout",
-            contentType : "application/json",
-            success: function(data){
-                sessionStorage.clear();
-            },
-            error: function(data){
     
-            }
-        })
-    })
-
     $('.name-mypage-bt').mouseover(function(){
         $('.name-mypage-bt').css('text-decoration', 'underline'); $
     });
