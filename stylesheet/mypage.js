@@ -1,4 +1,4 @@
-var domain = "http://api.kmma.io:8080/kmma/";
+var domain = "https://api.kmma.io:8080/kmma/";
 // var domain = "http://localhost:8080/kmma/"
 
 $(document).ready(function(){

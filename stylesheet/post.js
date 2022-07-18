@@ -18,7 +18,7 @@ $('.make_notice_bt button').click(function(){
 
 
 //관리자 검증(게시판 작성 가능 여부)
-var domain = "http://api.kmma.io:8080/kmma/";
+var domain = "https://api.kmma.io:8080/kmma/";
 
 $(document).ready(function(){
     $.ajax({
