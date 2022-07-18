@@ -1,5 +1,4 @@
 var domain = "https://kmma.io/kmma/";
-//var domain = "http://localhost:8080/kmma/";
 
 function signUp(){
     var signup_id = $('#signup_id').val();
