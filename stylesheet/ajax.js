@@ -57,18 +57,13 @@ function signUp(){
 
 function logout(){
     //로그아웃
-    $('.main-logout-bt').click(function(){
-        $.ajax({
-            type: "GET",
-            url: domain + "logout",
-            contentType : "application/json",
-            success: function(data){
-                sessionStorage.clear();
-            },
-            error: function(data){
-    
-            }
-        })
+    $.ajax({
+        type: "GET",
+        url: domain + "logout",
+        contentType : "application/json",
+        success: function(data){
+            sessionStorage.clear();
+        },
     })
 }
 
