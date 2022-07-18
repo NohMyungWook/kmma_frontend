@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
+    <script src="/stylesheet/ajax.js"></script>
     <script src="/stylesheet/address.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
@@ -96,39 +97,48 @@
         <div class="edit_mypage_body_content">
             <div class="edit_mypage_body_title">정보 수정</div>
         </div>
+
         <div class="edit_mypage_wrap">
+          
           <div class="edit_mypage_title">
             <b style="font-size: 1.7rem">회원정보 수정</b>
           </div>
-          <div class="edit_my_page_wrap">
+
+          <div class="edit_mypagecontent_wrap">
+
             <div class="editPage_id_wrap">
               <div class="editPage_wrap_title">아이디</div>
               <div id="editPage_id"></div>
             </div>
+
             <div class="editPage_email_wrap">
               <div class="editPage_wrap_title">이메일</div>
               <div id="editPage_email_inform"></div>
-              <input type="text" size="50" id="editPage_email" required />
+              <input type="text" id="editPage_email" required />
             </div>
+
             <div class="editPage_tel_wrap">
               <div class="editPage_wrap_title">전화번호</div>
               <div id="edit_tel_inform"></div>
-              <input type="text" size="50" id="editPage_tel" required />
+              <input type="text" id="editPage_tel" required />
             </div>
+
             <div class="editPage_department_wrap">
               <div class="editPage_wrap_title">소속</div>
-              <input type="text" size="50" id="editPage_department" required />
+              <input type="text" id="editPage_department" required />
             </div>
+
             <div class="editPage_address_wrap">
               <div class="editPage_wrap_title">주소</div>
               <div class="editPage_address_wrap_content">
                 <div class="editPage_address_input_wrap">
-                  <input type="text" size="35" id="editPage_address" disabled>
-                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()">주소찾기</button>
+                  <input type="text" id="editPage_address" disabled>
+                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()"> 주소찾기 </button>
                 </div>
-                <input type="text" size="50"  id="editPage_detail_address">
+                <input type="text" id="editPage_detail_address">
               </div>
             </div>
+
             <div class="editPage_enterprise_wrap">
               <div class="editPage_wrap_title">기업여부</div>
               <div class="edit_enterprise">

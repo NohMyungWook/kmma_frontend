@@ -2,12 +2,11 @@ var domain = "https://kmma.io/kmma/";
 
 
 $(document).ready(function(){
-    var loginId = sessionStorage.getItem('loginId');
 
     // 세션 검증
     $.ajax({
         type: "GET",
-        url: domain + "validation/session/"+sessionStorage.getItem('loginId'),
+        url: domain + "validation/session/" + sessionStorage.getItem('loginId'),
         contentType : "application/json",
         success: function(data){
             console.log("validation success");

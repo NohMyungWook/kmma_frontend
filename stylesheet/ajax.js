@@ -55,6 +55,7 @@ function signUp(){
     })
 }
 
+
 function logout(){
     //로그아웃
     $('.main-logout-bt').click(function(){
@@ -71,6 +72,7 @@ function logout(){
         })
     })
 }
+
 
 function editMyPageComplete(){
     var edit_id = $('#editPage_id').val();
@@ -287,21 +289,6 @@ $(document).ready(function(){
         }
     });
 
-    //마이페이지 수정 정보 가져오기
-    // $.ajax({
-    //     type: "GET",
-    //     url: domain + 'myinfo',
-    //     contentType: "application/JSON",
-    //     success: function(data){
-    //         $('.editPage_id').html(data.Id);
-    //         $('.editPage_email').val(data.email);
-    //         $('.editPage_phone').val(data.phone);
-    //         $('.editPage_department').val(data.department);
-    //         $('.editPage_address').val(data.address);
-    //         $('.editPage_detail_address').val(data.address_detail);
-    //         $('#' + data.companyYn).prop("checked", true);
-    //     } 
-    // })
 
     //마이페이지 수정 정보 보내기
     $('#edit_complete_bt').click(function(){
