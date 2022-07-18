@@ -1573,6 +1573,10 @@ input:disabled {
     align-items: center;
 }
 
+.table2Tr{
+    margin-top: 20px;
+}
+
 .essential_input{
     width: 48%;
     padding: 30px;
@@ -1675,10 +1679,13 @@ input:disabled {
     font-size: 1.3rem;
 }
 
+.editPage_address_wrap{
+    display: flex;
+    flex-direction: row;
+}
 .edit_enterprise{
     display: flex;
     flex-direction: row;
-    margin-top: 15px;
 }
 
 .edit_enterprise h4{
@@ -1690,8 +1697,9 @@ input:disabled {
     flex-direction: column;
 }
 
-#_no_check{
-    margin-top: 10px;
+#edit_complete_bt{
+    margin-top: 30px;
+    width: 100%;
 }
 
 .form-check{

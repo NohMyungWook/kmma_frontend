@@ -12,10 +12,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
+    <script src="/stylesheet/address.js"></script>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
     <script src=".vscode/myinfo.json" type="text/javascript"></script>
-    <script src="/stylesheet/address.js"></script>
+    <script src="/stylesheet/editMyInfo.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -96,19 +97,18 @@
             <div class="edit_mypage_body_title">정보 수정</div>
         </div>
         <div class="edit_mypage_wrap">
-            <table width="600px" name="frm" align="center">
+            <table width="600px" align="center">
                 <tr>
-                    <td align="center">
+                    <td>
                         
                         <table width="100%" class="table">
                             <tr align="center">
-                                <td><b>회원정보 수정</b></td>
+                                <td><b style="font-size: 1.7rem">회원정보 수정</b></td>
                             </tr>
                         </table>
                             
                         <table class="table2" width="100%">
-                            <form action="memberUpdate.do" method="post">
-                                <tr>
+                                <tr class="table2Tr">
                                     <td width="35%">아이디</td>
                                     <td width="65%" id="editPage_id">rinlee2001</td>
                                 </tr>			
@@ -116,40 +116,42 @@
                                     <td>비밀번호</td>
                                     <td>
                                         <div id="edit_check_pw_inform"></div>
-                                        <input type="password" size="40" id="editPage_pw" required /></td>
+                                        <input type="password" size="50" id="editPage_pw" required /></td>
                                 </tr>			
                                 <tr>
                                     <td>비밀번호 확인</td>
-                                    <td><input type="password" size="40" id="editPage_pw_check" required /></td>
+                                    <td><input type="password" size="50" id="editPage_pw_check" required /></td>
                                 </tr>
                                 <tr>
                                     <td>이메일</td>
                                     <td width="65%">
                                         <div id="editPage_email_inform"></div>
-                                        <input type="text" size="40" id="editPage_email" required /></td>
+                                        <input type="text" size="50" id="editPage_email" required /></td>
                                 </tr>
                                 <tr>
                                     <td>전화번호</td>
                                     <td>
                                         <div id="edit_tel_inform"></div>
-                                        <input type="text" size="40" id="editPage_tel" required /></td>
+                                        <input type="text" size="50" id="editPage_tel" required /></td>
                                 </tr>
                                 <tr>
                                     <td>소속</td>
-                                    <td><input type="text" size="40" id="editPage_department" value="dnsg" required /></td>
+                                    <td><input type="text" size="50" id="editPage_department" required /></td>
                                 </tr>
                                 <tr>
                                     <td>주소</td>
                                     <td>
-                                        <input type="text" id="editPage_address" disabled>
-                                        <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="edit">주소찾기</button>
-                                        <input type="text" id="editPage_detail_address">
+                                        <div class="editPage_address_wrap">
+                                          <input type="text" size="35" id="editPage_address" disabled>
+                                          <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()">주소찾기</button>
+                                        </div>
+                                        <input type="text" size="50"  id="editPage_detail_address">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>기업 여부</td>
                                     <td>
-                                        <div class="edit_enterprrise">
+                                        <div class="edit_enterprise">
                                           <div class="form-check" id="yes_check">
                                             <input class="form-check-input" type="radio" name="exampleRadio" id="Y-check" value="Y">
                                             <label class="form-check-label" for="exampleRadios3">YES</label>
@@ -161,14 +163,8 @@
                                         </div>
                                     </td>
                                 </tr>	                                
-                                </table>				
-                                <table>
-                                <tr>
-                                    <td colspan="2" align="center">
-                                      <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">저장하기</button>				
-                                    </td>
-                                </tr>	
-                                </table>
+                                </table>		
+                                <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">저장하기</button>				
                                 													
                             </form>
                         </table>
