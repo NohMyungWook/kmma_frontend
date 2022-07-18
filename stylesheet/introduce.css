@@ -1726,3 +1726,58 @@ input:disabled {
 .notice_write_bt{
     display: none;
 }
+
+/* 비밀번호 확인 페이지( 수정 페이지로 넘어감 ) */
+.checkPw_body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkPw_body_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkPw_body_title{
+    font-size: 2.5rem;
+    margin-top: 60px;
+}
+
+.checkPw_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    margin-top: 40px;
+    padding: 60px 50px;
+}
+
+.checkPw_title{
+    font-size: 1.5rem;
+}
+
+#check_pw_input{
+    width: 45%;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding-left: 10px;
+}
+
+#check_pw_bt{
+    width: 45%;
+    height: 40px;
+    margin-top: 30px;
+}
