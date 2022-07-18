@@ -1578,6 +1578,10 @@ input:disabled {
     flex-direction: row;
 }
 
+.editPage_email_content_inform, .editPage_tel_content_wrap{
+    display: flex;
+    flex-direction: column;
+}
 /* 비밀번호 확인 페이지( 수정 페이지로 넘어감 ) */
 .checkPw_body{
     width: 100%;

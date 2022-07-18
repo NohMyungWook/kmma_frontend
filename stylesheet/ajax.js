@@ -63,6 +63,7 @@ function logout(){
         contentType : "application/json",
         success: function(data){
             sessionStorage.clear();
+            location.href="index.html";
         },
     })
 }
@@ -218,7 +219,7 @@ $(document).ready(function(){
                     $('#signup_id').css('border', '1.5px solid red');
                     $('#signup_id_inform').html('이미 사용중인 아이디입니다.');
                 }
-            })
+            })  
         }
         
     })
@@ -286,58 +287,33 @@ $(document).ready(function(){
 
     //마이페이지 수정 정보 보내기
     $('#edit_complete_bt').click(function(){
-        var edit_id = $('#editPage_id').val();
-        var edit_pw = $('#editPage_pw').val();
-        var edit_pw_check = $('#editPage_pw_check').val();
         var edit_email = $('#editPage_email').val();
         var edit_tel = $('#editPage_tel').val();
-        var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
         var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
 
-            if(!(pwValid.test(edit_pw))){
-                $('#editPage_pw').css('border', '1.5px solid red');
-                $('#editPage_pw_inform').html('비밀번호를 다시입력하세요');
-                return;
-            } else{
-                if(edit_pw != editPage_pw_check){
-                    $('#editPage_pw').css('border', '1px solid black');
-                    $('#editPage_pw_check').css('border', '1px solid black');
-                    $('#editPage_pw_inform').html('');
-                    $('#editPage_check_pw_inform').html('');
-                    $('#editPage_pw_check').css('border', '1.5px solid red');
-                    $('#editPage_check_pw_inform').html('비밀번호가 일치하지 않습니다');
-                    return;
-                }
-                else{
-                    $('#editPage_pw').css('border', '1px solid black');
-                    $('#editPage_pw_check').css('border', '1px solid black');
-                    $('#editPage_pw_inform').html('');
-                    $('#editPage_check_pw_inform').html('');
-                }
-            }
             
-            if(!(emailValid.test(edit_email))){
-                $('#editPage_email').css('border', '1.5px solid red');
-                $('#editPage_email_inform').html('이메일을 다시입력하세요');
-                return;
-            } else{
-                $('#editPage_email').css('border', '1px solid black');
-                $('#editPage_email_inform').html('');
-            }
+        if(!(emailValid.test(edit_email))){
+            $('#editPage_email').css('border', '1.5px solid red');
+            $('#editPage_email_inform').html('이메일을 다시입력하세요');
+            return;
+        } else{
+            $('#editPage_email').css('border', '1px solid black');
+            $('#editPage_email_inform').html('');
+        }
 
-            if(!(phoneValid.test(edit_tel))){
-                $('#editPage_tel').css('border', '1.5px solid red');
-                $('#editPage_tel_inform').html('전화번호를 다시입력하세요');
-                return;
-            } else{
-                $('#editPage_tel').css('border', '1px solid black');
-                $('#editPage_tel_inform').html('');
-            }
-        
-        if(pwValid.test(edit_pw) && emailValid.test(edit_email) && phoneValid.test(edit_tel)){
+        if(!(phoneValid.test(edit_tel))){
+            $('#editPage_tel').css('border', '1.5px solid red');
+            $('#editPage_tel_inform').html('전화번호를 다시입력하세요');
+            return;
+        } else{
+            $('#editPage_tel').css('border', '1px solid black');
+            $('#editPage_tel_inform').html('');
+        }
+    
+        if(emailValid.test(edit_email) && phoneValid.test(edit_tel)){
             editMyPageComplete();
         }
-    })
+    });
 
 });

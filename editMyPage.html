@@ -12,11 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/ajax.js"></script>
     <script src="/stylesheet/address.js"></script>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
-    <script src=".vscode/myinfo.json" type="text/javascript"></script>
     <script src="/stylesheet/editMyInfo.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
@@ -113,14 +112,18 @@
 
             <div class="editPage_email_wrap">
               <div class="editPage_wrap_title">이메일</div>
-              <div id="editPage_email_inform"></div>
-              <input type="text" id="editPage_email" required />
+              <div class="editPage_email_content_wrap">
+                <div id="editPage_email_inform"></div>
+                <input type="text" id="editPage_email" required />
+              </div>
             </div>
 
             <div class="editPage_tel_wrap">
               <div class="editPage_wrap_title">전화번호</div>
-              <div id="edit_tel_inform"></div>
-              <input type="text" id="editPage_tel" required />
+              <div class="editPage_tel_content_wrap">
+                <div id="editPage_tel_inform"></div>
+                <input type="text" id="editPage_tel" required />
+              </div>
             </div>
 
             <div class="editPage_department_wrap">
@@ -156,7 +159,9 @@
             <div class="edit_complete_bt_wrap">
               <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">수정하기</button>				
             </div>
-          </div>             
+          </div>  
+        </div>
+    </div>           
   </div>
   <!-- footer -->
   <footer class="row justify-content-between row-cols-7 py-5 my-5 border-top">

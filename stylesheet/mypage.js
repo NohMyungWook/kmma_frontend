@@ -34,10 +34,14 @@ $(document).ready(function(){
      
     //세션 검증(비밀번호)
     $('#check_pw_bt').click(function(){
+        var check_pw_input = $('#check_pw_input').val();
         $.ajax({
-            type: "GET", 
+            type: "POST", 
             url: domain + 'validation/password',
-            contentType: 'application/JSON',
+            data: JSON.stringify({
+                "pw" : check_pw_input
+            }),
+            contentType: 'application/json',
             success: function(data){
                 location.href="editMyPage.html";
             },

@@ -7,13 +7,13 @@ function editMyInfo(){
         contentType: 'application/JSON',
         success: function(data){
             $('#editPage_id').html(data.id);
-            $('#editPage_email').value(data.email)
-            $('#editPage_tel').value(data.phone);
-            $('#editPage_department').value(data.department);
-            $('#editPage_address').value(data.address);
-            $('#editPage_detail_address').value(data.address_detail);
+            $('#editPage_email').attr('value', data.email);
+            $('#editPage_tel').attr('value',data.phone);
+            $('#editPage_department').attr('value',data.department);
+            $('#editPage_address').attr('value',data.address);
+            $('#editPage_detail_address').attr('value',data.address_detail);
             var companyYn = data.companyYn;
-            $('#' + companyYn).prop('checked', true);
+            $('#' + companyYn + '-check').prop('checked', true);
         }
     })
 }
