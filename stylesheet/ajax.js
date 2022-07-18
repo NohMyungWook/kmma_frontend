@@ -54,6 +54,57 @@ function signUp(){
     })
 }
 
+function editMyPageComplete(){
+    var edit_id = $('#editPage_id').val();
+    var edit_pw = $('#editPage_pw').val();
+    var edit_email = $('#editPage_email').val();
+    var edit_tel = $('#editPage_tel').val();
+    var edit_department, edit_address, edit_detail_address, edit_enterprise;
+    
+    if($('#editPage_department').val() == ''){
+        edit_department = null;
+    }else{
+        edit_department = $('#editPage_department').val();
+    }
+
+    if($('#editPage_address').val() == ''){
+        edit_address = null;
+    }else{
+        edit_address = $('#editPage_address').val();
+    }
+    
+    if($('#editPage_detail_address').val() == ''){
+        edit_detail_address = null;
+    }else{
+        edit_detail_address = $('#editPage_detail_address').val();
+    }
+    
+    if($("input[name=exampleRadio]:checked").val() == undefined){
+        edit_enterprise = null;
+    }else{
+        edit_enterprise = $("input[name=exampleRadio]:checked").val();
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: domain,
+        contentType: 'application/JSON',
+        data: JSON.stringify({
+            "id" : edit_id,
+            "pw" : edit_pw,
+            "email" : edit_email,
+            "phone" : edit_tel,
+            "department" : edit_department,
+            "address" : edit_address + " " + edit_detail_address,
+            "companyYn" : edit_enterprise
+        }),
+        success: function(data){
+            window.location.href="mypage.html"
+        }
+
+    });
+}
+
 $(document).ready(function(){
 
     /*로그인 정보*/
@@ -272,4 +323,77 @@ $(document).ready(function(){
             signUp();
         }
     });
+
+    //마이페이지 수정 정보 가져오기
+    $.ajax({
+        type: "GET",
+        url: domain + 'myinfo',
+        contentType: "application/JSON",
+        success: function(data){
+            $('.editPage_id').html(data.Id);
+            $('.editPage_email').val(data.email);
+            $('.editPage_phone').val(data.phone);
+            $('.editPage_department').val(data.department);
+            $('.editPage_address').val(data.address);
+            $('.editPage_detail_address').val(data.address_detail);
+            $('#' + data.companyYn).prop("checked", true);
+        } 
+    })
+
+    //마이페이지 수정 정보 보내기
+    $('#edit_complete_bt').click(function(){
+        var edit_id = $('#editPage_id').val();
+        var edit_pw = $('#editPage_pw').val();
+        var edit_pw_check = $('#editPage_pw_check').val();
+        var edit_email = $('#editPage_email').val();
+        var edit_tel = $('#editPage_tel').val();
+        var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
+        var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
+        var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
+
+            if(!(pwValid.test(edit_pw))){
+                $('#editPage_pw').css('border', '1.5px solid red');
+                $('#editPage_pw_inform').html('비밀번호를 다시입력하세요');
+                return;
+            } else{
+                if(edit_pw != editPage_pw_check){
+                    $('#editPage_pw').css('border', '1px solid black');
+                    $('#editPage_pw_check').css('border', '1px solid black');
+                    $('#editPage_pw_inform').html('');
+                    $('#editPage_check_pw_inform').html('');
+                    $('#editPage_pw_check').css('border', '1.5px solid red');
+                    $('#editPage_check_pw_inform').html('비밀번호가 일치하지 않습니다');
+                    return;
+                }
+                else{
+                    $('#editPage_pw').css('border', '1px solid black');
+                    $('#editPage_pw_check').css('border', '1px solid black');
+                    $('#editPage_pw_inform').html('');
+                    $('#editPage_check_pw_inform').html('');
+                }
+            }
+            
+            if(!(emailValid.test(edit_email))){
+                $('#editPage_email').css('border', '1.5px solid red');
+                $('#editPage_email_inform').html('이메일을 다시입력하세요');
+                return;
+            } else{
+                $('#editPage_email').css('border', '1px solid black');
+                $('#editPage_email_inform').html('');
+            }
+
+            if(!(phoneValid.test(edit_tel))){
+                $('#editPage_tel').css('border', '1.5px solid red');
+                $('#editPage_tel_inform').html('전화번호를 다시입력하세요');
+                return;
+            } else{
+                $('#editPage_tel').css('border', '1px solid black');
+                $('#editPage_tel_inform').html('');
+            }
+        
+        if(pwValid.test(edit_pw) && emailValid.test(edit_email) && phoneValid.test(edit_tel)){
+            editMyPageComplete();
+        }
+    })
+
 });

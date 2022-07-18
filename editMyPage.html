@@ -93,90 +93,104 @@
   <div>
     <div class="edit_mypage_body">
         <div class="edit_mypage_body_content">
-            <div class="edit_mypage_body_title">마이페이지</div>
+            <div class="edit_mypage_body_title">정보 수정</div>
         </div>
         <div class="edit_mypage_wrap">
-          <div class="edit_mypage_basic_information">
-            <div class="edit_mypage_member_img"><img src="/img/subImage/notice_user_name.png"></div>
-            <div class="edit_mypage_member_name">
-              <div class="edit_mypage_member_name_id"></div>
-            </div>
+            <table width="600px" name="frm" align="center">
+                <tr>
+                    <td align="center">
+                        
+                        <table width="100%" class="table">
+                            <tr align="center">
+                                <td><b>회원정보 수정</b></td>
+                            </tr>
+                        </table>
+                            
+                        <table class="table2" width="100%">
+                            <form action="memberUpdate.do" method="post">
+                                <tr>
+                                    <td width="35%">아이디</td>
+                                    <td width="65%" id="editPage_id">rinlee2001</td>
+                                </tr>			
+                                <tr>
+                                    <td>비밀번호</td>
+                                    <td>
+                                        <div id="edit_check_pw_inform"></div>
+                                        <input type="password" size="40" id="editPage_pw" required /></td>
+                                </tr>			
+                                <tr>
+                                    <td>비밀번호 확인</td>
+                                    <td><input type="password" size="40" id="editPage_pw_check" required /></td>
+                                </tr>
+                                <tr>
+                                    <td>이메일</td>
+                                    <td width="65%">
+                                        <div id="editPage_email_inform"></div>
+                                        <input type="text" size="40" id="editPage_email" required /></td>
+                                </tr>
+                                <tr>
+                                    <td>전화번호</td>
+                                    <td>
+                                        <div id="edit_tel_inform"></div>
+                                        <input type="text" size="40" id="editPage_tel" required /></td>
+                                </tr>
+                                <tr>
+                                    <td>소속</td>
+                                    <td><input type="text" size="40" id="editPage_department" value="dnsg" required /></td>
+                                </tr>
+                                <tr>
+                                    <td>주소</td>
+                                    <td>
+                                        <input type="text" id="editPage_address" disabled>
+                                        <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcode()">주소찾기</button>
+                                        <input type="text" id="editPage_detail_address">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>기업 여부</td>
+                                    <td>
+                                        <div class="edit_enterprrise">
+                                          <div class="form-check" id="yes_check">
+                                            <input class="form-check-input" type="radio" name="exampleRadio" id="Y-check" value="Y">
+                                            <label class="form-check-label" for="exampleRadios3">YES</label>
+                                          </div>
+                                          <div class="form-check" id="no_check">
+                                            <input class="form-check-input" type="radio" name="exampleRadio" id="N-check" value="N">
+                                            <label class="form-check-label" for="exampleRadios4">NO</label>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr>	
+                                    <td><button type="button" id="edit_complete_bt" class="btn btn-outline-dark">저장하기</button></td>
+                                <tr>
+
+                                </tr>
+                                
+                                </table>				
+                                <table>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <input class="button" type="submit" value="회원정보 수정" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input class="button" type="reset" value="다시쓰기" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input class="button" type="button" value="아이디삭제" onclick="memberDelete()" />								
+                                    </td>
+                                </tr>	
+                                </table>
+                    <!-- 		-----회사정보-----		 -->
+                                
+                                <input type="hidden" name="co_id">															
+                            </form>
+                        </table>
+                    </td>
+                </tr>
+            </table>
           </div>
 
-          <div class="edit_mypage_wrap_content">
-            <div class="edit_essential_input">
-              <h3>필수항목</h3>
-              <div class="edit_id">
-                <h4>아이디</h4>
-                <div id="edit_id_inform"></div>
-                <div class="edit_id_wrap">
-                  <div class="edit_id_input_wrap">
-                    <input type="text" id ="edit_id" placeholder="아이디" required>
-                    <p>* 4~15자리</p>
-                  </div>
-                </div>
-              </div>
-              <div class="edit_pw">
-                <h4>비밀번호</h4>
-                <div id="edit_pw_inform"></div>
-                <div id="edit_check_false"></div>
-                  <input type="password" id="edit_pw" placeholder="비밀번호" required>
-                  <p>* 8~20자리, 영어, 숫자, 특수문자 포함</p>
-              </div>
-              <div class="edit_pw_check">
-                <h4>비밀번호 재입력</h4>
-                <div id="edit_check_pw_inform"></div>
-                <div id="edit_check_false"></div>
-                <input type="password" id="edit_pw_check" placeholder="비밀번호" required>
-              </div>
-              <div class="edit_email">
-                <h4>이메일</h4>
-                <div id="edit_email_inform"></div>
-                <input type="email" id="edit_email" placeholder="이메일" required>
-              </div>
-              <div class="edit_tel">
-                <h4>전화번호</h4>
-                <div id="edit_tel_inform"></div>
-                <input type="tel" id="edit_tel" placeholder="전화번호" required>
-                <p>* -(하이픈) 포함</p>
-              </div>
-            </div>
-
-            <div class="edit_select_input">
-              <h3>선택항목</h3>
-              <div class="edit_along">
-                <h4>소속</h4>
-                <input type="text" id="edit_along" placeholder="소속">
-              </div>
-              <div class="edit_address">
-                <h4>주소</h4>
-                <div class="edit_address_wrap">        
-                  <input type="text" id="edit_address" placeholder="주소" disabled>
-                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcode()">주소찾기</button>
-                </div>
-                <input type="text" id="edit_detail_address" placeholder="상세 주소">
-              </div>
-              <div class="edit_enterprise">
-                <h4>기업여부</h4>
-                <div class="edit_enterprise_check">
-                  <div class="form-check" id="_yes_check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Y">
-                    <label class="form-check-label" for="exampleRadios1">YES</label>
-                  </div>
-                  <div class="form-check" id="_no_check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="N">
-                    <label class="form-check-label" for="exampleRadios2">NO</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mypage_edit_bt">
-            <button type="button" onclick="location.href = 'editMyPage.html'" class="btn btn-outline-dark">내 정보 수정하기</button>
-          </div>
-
-        </div>
-    </div>
+    
+    
+   
   </div>
   <!-- footer -->
   <footer class="row justify-content-between row-cols-7 py-5 my-5 border-top">
