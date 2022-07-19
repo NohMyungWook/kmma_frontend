@@ -1023,6 +1023,7 @@
     width: 100%;
     margin-top: 10px;
 }
+
 #signup_address_bt{
     height: 40px;
     margin-left: 10px;
@@ -1421,8 +1422,17 @@
     align-items: center;
 }
 
-.mypage_email{
+.mypage_email_name{
     margin-top: 30px;
+    font-size: 1.3rem;
+}
+
+.mypage_phone_name, .mypage_department_name, .mypage_department_name, .mypage_address_name, .mypage_companyYn_name{
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+.mypage_email{
     height: 100%;
     border: 1px solid rgb(228, 228, 228);
     border-radius: 10px;
@@ -1434,7 +1444,6 @@
 }
 
 .mypage_phone, .mypage_department, .mypage_address, .mypage_companyYn{
-    margin-top: 20px;
     height: 100%;
     border: 1px solid rgb(228, 228, 228);
     border-radius: 10px;
@@ -1545,43 +1554,95 @@ input:disabled {
 }
 
 .edit_mypagecontent_wrap{
-    width: 100%;
-}
-
-.editPage_id_wrap, .editPage_email_wrap, .editPage_tel_wrap, .editPage_department_wrap{
-    height: 40px;
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-}
-
-.editPage_address_wrap, .editPage_enterprise_wrap{
-    height: 90px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-}
-
-.editPage_wrap_title{
-    font-size: 1.2rem;
-    width: 30%;
-}
-
-.editPage_address_input_wrap{
-    display: flex;
-    flex-direction: row;
-}
-
-.edit_enterprise{
-    display: flex;
-    flex-direction: row;
-}
-
-.editPage_email_content_inform, .editPage_tel_content_wrap{
+    width: 70%;
     display: flex;
     flex-direction: column;
 }
+
+.editPage_email_wrap, .editPage_tel_wrap, .editPage_department_wrap, .editPage_detail_address_wrap, .editPage_enterprise_wrap, .edit_enterprise{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.editPage_email_wrap input, .editPage_tel_wrap input, .editPage_department_wrap input, .editPage_address_wrap input, .editPage_detail_address_wrap input{ 
+    border-radius: 7px;
+    border: 1px solid rgb(65, 65, 65);
+    padding: 0 10px;
+    height: 35px;
+}
+
+.editPage_address_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.editPage_wrap_title{
+    width: 15%;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+#editPage_id, .editPage_email_content_wrap, .editPage_tel_content_wrap, #editPage_department, .editPage_address_input_wrap, #editPage_detail_address, .edit_enterprise{
+    width: 70%;
+}
+
+.editPage_address_input_wrap{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#editPage_address{
+    width: 70%;
+}
+
+#edit_address_bt{
+    width: 27%;
+}
+
+#editPage_tel, #editPage_email{
+    width: 100%;
+}
+
+.edit_enterprise{
+    margin-top: 0px;
+}
+
+#yes_check{
+    width: 20%;
+    margin-left: 5px;
+}
+
+#no_check{
+    width: 80%;
+}
+
+.edit_complete_bt_wrap{
+    margin: 50px auto 0px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit_complete_bt_wrap button{
+    width: 25%;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+#secession_bt{
+    color: rgb(214, 23, 23);
+}
+
+
 /* 비밀번호 확인 페이지( 수정 페이지로 넘어감 ) */
 .checkPw_body{
     width: 100%;

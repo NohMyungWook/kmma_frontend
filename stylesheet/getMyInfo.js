@@ -4,14 +4,39 @@ function getMyInfo(){
     $.ajax({
         type: 'GET',
         url: domain + "myinfo",
-        contentType: 'application/JSON',
+        contentType: 'application/json',
         success: function(data){
-            $('.mypage_id').html('아이디 : ' + data.id);
-            $('.mypage_email').html('이메일 : ' + data.email);
-            $('.mypage_phone').html('전화번호 : ' + data.phone);
-            $('.mypage_department').html('소속 : ' + data.department);
-            $('.mypage_address').html('주소 : ' + data.address + ' ' + data.address_detail);
-            $('.mypage_companyYn').html('기업 여부: ' + data.companyYn);
+            $('.mypage_email').html(data.email);
+            $('.mypage_phone').html(data.phone);
+
+            var myDepartment, myAddress, myAddressDetail, myCompany;
+            if(data.dapartment == null){
+                myDepartment == "미입력";
+            }else{
+                myDepartment == data.department;
+            }
+
+            if(data.address == null){
+                myAddress == "미입력";
+            } else{
+                myAddress == data.address;
+            }
+
+            if(data.address_detail == null){
+                myAddressDetail == "미입력";
+            }else{
+                myAddressDetail == data.address_detail;
+            }
+
+            if(data.companyYn == null){
+                myCompany == "미입력";
+            }else{
+                myCompany == data.companyYn;
+            }
+            
+            $('.mypage_department').html(myDepartment);
+            $('.mypage_address').html(myAddress + ' ' + myAddressDetail);
+            $('.mypage_companyYn').html(myCompany);
         }
     })
 }

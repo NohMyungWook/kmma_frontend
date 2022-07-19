@@ -102,7 +102,7 @@ function editMyPageComplete(){
     $.ajax({
         type: 'PUT',
         url: domain + 'user',
-        contentType: 'application/JSON',
+        contentType: 'application/json',
         data: JSON.stringify({
             "id" : edit_id,
             "email" : edit_email,
@@ -129,7 +129,7 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: domain + "login",
-            contentType : "application/JSON",
+            contentType : "application/json",
             data: JSON.stringify({
                 "id" : login_id,
                 "pw" : login_pw

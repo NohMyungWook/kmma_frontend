@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
     <script src="/stylesheet/ajax.js"></script>
     <script src="/stylesheet/address.js"></script>
     <script src="/stylesheet/mypage.js"></script>
@@ -110,19 +111,20 @@
               <div id="editPage_id"></div>
             </div>
 
-            <div class="editPage_email_wrap">
-              <div class="editPage_wrap_title">이메일</div>
-              <div class="editPage_email_content_wrap">
-                <div id="editPage_email_inform"></div>
-                <input type="text" id="editPage_email" required />
-              </div>
-            </div>
-
             <div class="editPage_tel_wrap">
               <div class="editPage_wrap_title">전화번호</div>
               <div class="editPage_tel_content_wrap">
                 <div id="editPage_tel_inform"></div>
                 <input type="text" id="editPage_tel" required />
+                <p style="font-size: 0.8rem; margin-bottom: 0px;">* -(하이픈) 포함</p>
+              </div>
+            </div>
+
+            <div class="editPage_email_wrap">
+              <div class="editPage_wrap_title">이메일</div>
+              <div class="editPage_email_content_wrap">
+                <div id="editPage_email_inform"></div>
+                <input type="text" id="editPage_email" required />
               </div>
             </div>
 
@@ -133,13 +135,15 @@
 
             <div class="editPage_address_wrap">
               <div class="editPage_wrap_title">주소</div>
-              <div class="editPage_address_wrap_content">
-                <div class="editPage_address_input_wrap">
-                  <input type="text" id="editPage_address" disabled>
-                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()"> 주소찾기 </button>
-                </div>
-                <input type="text" id="editPage_detail_address">
+              <div class="editPage_address_input_wrap">
+                <input type="text" id="editPage_address" disabled>
+                <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()"> 주소찾기 </button>
               </div>
+            </div>
+
+            <div class="editPage_detail_address_wrap">
+              <div class="editPage_wrap_title">상세주소</div>
+              <input type="text" id="editPage_detail_address">
             </div>
 
             <div class="editPage_enterprise_wrap">
@@ -157,7 +161,8 @@
             </div>
 
             <div class="edit_complete_bt_wrap">
-              <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">수정하기</button>				
+              <button type="button" id="edit_complete_bt" class="btn btn-outline-dark">수정하기</button>
+              <button type="button" id="secession_bt" class="btn btn-outline-dark">탈퇴하기</button>					
             </div>
           </div>  
         </div>

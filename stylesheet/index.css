@@ -229,11 +229,38 @@ body{
 }
 
 /* footer */
+
+.d-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+}
 .d-flex a{
     text-decoration: none;
     color: gray;
 }
 
-.mypage-bt{
+.login-signup-bt{
     display: none;
 }
+
+.name-mypage-bt{
+    display: block;
+    text-align: right; 
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.index_logout_bt{
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.index_logout_bt p{
+    width: 55.4px;
+}
+
