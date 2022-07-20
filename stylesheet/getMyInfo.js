@@ -17,14 +17,10 @@ function getMyInfo(){
 
             if(data.address == null && data.address_detail == null){
                 $('.mypage_address').html("미입력");
-            }
-
-            if(data.address != null){
-                $('.mypage_address').html(data.address + ' ');
-            }
-            
-            if(data.address_detail != null){
-                $('.mypage_address').html(data.address_detail);
+            } else if(data.address != null && data.detail != null){
+                $('.mypage_address').html(data.address + ' ' + data.address_detail);
+            } else if(data.address_detail == null){
+                $('.mypage_address').html(data.address);
             }
 
             if(data.companyYn == null){

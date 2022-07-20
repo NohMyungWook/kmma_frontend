@@ -251,5 +251,6 @@ body{
 .index_logout_bt p{
     width: 50%;
     display: none;
+    cursor: pointer;
 }
 

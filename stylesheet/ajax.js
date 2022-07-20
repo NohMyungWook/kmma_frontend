@@ -119,6 +119,20 @@ function editMyPageComplete(){
     });
 }
 
+
+function deleteMyInfo(){
+    var userId = $('#editPage_id').text();
+    $.ajax({
+        type: "DELETE",
+        url: domain + "user/" + userId,
+        contentType: 'application.json',
+        success: function(data){
+            logout();
+            window.location.href="index.html";
+        }
+    })
+}
+
 $(document).ready(function(){
 
     /*로그인 정보*/
@@ -225,11 +239,13 @@ $(document).ready(function(){
 
     /*정규식*/
     $('#signup_sub_bt').click(function(){
-        var signup_id = $('#signup_id').val();
         var signup_pw = $('#signup_pw').val();
         var signup_pw_check = $('#signup_pw_check').val();
         var signup_email = $('#signup_email').val();
         var signup_tel = $('#signup_tel').val();
+        var signup_address = $('#signup_address').val();
+        var signup_detail_address = $('#signup_detail_address').val();
+        var email_check = true;
         var pwValid = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/);
         var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
@@ -277,8 +293,13 @@ $(document).ready(function(){
                 $('#signup_tel').css('border', '1px solid black');
                 $('#signup_tel_inform').html('');
             }
+
+            if(signup_address == '' && signup_detail_address != ''){
+                $('#signup_address_inform').html('이메일을 입력해주세요');
+                email_check = false;
+            }
         }
-        if(pwValid.test(signup_pw) && emailValid.test(signup_email) && phoneValid.test(signup_tel)){
+        if(pwValid.test(signup_pw) && emailValid.test(signup_email) && phoneValid.test(signup_tel) && email_check){
             signUp();
         }
     });
@@ -288,6 +309,9 @@ $(document).ready(function(){
     $('#edit_complete_bt').click(function(){
         var edit_email = $('#editPage_email').val();
         var edit_tel = $('#editPage_tel').val();
+        var edit_address = $('#editPage_address').val();
+        var edit_detail_address = $('#editPage_detail_address').val();
+        var edit_email_check = true;
         var emailValid = new RegExp(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/);
         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
 
@@ -310,7 +334,12 @@ $(document).ready(function(){
             $('#editPage_email_inform').html('');
         }
     
-        if(emailValid.test(edit_email) && phoneValid.test(edit_tel)){
+        if(edit_address == '' && edit_detail_address != ''){
+            $('#editPage_address_inform').html('이메일을 입력해주세요');
+            edit_email_check = false;
+        }
+
+        if(emailValid.test(edit_email) && phoneValid.test(edit_tel) && edit_email_check){
             editMyPageComplete();
         }
     });
