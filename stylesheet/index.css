@@ -227,8 +227,6 @@ body{
     color: gray; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    text-align: right;
 }
 
 .d-flex a{
@@ -238,21 +236,20 @@ body{
 
 
 .name-mypage-bt{
-    text-align: right; 
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
     width: auto;
     display: none;
 }
 
 .index_logout_bt{
-    display: none;
+    display: flex;
+    justify-content: flex-end;
     font-size: 1rem;
+    display: none;
 }
 
 .index_logout_bt p{
+    width: 50%;
     display: none;
-    width: 55.4px;
 }
 

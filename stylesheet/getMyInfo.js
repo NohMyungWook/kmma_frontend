@@ -17,18 +17,22 @@ function getMyInfo(){
 
             if(data.address == null && data.address_detail == null){
                 $('.mypage_address').html("미입력");
-            } else if(data.address != null){
+            }
+
+            if(data.address != null){
                 $('.mypage_address').html(data.address + ' ');
-            } else if(data.address_detail != null){
+            }
+            
+            if(data.address_detail != null){
                 $('.mypage_address').html(data.address_detail);
-            }else{
-                $('.mypage_address').html(data.address + ' ' + data.address_detail);
             }
 
             if(data.companyYn == null){
                 $('.mypage_companyYn').html("미입력");
-            }else{
-                $('.mypage_companyYn').html(data.companyYn);
+            }else if(data.companyYn == 'Y'){
+                $('.mypage_companyYn').html('Yes');
+            }else if(data.companyYn == 'N'){
+                $('.mypage_companyYn').html('No');
             }
             
         }

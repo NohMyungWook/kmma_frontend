@@ -21,14 +21,13 @@ var domain = "https://kmma.io/kmma/";
 function postUser(){
     $.ajax({
         type: 'GET',
-        url: domain + 'myinfo',
+        url: domain + 'validation/authority',
         contentType: 'application/json',
         success: function(data){
-            if(data.userRole == 'Admin'){
-                $('.notice_write_bt').css('display', 'block');
-            }else{
-                $('.notice_write_bt').css('display', 'none');
-            }
+            $('.notice_write_bt').css('display', 'block');
+        },
+        error: function(data){
+            $('.notice_write_bt').css('display', 'none');s
         }
     })
 }

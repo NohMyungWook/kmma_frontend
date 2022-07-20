@@ -113,8 +113,7 @@ function editMyPageComplete(){
             "companyYn" : edit_enterprise
         }),
         success: function(data){
-            logout();
-            window.location.href="login.html"
+            window.location.href="mypage.html"
         }
 
     });

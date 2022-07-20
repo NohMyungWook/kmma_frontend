@@ -26,6 +26,7 @@ function editMyInfo(){
 }
 
 function deleteMyInfo(){
+    alert('dd');
     var userId = $('#editPage_id').text();
     $.ajax({
         type: "DELETE",
@@ -41,7 +42,4 @@ $(document).ready(function(){
     editMyInfo();
 })
 
-$('#secession_bt').click(function(){
-    deleteMyInfo();
-})
 

@@ -1458,26 +1458,32 @@
     font-size: 1.3rem;
 }
 
-.mypage_email{
-    height: 100%;
+.mypage_email{    
     border: 1px solid rgb(228, 228, 228);
     border-radius: 10px;
     background-color: #f7f5f5bc;
     width: 100%;
-    padding: 10px 70px;
+    height: auto;
+    padding: 10px;
     text-align: center;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
 }
 
 .mypage_phone, .mypage_department, .mypage_address, .mypage_companyYn{
-    height: 100%;
     border: 1px solid rgb(228, 228, 228);
     border-radius: 10px;
     background-color: #f7f5f5bc;
     width: 100%;
-    padding: 10px 70px;
+    height: 100%;
+    padding: 10px 50px;
     text-align: center;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .mypage_edit_bt{
