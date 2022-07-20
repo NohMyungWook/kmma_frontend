@@ -70,7 +70,7 @@ function logout(){
 
 
 function editMyPageComplete(){
-    var edit_id = $('#editPage_id').val();
+    var edit_id = $('#editPage_id').text();
     var edit_email = $('#editPage_email').val();
     var edit_tel = $('#editPage_tel').val();
     var edit_department, edit_address, edit_detail_address, edit_enterprise;

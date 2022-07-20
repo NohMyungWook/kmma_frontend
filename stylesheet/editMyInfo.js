@@ -24,7 +24,24 @@ function editMyInfo(){
         }
     })
 }
+
+function deleteMyInfo(){
+    var userId = $('#editPage_id').text();
+    $.ajax({
+        type: "DELETE",
+        url: domain + "user/" + userId,
+        contentType: 'application.json',
+        success: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
+
 $(document).ready(function(){
     editMyInfo();
+})
+
+$('#secession_bt').click(function(){
+    deleteMyInfo();
 })
 

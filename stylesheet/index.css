@@ -236,9 +236,6 @@ body{
     color: gray;
 }
 
-.login-signup-bt{
-    padding-top: 20px;
-}
 
 .name-mypage-bt{
     text-align: right; 
@@ -246,6 +243,7 @@ body{
     display: flex;
     flex-direction: column;
     width: auto;
+    display: none;
 }
 
 .index_logout_bt{
