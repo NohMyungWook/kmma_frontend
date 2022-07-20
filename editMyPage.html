@@ -80,14 +80,11 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex">
-                <!-- <button class="btn btn-outline-secondary" type="">로그인/회원가입</button> -->
+            <div align="right" class="d-flex">
                 <a href="login.html" class="login-signup-bt">로그인/회원가입</a>
-                <div class="mypage-bt" style="text-align: right; padding-top: 10px;">
-                  <a href="mypage.html" class="name-mypage-bt"></a>
-                  <div style="font-size: 1rem;" onclick="logout();">로그아웃</div>
-                </div>
-              </form>
+                <a href="mypage.html" class="name-mypage-bt"></a>
+                <div class="index_logout_bt"><p onclick="logout();">로그아웃</p></div>
+            </div>
           </div>
         </div>
       </nav>
@@ -114,7 +111,7 @@
             <div class="editPage_tel_wrap">
               <div class="editPage_wrap_title">전화번호</div>
               <div class="editPage_tel_content_wrap">
-                <div id="editPage_tel_inform"></div>
+                <div id="editPage_tel_inform" style="color: red;"></div>
                 <input type="text" id="editPage_tel" required />
                 <p style="font-size: 0.8rem; margin-bottom: 0px;">* -(하이픈) 포함</p>
               </div>
@@ -123,7 +120,7 @@
             <div class="editPage_email_wrap">
               <div class="editPage_wrap_title">이메일</div>
               <div class="editPage_email_content_wrap">
-                <div id="editPage_email_inform"></div>
+                <div id="editPage_email_inform" style="color: red;"></div>
                 <input type="text" id="editPage_email" required />
               </div>
             </div>

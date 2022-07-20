@@ -516,6 +516,7 @@
     border: 1px solid rgb(176, 176, 176);
     background-color: white;
 }
+
 .notice_search_wrap{
     width: 90%;
     display: flex;
@@ -582,6 +583,8 @@
     display: flex;
     justify-content: center;
 }
+
+
 /* 활동소식 및 보도자료 */
 .news_body{
     height: 100%;
@@ -599,7 +602,27 @@
 .news_search{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.news_search_area{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+}
+
+.news_write_bt_wrap{
+    width: 10%;
+}
+
+.news_write_bt_wrap button{
+    border-radius: 2px;
+    height: 30px;
+    width: 80px;
+    border: 1px solid rgb(176, 176, 176);
+    background-color: white;
 }
 
 .news_search_select{
@@ -609,6 +632,8 @@
 
 .news_search_input{
     margin-left: 5px;
+    display: flex;
+    flex-direction: row;
 }
 
 .news_search_input_box{
@@ -620,6 +645,7 @@
     border-radius: 2px;
     height: 30px;
     width: 60px;
+    margin-left: 5px;
     border: 1px solid rgb(176, 176, 176);
     background-color: white;
 }
@@ -1559,12 +1585,16 @@ input:disabled {
     flex-direction: column;
 }
 
-.editPage_email_wrap, .editPage_tel_wrap, .editPage_department_wrap, .editPage_detail_address_wrap, .editPage_enterprise_wrap, .edit_enterprise{
+.editPage_id_wrap, .editPage_email_wrap, .editPage_tel_wrap, .editPage_department_wrap, .editPage_detail_address_wrap, .editPage_enterprise_wrap, .edit_enterprise{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
+}
+
+#editPage_id{
+    font-size: 1.1rem;
 }
 
 .editPage_email_wrap input, .editPage_tel_wrap input, .editPage_department_wrap input, .editPage_address_wrap input, .editPage_detail_address_wrap input{ 

@@ -9,34 +9,28 @@ function getMyInfo(){
             $('.mypage_email').html(data.email);
             $('.mypage_phone').html(data.phone);
 
-            var myDepartment, myAddress, myAddressDetail, myCompany;
-            if(data.dapartment == null){
-                myDepartment == "미입력";
+            if(data.department == null){
+                $('.mypage_department').html("미입력");
             }else{
-                myDepartment == data.department;
+                $('.mypage_department').html(data.department);
             }
 
-            if(data.address == null){
-                myAddress == "미입력";
-            } else{
-                myAddress == data.address;
-            }
-
-            if(data.address_detail == null){
-                myAddressDetail == "미입력";
+            if(data.address == null && data.address_detail == null){
+                $('.mypage_address').html("미입력");
+            } else if(data.address == null){
+                $('.mypage_address').html(data.address_detail);
+            } else if(data.address_detail == null){
+                $('.mypage_address').html(data.address_detail);
             }else{
-                myAddressDetail == data.address_detail;
+                $('.mypage_address').html(data.address + ' ' + data.address_detail);
             }
 
             if(data.companyYn == null){
-                myCompany == "미입력";
+                $('.mypage_companyYn').html("미입력");
             }else{
-                myCompany == data.companyYn;
+                $('.mypage_companyYn').html(data.companyYn);
             }
             
-            $('.mypage_department').html(myDepartment);
-            $('.mypage_address').html(myAddress + ' ' + myAddressDetail);
-            $('.mypage_companyYn').html(myCompany);
         }
     })
 }

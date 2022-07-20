@@ -14,8 +14,19 @@
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
-    <script src="/stylesheet/ajax.js"></script>
     <script src="/stylesheet/post.js"></script>
+    <script src="/stylesheet/ajax.js"></script>
+
+    <!-- include summernote css/js-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#summernote').summernote({
+		      height: 400     
+        });
+      });
+    </script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -88,97 +99,21 @@
       </nav>
 </header>
   <div>
-    <div class="news_body">
-        <div class="news_wrap">
-            <div class="title_out_wrap">
-              <div class="title_text">활동소식 및 보도자료</div>
-              <div class="title_under"></div>
-            </div>
-            <div class="news_content">
-                <div class="news_search">
-                    <div class="news_write_bt_wrap">
-                      <button type="button" class="news_write_bt" onclick="location.href='writeNews.html'">작성하기</button>
-                    </div>
-                    <div class="news_search_area">
-                        <form>
-                            <select class="news_search_select">
-                                <option>제목</option>
-                                <option>내용</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="news_search_input">
-                        <input type="text" class="news_search_input_box">
-                        <button type="button" class="news_search_input_bt">검색</button>
-                    </div>
-                </div>
-                <div class="news_list">
-                  <a href="news_postDetails.html">
-                        <div class="news_list_header">
-                            <div class="news_list_title">한국메타버스미디어협회의 활동 소식을 전해드려요</div>
-                            <div class="news_list_time">2022.07.06</div>
-                        </div>
-                        <div class="news_list_content">
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                        </div>
-                    </a>
-                    <a href="news_postDetails.html">
-                        <div class="news_list_header">
-                            <div class="news_list_title">한국메타버스미디어협회의 활동 소식을 전해드려요</div>
-                            <div class="news_list_time">2022.07.06</div>
-                        </div>
-                        <div class="news_list_content">
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..  
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                        </div>
-                    </a>
-                    <a href="news_postDetails.html">
-                        <div class="news_list_header">
-                            <div class="news_list_title">한국메타버스미디어협회의 활동 소식을 전해드려요</div>
-                            <div class="news_list_time">2022.07.06</div>
-                        </div>
-                        <div class="news_list_content">
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..  
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                        </div>
-                    </a>
-                    <a href="news_postDetails.html">
-                        <div class="news_list_header">
-                            <div class="news_list_title">한국메타버스미디어협회의 활동 소식을 전해드려요</div>
-                            <div class="news_list_time">2022.07.06</div>
-                        </div>
-                        <div class="news_list_content">
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다..
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 
-                            한국메타버스미디어협회는 항상 노력합니다.. 한국메타버스미디어협회는 항상 노력합니다.. 
-                        </div>
-                    </a>
-                </div>
-                <div class="news_page_num">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    <div class="writeNotice_body">
+      <div class="title_out_wrap">
+        <div class="title_text">활동소식 및 보도자료</div>
+        <div class="title_under"></div>
+      </div>
+      <div class="make_notice_wrap">
+        <div class="make_notice_title">
+          <p>제목 : </p>
+          <input type="text" class="post_notice_title">
         </div>
+        <div id="summernote"></div> 
+        <div class="make_notice_bt">
+          <button type="button" class="btn btn-outline-dark">등록하기</button>
+        </div>
+      </div>
     </div>
   </div>
   <!-- footer -->

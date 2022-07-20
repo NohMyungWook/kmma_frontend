@@ -11,6 +11,7 @@ $(document).ready(function(){
         success: function(data){
             console.log("validation success");
             $('.login-signup-bt').css('display', 'none');
+            $('.login-signup-bt p').css('display', 'none');
             $('.mypage-bt').css('display', 'block');
             $('.name-mypage-bt').html('[' + sessionStorage.getItem('loginId') + ']님 환영합니다');
             $('.mypage_member_name_id').html(sessionStorage.getItem('loginId') +' 님');
@@ -19,6 +20,7 @@ $(document).ready(function(){
         error: function(data){
             console.log("validation error");
             $('.login-signup-bt').css('display', 'block');
+            $('.login-signup-bt p').css('display', 'block');
             $('.mypage-bt').css('display', 'none');
         }
     })
@@ -46,7 +48,7 @@ $(document).ready(function(){
                 location.href="editMyPage.html";
             },
             error: function(data){
-
+                document.getElementById("checkPw_title").innerHTML =('비밀번호를 다시 입력하세요');
             }
         })
     })

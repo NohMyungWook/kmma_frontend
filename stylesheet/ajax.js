@@ -293,15 +293,6 @@ $(document).ready(function(){
         var phoneValid = new RegExp(/^\d{2,3}[-]\d{3,4}[-]\d{4}$/);
 
             
-        if(!(emailValid.test(edit_email))){
-            $('#editPage_email').css('border', '1.5px solid red');
-            $('#editPage_email_inform').html('이메일을 다시입력하세요');
-            return;
-        } else{
-            $('#editPage_email').css('border', '1px solid black');
-            $('#editPage_email_inform').html('');
-        }
-
         if(!(phoneValid.test(edit_tel))){
             $('#editPage_tel').css('border', '1.5px solid red');
             $('#editPage_tel_inform').html('전화번호를 다시입력하세요');
@@ -309,6 +300,15 @@ $(document).ready(function(){
         } else{
             $('#editPage_tel').css('border', '1px solid black');
             $('#editPage_tel_inform').html('');
+        }
+        
+        if(!(emailValid.test(edit_email))){
+            $('#editPage_email').css('border', '1.5px solid red');
+            $('#editPage_email_inform').html('이메일을 다시입력하세요');
+            return;
+        } else{
+            $('#editPage_email').css('border', '1px solid black');
+            $('#editPage_email_inform').html('');
         }
     
         if(emailValid.test(edit_email) && phoneValid.test(edit_tel)){
