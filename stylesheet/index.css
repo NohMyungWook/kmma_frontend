@@ -254,3 +254,8 @@ body{
     cursor: pointer;
 }
 
+#footer_img_wrap{
+    display: flex;
+    justify-content: flex-start;
+}
+

@@ -496,7 +496,7 @@
 
 .notice_content{
     margin: 40px auto 0px auto;
-    width: 90%;
+    width: 77%;
 }
 
 .notice_search{
@@ -554,23 +554,30 @@
 }
 
 .notice_list a{
+    width: 100%;
     text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .notice_list div{
-    width: 100%;
     color: black;
-    padding-top: 10px;
 }
 
 .notice_list_title{
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    padding-left: 40px;
+    border-bottom: 1px solid black;
 }
 
 .notice_list_time{
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-top: 23px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+    text-align: right;
     border-bottom: 1px solid black;
 }
 
@@ -579,9 +586,19 @@
 }
 
 .notice_page_num{
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.before_notice_bt, .next_notice_bt{
+    border-radius: 2px;
+    height: 40px;
+    width: 80px;
+    font-size: 1.1rem;
+    border: 1px solid rgb(176, 176, 176);
+    background-color: white;
 }
 
 
@@ -693,9 +710,19 @@
 }
 
 .news_page_num{
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.before_article_bt, .next_article_bt{
+    border-radius: 2px;
+    height: 40px;
+    width: 80px;
+    font-size: 1.1rem;
+    border: 1px solid rgb(176, 176, 176);
+    background-color: white;
 }
 
 /* 회원 등록 */
@@ -1631,7 +1658,7 @@ input:disabled {
 .editPage_address_input_wrap{
     width: 70%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 

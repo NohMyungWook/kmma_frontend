@@ -17,7 +17,7 @@ function getMyInfo(){
 
             if(data.address == null && data.address_detail == null){
                 $('.mypage_address').html("미입력");
-            } else if(data.address != null && data.detail != null){
+            } else if(data.address != null && data.address_detail != null){
                 $('.mypage_address').html(data.address + ' ' + data.address_detail);
             } else if(data.address_detail == null){
                 $('.mypage_address').html(data.address);

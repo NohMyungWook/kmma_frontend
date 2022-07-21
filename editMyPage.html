@@ -133,9 +133,11 @@
             <div class="editPage_address_wrap">
               <div class="editPage_wrap_title">주소</div>
               <div class="editPage_address_input_wrap">
-                <div id="editPage_tel_inform" style="color: red;"></div>
-                <input type="text" id="editPage_address" disabled>
-                <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()"> 주소찾기 </button>
+                <div id="editPage_address_inform" style="color: red;"></div>
+                <div class="editPage_find_address_wrap">
+                  <input type="text" id="editPage_address" disabled>
+                  <button type="button" id="edit_address_bt" class="btn btn-outline-dark" onclick="openDaumPostcodeAddress()"> 주소찾기 </button>
+                </div>
               </div>
             </div>
 
@@ -169,8 +171,8 @@
   <!-- footer -->
   <footer class="row justify-content-between row-cols-7 py-5 my-5 border-top">
     <div class="col-4">
-      <a href="index.html" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-        <img class="bi me-2" width="180" height="70" src="/img/logo.png" alt="">
+      <a href="index.html" id="footer_img_wrap" class="footImg align-items-center mb-3 link-dark text-decoration-none">
+        <img class="bi me-2" id="footer_img_loco" width="180" height="70" src="/img/logo.png" alt="">
       </a>
       <p class="text-muted">© 2022 Korea Metaverse Media Assoication. All rights reserved.</p>
       <p class="text-muted">Email. shlee@kmma.io</p>
