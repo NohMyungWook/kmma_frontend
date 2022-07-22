@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
     <script src="/stylesheet/ajax.js"></script>
-    <script src="/stylesheet/articlePost.js"></script>
+    <script src="/stylesheet/searchPost.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -88,91 +88,74 @@
       </nav>
 </header>
   <div>
-    <div class="news_body">
-        <div class="news_wrap">
+    <div class="notice_body">
+        <div class="notice_wrap">
             <div class="title_out_wrap">
-              <div class="title_text">활동소식 및 보도자료</div>
+              <div class="title_text">공지사항</div>
               <div class="title_under"></div>
             </div>
-            <div class="news_content">
-                <div class="news_search">
-                    <div class="news_write_bt_wrap">
-                      <button type="button" class="news_write_bt" onclick="location.href='writeNews.html'">작성하기</button>
-                    </div>
-                    <div class="news_search_area">
-                        <form>
-                            <select class="news_search_select">
-                                <option>제목</option>
-                                <option>내용</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="news_search_input">
-                        <input type="text" class="news_search_input_box">
-                        <button type="button" class="news_search_input_bt">검색</button>
-                    </div>
-                </div>
-                <div class="news_list">
-                  <a href="news_postDetails.html" id="article_link0">
-                        <div class="news_list_header">
-                            <div class="news_list_title" id="news_list_title0"></div>
-                            <div class="news_list_time" id="news_list_time0"></div>
-                        </div>
-                        <div class="news_list_content" id="news_list_content0">
-                        </div>
+            <div class="search_word_wrap">
+                
+            </div>
+            <div class="notice_list">
+                <a href="postDetails.html" id="search_notice_link0">
+                    <div class="notice_list_title" id="search_notice_list_title0"></div>
+                    <div class="notice_list_time" id="search_notice_list_time0"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link1">
+                    <div class="notice_list_title" id="search_notice_list_title1"></div>
+                    <div class="notice_list_time" id="search_notice_list_time1"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link2">
+                    <div class="notice_list_title" id="search_notice_list_title2"></div>
+                    <div class="notice_list_time" id="search_notice_list_time2"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link3">
+                    <div class="notice_list_title" id="search_notice_list_title3"></div>
+                    <div class="notice_list_time" id="search_notice_list_time3"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link4">
+                    <div class="notice_list_title" id="search_notice_list_title4"></div>
+                    <div class="notice_list_time" id="search_notice_list_time4"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link5">
+                    <div class="notice_list_title" id="search_notice_list_title5"></div>
+                    <div class="notice_list_time" id="search_notice_list_time5"></div>
+                </a>
+                <a href="postDetails.html"  id="search_notice_link6">
+                    <div class="notice_list_title" id="search_notice_list_title6"></div>
+                    <div class="notice_list_time" id="search_notice_list_time6"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link7">
+                    <div class="notice_list_title" id="search_notice_list_title7"></div>
+                    <div class="notice_list_time" id="search_notice_list_time7"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link8">
+                    <div class="notice_list_title" id="search_notice_list_title8"></div>
+                    <div class="notice_list_time" id="search_notice_list_time8"></div>
+                </a>
+                <a href="postDetails.html" id="search_notice_link9">
+                    <div class="notice_list_title" id="search_notice_list_title9"></div>
+                    <div class="notice_list_time" id="search_notice_list_time9"></div>
+                </a>
+            </div>
+            <div class="notice_page_num">
+                <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
                     </a>
-                    <a href="news_postDetails.html" id="article_link1">
-                        <div class="news_list_header">
-                            <div class="news_list_title" id="news_list_title1"></div>
-                            <div class="news_list_time" id="news_list_time1"></div>
-                        </div>
-                        <div class="news_list_content" id="news_list_content1">
-                        </div>
+                    </li>
+                    <li class="page-item"><a class="page-link" id="noticePage1" href="#" onclick="searchNotice(1)">1</a></li>
+                    <li class="page-item"><a class="page-link" id="noticePage2" href="#" onclick="searchNotice(2)">2</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
                     </a>
-                    <a href="news_postDetails.html" id="article_link2">
-                        <div class="news_list_header">
-                            <div class="news_list_title" id="news_list_title2"></div>
-                            <div class="news_list_time"  id="news_list_time2"></div>
-                        </div>
-                        <div class="news_list_content" id="news_list_content2">
-                        </div>
-                    </a>
-                    <a href="news_postDetails.html" id="article_link3">
-                        <div class="news_list_header">
-                            <div class="news_list_title" id="news_list_title3"></div>
-                            <div class="news_list_time" id="news_list_time3"></div>
-                        </div>
-                        <div class="news_list_content" id="news_list_content3">
-                        </div>
-                    </a>
-                    <a href="news_postDetails.html" id="article_link4">
-                        <div class="news_list_header">
-                            <div class="news_list_title" id="news_list_title4"></div>
-                            <div class="news_list_time" id="news_list_time4"></div>
-                        </div>
-                        <div class="news_list_content" id="news_list_content4">
-                        </div>
-                    </a>
-                </div>
-                <div class="news_page_num">
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" id="noticePage1" href="#" onclick="getArticle(1)">1</a></li>
-                      <li class="page-item"><a class="page-link" id="noticePage2" href="#" onclick="getArticle(2)">2</a></li>
-                      <li class="page-item"><a class="page-link" id="noticePage3" href="#" onclick="getArticle(3)">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+                    </li>
+                </ul>
+                </nav>
             </div>
         </div>
     </div>

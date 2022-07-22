@@ -43,11 +43,13 @@ function getNotice(num){
                 for(startNum; startNum < 10; startNum++){
                     $('#notice_list_title' + startNum).html(data.content[startNum]['title']);
                     $('#notice_list_time' + startNum).html(data.content[startNum]['regdate']);
+                    $('#notice_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['noticeNo']));
                 }
             } else{
                 for(startNum; startNum < pageNum; startNum++){
                     $('#notice_list_title' + startNum).html(data.content[startNum]['title']);
                     $('#notice_list_time' + startNum).html(data.content[startNum]['regdate']);
+                    $('#notice_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['noticeNo']));
                 }
                 for(pageNum; pageNum < 10; pageNum++){
                     $('#notice_link'+ pageNum).css('display', 'none');
@@ -59,43 +61,8 @@ function getNotice(num){
 
 $(document).ready(function(){
     getNotice(1);
-    getArticle(1);
 })
 
-//articleNews.html에 가져오기
-function getArticle(num){
-    for(var i = 0; i < 10; i++){
-        $('#article_link' + i).removeAttr('style');
-    }
-    $.ajax({
-        type: "GET",
-        url: domain + "articlelist?page=" + num,
-        contentType: 'application/json',
-        success: function(data){
-            var totalPage = data.totalElements;
-            var startNum = 0;
-            var pageNum = totalPage - 5*(num-1);
-            var endNum = startNum + pageNum;
-
-            if(pageNum > 5){ 
-                for(startNum; startNum < 5; startNum++){
-                    $('#news_list_title' + startNum).html(data.content[startNum]['title']);
-                    $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
-                    $('#news_list_content' + startNum).html(data.content[startNum]['content']);
-                }
-            } else{
-                for(startNum; startNum < endNum; startNum++){
-                    $('#news_list_title' + startNum).html(data.content[startNum]['title']);
-                    $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
-                    $('#news_list_content' + startNum).html(data.content[startNum]['content']);
-                }
-                for(endNum; endNum < 5; startNum++){
-                    $('#article_link'+ endNum).css('display', 'none');
-                }
-            }
-        }
-    })
-}
 
 //게시물 상세 조회(공지사항)) -> 클릭했을 때 noticeNo 가 뭔지 어케 알아 
 function getNoticeContent(){ 
@@ -110,22 +77,3 @@ function getNoticeContent(){
         }
     })
 }
-
-//게시물 상세조회(활동소식 및 보도자료)
-function getArticleContent(){
-    $.ajax({
-        type: "GET",
-        url: domain + "article/" + articleNo,
-        contentType: 'application/json',
-        success: function(data){
-            $('#article_details_title').html(data.title);
-            $('.article_details_content').html(data.content);
-            $('.article_upload_time').html(data.regdate);
-        }
-    })
-}
-
-
-// alert(data.content[0]['articleNo']);
-
-// alert(data.totalPages);
