@@ -1770,3 +1770,7 @@ input:disabled {
     height: 40px;
     margin-top: 30px;
 }
+
+#notice_link9{
+    display: none;
+}
