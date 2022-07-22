@@ -62,38 +62,38 @@ $(document).ready(function(){
 })
 
 //articleNews.html에 가져오기
-    function getArticle(num){
-        $.ajax({
-            type: "GET",
-            url: domain + "articlelist?page=" + num,
-            contentType: 'application/json',
-            success: function(data){
-                var totalPage = data.totalElements;
-                var startNum = 5 * (num - 1);
-                var pageNum = totalPage - startNum;
-                var endNum = startNum + pageNum;
-    
-                if(pageNum > 5){ 
-                    for(startNum; startNum < 5; startNum++){
-                        $('#news_list_title' + startNum).html(data.content[startNum]['title']);
-                        $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
-                        $('#news_list_content' + startNum).html(data.content[startNum]['content']);
-                    }
-                } else{
-                    for(startNum; startNum < endNum ; startNum++){
-                        $('#news_list_title' + (startNum - 5)).html(data.content[startNum]['title']);
-                        $('#news_list_time' + (startNum - 5)).html(data.content[startNum]['regdate']);
-                        $('#news_list_content' + (startNum - 5)).html(data.content[startNum]['content']);
-                    }
-                    for(endNum;endNum < (5 * num); endNum++){
-                        $('#news_list_title' + (endNum - 5)).css('display', 'none');
-                        $('#news_list_time' + (endNum - 5)).css('display', 'none');
-                        $('#news_list_content' + (endNum - 5)).css('display', 'none');
-                    }
+function getArticle(num){
+    $.ajax({
+        type: "GET",
+        url: domain + "articlelist?page=" + num,
+        contentType: 'application/json',
+        success: function(data){
+            var totalPage = data.totalElements;
+            var startNum = 5 * (num - 1);
+            var pageNum = totalPage - startNum;
+            var endNum = startNum + pageNum;
+
+            if(pageNum > 5){ 
+                for(startNum; startNum < 5; startNum++){
+                    $('#news_list_title' + startNum).html(data.content[startNum]['title']);
+                    $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
+                    $('#news_list_content' + startNum).html(data.content[startNum]['content']);
+                }
+            } else{
+                for(startNum; startNum < endNum ; startNum++){
+                    $('#news_list_title' + (startNum - 5)).html(data.content[startNum]['title']);
+                    $('#news_list_time' + (startNum - 5)).html(data.content[startNum]['regdate']);
+                    $('#news_list_content' + (startNum - 5)).html(data.content[startNum]['content']);
+                }
+                for(endNum;endNum < (5 * num); endNum++){
+                    $('#news_list_title' + (endNum - 5)).css('display', 'none');
+                    $('#news_list_time' + (endNum - 5)).css('display', 'none');
+                    $('#news_list_content' + (endNum - 5)).css('display', 'none');
                 }
             }
-        })
-    }
+        }
+    })
+}
 
 //게시물 상세 조회(공지사항)) -> 클릭했을 때 noticeNo 가 뭔지 어케 알아 
 function getNoticeContent(){ 
