@@ -589,18 +589,8 @@
     margin-top: 40px;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
-
-.before_notice_bt, .next_notice_bt{
-    border-radius: 2px;
-    height: 40px;
-    width: 80px;
-    font-size: 1.1rem;
-    border: 1px solid rgb(176, 176, 176);
-    background-color: white;
-}
-
 
 /* 활동소식 및 보도자료 */
 .news_body{
@@ -713,16 +703,7 @@
     margin-top: 40px;
     display: flex;
     width: 100%;
-    justify-content: space-between;
-}
-
-.before_article_bt, .next_article_bt{
-    border-radius: 2px;
-    height: 40px;
-    width: 80px;
-    font-size: 1.1rem;
-    border: 1px solid rgb(176, 176, 176);
-    background-color: white;
+    justify-content: center;
 }
 
 /* 회원 등록 */
@@ -1257,21 +1238,12 @@
     border-bottom: 2px solid rgb(127, 126, 126);
 }
 
-.post_user_name{
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.post_user_name_picture{
-    display: flex;
-    padding-right: 30px;
-}
-
 .post_upload_time{
-    padding-left: 30px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
 }
+
 .post_user_name_picture img{
     width: 20px;
     height: 20px;
@@ -1408,6 +1380,44 @@
     .next_post_title{
         display: none;
     }
+}
+
+
+/* 활동소식 게시글 세부사항 */
+
+.article_details_content_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    border: 1px solid rgba(66, 65, 65, 0.2);
+    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
+    padding: 50px 40px;
+    margin: 60px auto 0px auto;
+}
+
+.article_details_title{
+    height: 100%;
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgb(127, 126, 126);
+    border-bottom: 2px solid rgb(127, 126, 126);
+}
+
+.article_upload_time{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.article_details_content{
+    margin-top: 50px;
+    width: 75%;
 }
 
 /* 마이페이지 */
