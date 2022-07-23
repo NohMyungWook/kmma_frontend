@@ -21,9 +21,9 @@ function getSearchNoticePageNum(num){
             var pageNum = data.totalPages + 1;
             for(var i = 1; i < pageNum; i++){
                 if(i == 1){
-                    $('#noticeSearchPagination').html('<li class="page-item"><a class="page-link" id="noticePage' + i + '" onclick="searchApi(' + i + ')">' + i + '</a></li>');
+                    $('#noticeSearchPagination').html('<li class="page-item"><a class="page-link" id="noticeSearchPage' + i + '" onclick="searchApi(' + i + ')">' + i + '</a></li>');
                 }else{
-                    $('#noticeSearchPagination').append('<li class="page-item"><a class="page-link" id="noticePage' + i + '" onclick="searchApi(' + i + ')">' + i + '</a></li>');
+                    $('#noticeSearchPagination').append('<li class="page-item"><a class="page-link" id="noticeSearchPage' + i + '" onclick="searchApi(' + i + ')">' + i + '</a></li>');
                 }
             }
         }
@@ -31,6 +31,7 @@ function getSearchNoticePageNum(num){
 }
 
 function searchApi(num){
+    window.scrollTo(0,0);
     var searchWord = $('#notice_search_input').val();
     var page = num;
 
@@ -43,7 +44,8 @@ function searchApi(num){
         type: "GET",
         url: domain + 'notice/search/title/' + searchWord + '?page=' + page,
         contentType: 'application/json',
-        success: function(data){
+        success: function(data){  
+            $('#noticeSearchPage' + num).css('background-color', 'rgb(214, 214, 214)');
             var totalPage = data.totalElements;
             var startNum = 0;
             var pageNum = totalPage - 10*(num-1);
@@ -67,5 +69,4 @@ function searchApi(num){
         }
     })
 }
-
 

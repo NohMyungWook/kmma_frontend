@@ -1782,3 +1782,21 @@ input:disabled {
 #notice_link9{
     display: none;
 }
+
+.page-item{
+    text-align: center;
+    width: 60px;
+    cursor: pointer;
+}
+
+.page-link{
+    color: black;
+    border: 1px solid rgb(214, 214, 214);
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: white;
+}
+ 
+#noticePage1, #articlePage1{
+    background-color: rgb(214, 214, 214);
+}

@@ -47,6 +47,8 @@ function getArticle(num){
     for(var i = 0; i < 10; i++){
         $('#article_link' + i).removeAttr('style');
     }
+    $('#articlePagination a').css('background-color', 'white');
+    $('#articlePage' + num).css('background-color', 'rgb(214, 214, 214)');
     $.ajax({
         type: "GET",
         url: domain + "articlelist?page=" + num,
@@ -108,6 +110,6 @@ function getArticleContent(){
 
 $(document).ready(function(){
     postUser();
-    getArticle(1);
     getArticlePageNum(1);
+    getArticle(1);
 })

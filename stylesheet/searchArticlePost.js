@@ -12,9 +12,9 @@ function getSearchArticlePageNum(num){
             var pageNum = data.totalPages + 1;
             for(var i = 1; i < pageNum; i++){
                 if(i == 1){
-                    $('#articleSearchPagination').html('<li class="page-item"><a class="page-link" id="articlePage' + i + '" onclick="searchArticleApi(' + i + ')">' + i + '</a></li>');
+                    $('#articleSearchPagination').html('<li class="page-item"><a class="page-link" id="articleSearchPage' + i + '" onclick="searchArticleApi(' + i + ')">' + i + '</a></li>');
                 }else{
-                    $('#articleSearchPagination').append('<li class="page-item"><a class="page-link" id="articlePage' + i + '" onclick="searchArticleApi(' + i + ')">' + i + '</a></li>');
+                    $('#articleSearchPagination').append('<li class="page-item"><a class="page-link" id="articleSearchPage' + i + '" onclick="searchArticleApi(' + i + ')">' + i + '</a></li>');
                 }
             }
         }
@@ -22,13 +22,13 @@ function getSearchArticlePageNum(num){
 }
 
 function searchArticleApi(num){
+    window.scrollTo(0,0);
     var searchWord = $('#article_search_input').val();
     var page = num;
 
     for(var i = 0; i < 5; i++){
         $('#article_link' + i).removeAttr('style');
     }
-
     getSearchArticlePageNum(1);
 
     $.ajax({
@@ -36,6 +36,7 @@ function searchArticleApi(num){
         url: domain + 'article/search/title/' + searchWord + '?page=' + page,
         contentType: 'application/json',
         success: function(data){
+            $('#articleSearchPage' + num).css('background-color', 'rgb(214, 214, 214)');
             var pageNumber = data.totalPages + 1;
             var totalPage = data.totalElements;
             var startNum = 0;
