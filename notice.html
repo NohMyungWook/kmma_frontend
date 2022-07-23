@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE  html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -111,77 +111,70 @@
                       </div>
                       <div class="notice_search_input">
                           <input type="text" id="notice_search_input" class="notice_search_input_box">
-                          <button type="button" id="notice_search_bt" class="notice_search_input_bt" onclick="searchNotice(1);">검색</button>
+                          <button type="button" id="notice_search_bt" class="notice_search_input_bt" onclick="searchApi(1);">검색</button>
                       </div>
                     </div>
                 </div>
                 <div class="notice_list">
-                    <a href="postDetails.html" id="notice_link0">
+                    <a id="notice_link0" onclick="clickNotice(0)">
                         <div class="notice_list_title" id="notice_list_title0"></div>
                         <div class="notice_list_time" id="notice_list_time0"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link1">
+                    <a id="notice_link1" onclick="clickNotice(1)">
                         <div class="notice_list_title" id="notice_list_title1"></div>
                         <div class="notice_list_time" id="notice_list_time1"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link2">
+                    <a id="notice_link2" onclick="clickNotice(2)">
                         <div class="notice_list_title" id="notice_list_title2"></div>
                         <div class="notice_list_time" id="notice_list_time2"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link3">
+                    <a id="notice_link3" onclick="clickNotice(3)">
                         <div class="notice_list_title" id="notice_list_title3"></div>
                         <div class="notice_list_time" id="notice_list_time3"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link4">
+                    <a id="notice_link4" onclick="clickNotice(4)">
                         <div class="notice_list_title" id="notice_list_title4"></div>
                         <div class="notice_list_time" id="notice_list_time4"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link5">
+                    <a id="notice_link5" onclick="clickNotice(5)">
                         <div class="notice_list_title" id="notice_list_title5"></div>
                         <div class="notice_list_time" id="notice_list_time5"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html"  id="notice_link6">
+                    <a id="notice_link6" onclick="clickNotice(6)">
                         <div class="notice_list_title" id="notice_list_title6"></div>
                         <div class="notice_list_time" id="notice_list_time6"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link7">
+                    <a id="notice_link7" onclick="clickNotice(7)">
                         <div class="notice_list_title" id="notice_list_title7"></div>
                         <div class="notice_list_time" id="notice_list_time7"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link8">
+                    <a id="notice_link8" onclick="clickNotice(8)">
                         <div class="notice_list_title" id="notice_list_title8"></div>
                         <div class="notice_list_time" id="notice_list_time8"></div>
                         <div style="flex: 0;"></div>
                     </a>
-                    <a href="postDetails.html" id="notice_link9">
+                    <a id="notice_link9" onclick="clickNotice(9)">
                         <div class="notice_list_title" id="notice_list_title9"></div>
                         <div class="notice_list_time" id="notice_list_time9"></div>
                         <div style="flex: 0;"></div>
                     </a>
                 </div>
                 <div class="notice_page_num">
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" id="noticePage1" href="#" onclick="getNotice(1)">1</a></li>
-                      <li class="page-item"><a class="page-link" id="noticePage2" href="#" onclick="getNotice(2)">2</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
+                  <nav aria-label="Page navigation example" id="pageNav1">
+                    <ul class="pagination" id="noticePagination">                    
+
+                    </ul>
+                  </nav>
+                  <nav aria-label="Page navigation example" id="pageNav2">
+                    <ul class="pagination" id="noticeSearchPagination">
                     </ul>
                   </nav>
                 </div>

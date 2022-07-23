@@ -16,6 +16,7 @@
     <script src="/stylesheet/mypage.js"></script>
     <script src="/stylesheet/ajax.js"></script>
     <script src="/stylesheet/articlePost.js"></script>
+    <script src="/stylesheet/searchArticlePost.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -97,7 +98,7 @@
             <div class="news_content">
                 <div class="news_search">
                     <div class="news_write_bt_wrap">
-                      <button type="button" class="news_write_bt" onclick="location.href='writeNews.html'">작성하기</button>
+                      <button type="button" class="news_write_bt" onclick="writeArticleUser()">작성하기</button>
                     </div>
                     <div class="news_search_area">
                         <form>
@@ -108,68 +109,67 @@
                         </form>
                     </div>
                     <div class="news_search_input">
-                        <input type="text" class="news_search_input_box">
-                        <button type="button" class="news_search_input_bt">검색</button>
+                        <input type="text" class="news_search_input_box" id="article_search_input">
+                        <button type="button" class="news_search_input_bt" onclick="searchArticleApi(1)">검색</button>
                     </div>
                 </div>
                 <div class="news_list">
-                  <a href="news_postDetails.html" id="article_link0">
+                  <a href="news_postDetails.html" id="article_link0" onclick="clickArticle(0)">
                         <div class="news_list_header">
                             <div class="news_list_title" id="news_list_title0"></div>
                             <div class="news_list_time" id="news_list_time0"></div>
                         </div>
                         <div class="news_list_content" id="news_list_content0">
                         </div>
+                        <div style="flex: 0;"></div>
                     </a>
-                    <a href="news_postDetails.html" id="article_link1">
+                    <a href="news_postDetails.html" id="article_link1" onclick="clickArticle(1)">
                         <div class="news_list_header">
                             <div class="news_list_title" id="news_list_title1"></div>
                             <div class="news_list_time" id="news_list_time1"></div>
                         </div>
                         <div class="news_list_content" id="news_list_content1">
                         </div>
+                        <div style="flex: 0;"></div>
                     </a>
-                    <a href="news_postDetails.html" id="article_link2">
+                    <a href="news_postDetails.html" id="article_link2" onclick="clickArticle(2)">
                         <div class="news_list_header">
                             <div class="news_list_title" id="news_list_title2"></div>
                             <div class="news_list_time"  id="news_list_time2"></div>
                         </div>
                         <div class="news_list_content" id="news_list_content2">
                         </div>
+                        <div style="flex: 0;"></div>
                     </a>
-                    <a href="news_postDetails.html" id="article_link3">
+                    <a href="news_postDetails.html" id="article_link3" onclick="clickArticle(3)">
                         <div class="news_list_header">
                             <div class="news_list_title" id="news_list_title3"></div>
                             <div class="news_list_time" id="news_list_time3"></div>
                         </div>
                         <div class="news_list_content" id="news_list_content3">
                         </div>
+                        <div style="flex: 0;"></div>
                     </a>
-                    <a href="news_postDetails.html" id="article_link4">
+                    <a href="news_postDetails.html" id="article_link4" onclick="clickArticle(4)">
                         <div class="news_list_header">
                             <div class="news_list_title" id="news_list_title4"></div>
                             <div class="news_list_time" id="news_list_time4"></div>
                         </div>
                         <div class="news_list_content" id="news_list_content4">
                         </div>
+                        <div style="flex: 0;"></div>
                     </a>
                 </div>
                 <div class="news_page_num">
-                  <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" id="noticePage1" href="#" onclick="getArticle(1)">1</a></li>
-                      <li class="page-item"><a class="page-link" id="noticePage2" href="#" onclick="getArticle(2)">2</a></li>
-                      <li class="page-item"><a class="page-link" id="noticePage3" href="#" onclick="getArticle(3)">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
+                  <nav aria-label="Page navigation example" id="pageNav1">
+                    <ul class="pagination" id="articlePagination">
+                    </ul>
+                  </nav>
+                  <nav aria-label="Page navigation example" id="pageNav2">
+                    <ul class="pagination" id="articleSearchPagination">
+                      <li class="page-item"><a class="page-link" id="artPage1" onclick="searchArticleApi(1)">1</a></li>
+                      <li class="page-item"><a class="page-link" id="noticePage2" onclick="searchArticleApi(2)">2</a></li>
+                      <li class="page-item"><a class="page-link" id="noticePage3" onclick="searchArticleApi(3)">3</a></li>
                     </ul>
                   </nav>
                 </div>

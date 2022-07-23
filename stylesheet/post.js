@@ -17,16 +17,31 @@ function postUser(){
     })
 }
 
-$(document).ready(function(){
-    postUser();
-})
+function writeNoticeUser(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+            window.location.href='writeNotice.html';
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
 
-// alert(Object.keys(data).length);
-// alert(data[0]['content']);
+
+function clickNotice(num){
+    var noticeNum = $('#notice_link' + num + ' div:nth-child(3)').attr('id');
+    sessionStorage.setItem('noticeNum', noticeNum);
+    location.href="postDetails.html";
+}
 
 
 //notice.html
 function getNotice(num){
+    window.scrollTo(0,0);
     for(var i = 0; i < 10; i++){
         $('#notice_link' + i).removeAttr('style');
     }
@@ -59,10 +74,19 @@ function getNotice(num){
     })
 }
 
-$(document).ready(function(){
-    getNotice(1);
-})
-
+function getNoticePageNum(num){
+    $.ajax({
+        type: "GET",
+        url: domain + "noticelist?page=" + num,
+        contentType: 'application/json',
+        success: function(data){
+            var pageNum = data.totalPages + 1;
+            for(var i = 1; i < pageNum; i++){
+                $('#noticePagination').append('<li class="page-item"><a class="page-link" id="noticePage' + i + '" onclick="getNotice(' + i + ')">' + i + '</a></li>');
+            }
+        }
+    })
+}
 
 //게시물 상세 조회(공지사항)) -> 클릭했을 때 noticeNo 가 뭔지 어케 알아 
 function getNoticeContent(){ 
@@ -77,3 +101,10 @@ function getNoticeContent(){
         }
     })
 }
+
+
+$(document).ready(function(){
+    postUser();
+    getNotice(1);
+    getNoticePageNum(1);
+})

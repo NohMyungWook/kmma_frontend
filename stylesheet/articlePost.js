@@ -18,8 +18,32 @@ function postUser(){
     })
 }
 
+function writeArticleUser(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+            window.location.href='writeArticle.html';
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
+
+
+function clickArticle(num){
+    var articleNum = $('#article_link' + num + ' div:nth-child(3)').attr('id');
+    sessionStorage.setItem('articleNum', articleNum);
+    location.href="news_postDetails.html";
+    showArticle();
+}
+
+
 //articleNews.html에 가져오기
 function getArticle(num){
+    window.scrollTo(0,0);
     for(var i = 0; i < 10; i++){
         $('#article_link' + i).removeAttr('style');
     }
@@ -37,16 +61,32 @@ function getArticle(num){
                     $('#news_list_title' + startNum).html(data.content[startNum]['title']);
                     $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
                     $('#news_list_content' + startNum).html(data.content[startNum]['content']);
+                    $('#article_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['articleNo']));
                 }
             } else{
                 for(startNum; startNum < pageNum; startNum++){
                     $('#news_list_title' + startNum).html(data.content[startNum]['title']);
                     $('#news_list_time' + startNum).html(data.content[startNum]['regdate']);
                     $('#news_list_content' + startNum).html(data.content[startNum]['content']);
+                    $('#article_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['articleNo']));
                 }
                 for(pageNum; pageNum < 10; pageNum++){
                     $('#article_link'+ pageNum).css('display', 'none');
                 }
+            }
+        }
+    })
+}
+
+function getArticlePageNum(num){
+    $.ajax({
+        type: "GET",
+        url: domain + "articlelist?page=" + num,
+        contentType: 'application/json',
+        success: function(data){
+            var pageNum = data.totalPages + 1;
+            for(var i = 1; i < pageNum; i++){
+                $('#articlePagination').append('<li class="page-item"><a class="page-link" id="articlePage' + i + '" onclick="getArticle(' + i + ')">' + i + '</a></li>');
             }
         }
     })
@@ -69,4 +109,5 @@ function getArticleContent(){
 $(document).ready(function(){
     postUser();
     getArticle(1);
+    getArticlePageNum(1);
 })
