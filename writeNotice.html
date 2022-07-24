@@ -16,6 +16,8 @@
     <script src="/stylesheet/mypage.js"></script>
     <script src="/stylesheet/post.js"></script>
     <script src="/stylesheet/ajax.js"></script>
+    <script src="/stylesheet/writeNotice.js"></script>
+
 
     <!-- include summernote css/js-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
@@ -109,9 +111,9 @@
           <p>제목 : </p>
           <input type="text" class="post_notice_title">
         </div>
-        <div id="summernote"></div> 
+        <div id="summernote" name="content"></div> 
         <div class="make_notice_bt">
-          <button type="button" class="btn btn-outline-dark">등록하기</button>
+          <button type="button" class="btn btn-outline-dark" onclick="imgChange()">등록하기</button>
         </div>
       </div>
     </div>

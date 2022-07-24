@@ -43,6 +43,45 @@ function stopAction(){
     clearInterval(interval);
 }
 
+function getNotice(num){
+    for(var i = 0; i < 10; i++){
+        $('#notice_link' + i).removeAttr('style');
+    }
+    $.ajax({
+        type: "GET",
+        url: domain + "noticelist?page=" + num,
+        contentType: 'application/json',
+        success: function(data){
+            var startNum = 0;
+            for(startNum; startNum < 3; startNum++){
+                $('#notice_list_title' + startNum).html(data.content[startNum]['title']);
+                $('#notice_list_time' + startNum).html(data.content[startNum]['regdate']);
+                $('#notice_link' + startNum +' div:nth-child(4)').attr("id", (data.content[startNum]['noticeNo']));
+            }
+        }
+    })
+}
+
+function clickNotice(num){
+    var noticeNum = $('#notice_link' + num + ' div:nth-child(4)').attr('id');
+    sessionStorage.setItem('noticeNum', noticeNum);
+    location.href="postDetails.html";
+}
+
+function getNoticeContent(){ 
+    $.ajax({
+        type: "GET",
+        url: domain + "notice/" + noticeNo,
+        contentType: 'application/json',
+        success: function(data){
+            $('#post_details_title').html(data.title);
+            $('.post_details_content').html(data.content);
+            $('.post_upload_time').html(data.regdate);
+        }
+    })
+}
+
+
 //index.html 페이지에 최근 공지글 3개
 function getIndexNotice(){
     $.ajax({
@@ -50,19 +89,20 @@ function getIndexNotice(){
         url: domain + "notice/main",
         contentType: 'application/json',
         success: function(data){
-            $('#index_notice_title1').html(data[0]['title']);
-            $('#index_notice_content1').html(data[0]['content']);
-            $('#index_notice_date1').html(data[0]['regdate']);
-            $('#index_notice_title2').html(data[1]['title']);
-            $('#index_notice_content2').html(data[1]['content']);
-            $('#index_notice_date2').html(data[1]['regdate']);
-            $('#index_notice_title3').html(data[2]['title']);
-            $('#index_notice_content3').html(data[2]['content']);
-            $('#index_notice_date3').html(data[2]['regdate']);
+            $('#index_notice_title0').html(data[0]['title']);
+            $('#index_notice_content0').html(data[0]['content']);
+            $('#index_notice_date0').html(data[0]['regdate']);
+            $('#index_notice_title1').html(data[1]['title']);
+            $('#index_notice_content1').html(data[1]['content']);
+            $('#index_notice_date1').html(data[1]['regdate']);
+            $('#index_notice_title2').html(data[2]['title']);
+            $('#index_notice_content2').html(data[2]['content']);
+            $('#index_notice_date2').html(data[2]['regdate']);
         }
     })
 }
 
 $(document).ready(function(){
     getIndexNotice();
+    getNotice(1);
 })
