@@ -110,6 +110,6 @@ function getArticleContent(){
 
 $(document).ready(function(){
     postUser();
-    getArticlePageNum(1);
     getArticle(1);
+    getArticlePageNum(1);
 })

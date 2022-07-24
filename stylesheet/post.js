@@ -45,7 +45,7 @@ function getNotice(num){
     for(var i = 0; i < 10; i++){
         $('#notice_link' + i).removeAttr('style');
     }
-    $('#noticePage1').css('background-color', 'white');
+    $('#noticePagination a').css('background-color', 'white');
     $('#noticePage' + num).css('background-color', 'rgb(214, 214, 214)');
     $.ajax({
         type: "GET",
