@@ -10,6 +10,10 @@ body{
     display: block;
 }
 
+header{
+    min-width: 375px;
+}
+
 .btn{
     cursor: pointer;
 }
@@ -257,6 +261,16 @@ body{
 #footer_img_wrap{
     display: flex;
     justify-content: flex-start;
+}
+
+@media(max-width: 755px){
+    .col-1{
+        display: none;
+    }
+    .col-4{
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 #index_notice_content0 img, #index_notice_content1 img, #index_notice_content2 img{

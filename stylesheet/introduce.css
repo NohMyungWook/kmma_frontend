@@ -19,7 +19,9 @@
 
 @media(max-width: 500px){
     .title_out_wrap{
-        height: 50px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+        height: 80px;
     }
 }
 
@@ -270,6 +272,13 @@
     font-size: 1.5rem;
 }
 
+@media(max-width : 1030px){
+    .article_content_tabname > div{
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+}
 .tab_content_margin h4{
     color: black;
 }
@@ -303,6 +312,11 @@
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
+@media (max-width: 1030px){
+    .route_content_box{
+        width: 80%;
+    }
+}
 /* 주요사업 - 교육 */
 .education_body{
     height: 100%;
@@ -525,6 +539,7 @@
 }
 
 
+
 .notice_search_select{
     height: 30px;
     width: 70px;
@@ -547,6 +562,26 @@
     background-color: white;
 }
 
+@media (max-width: 520px){
+    .notice_search{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .notice_search_wrap{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width: 420px){
+    .notice_search_wrap{
+        display: none;
+    }
+}
 .notice_list{
     margin-top: 30px;
     width: 100%;
@@ -616,12 +651,32 @@
     justify-content: space-between;
 }
 
-
 .news_search_area{
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+@media (max-width: 520px){
+    .news_search{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .news_search_area{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width: 420px){
+    .news_search_area{
+        display: none;
+    }
 }
 
 .news_write_bt_wrap{
