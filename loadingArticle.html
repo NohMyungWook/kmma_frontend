@@ -12,22 +12,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheet/index.css">
     <link rel="stylesheet" href="stylesheet/introduce.css">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="/stylesheet/mypage.js"></script>
-    <script src="/stylesheet/post.js"></script>
     <script src="/stylesheet/ajax.js"></script>
-    <script src="/stylesheet/writeNotice.js"></script>
-
-
-    <!-- include summernote css/js-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+    <script src="/stylesheet/article_tab.js"></script>
+    <script src="/stylesheet/mypage.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script>
-      $(document).ready(function() {
-        $('#summernote').summernote({
-		      height: 400     
-        });
-      });
+        setTimeout(function(){
+            location.href = "activityNews.html";
+        },1500);
     </script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
@@ -100,22 +92,10 @@
         </div>
       </nav>
 </header>
-  <div>
-    <div class="writeNotice_body">
-      <div class="title_out_wrap">
-        <div class="title_text">공지사항</div>
-        <div class="title_under"></div>
-      </div>
-      <div class="make_notice_wrap">
-        <div class="make_notice_title">
-          <p>제목 : </p>
-          <input type="text" class="post_notice_title">
-        </div>
-        <div id="summernote" name="content"></div> 
-        <div class="make_notice_bt">
-          <button type="button" class="btn btn-outline-dark" onclick="makeNoticePost()">등록하기</button>
-        </div>
-      </div>
+  <div class="loadingBody">
+    <div class="loadingWrap">
+        <img src = "img/subImage/loading.gif" />
+        <p>등록 중입니다.</p>
     </div>
   </div>
   <!-- footer -->

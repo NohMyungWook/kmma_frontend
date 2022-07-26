@@ -108,8 +108,16 @@ function getArticleContent(){
     })
 }
 
+function noImage(){
+    for(var i = 0; i < 5; i++){
+        var name = '#news_list_content' + i;
+        $(name + 'img').css('display', 'none');
+    }
+}
+
 $(document).ready(function(){
     postUser();
     getArticle(1);
+    noImage();
     getArticlePageNum(1);
 })

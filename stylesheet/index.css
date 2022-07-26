@@ -259,3 +259,6 @@ body{
     justify-content: flex-start;
 }
 
+#index_notice_content0 img, #index_notice_content1 img, #index_notice_content2 img{
+    display: none;
+}

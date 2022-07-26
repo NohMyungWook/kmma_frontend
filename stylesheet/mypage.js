@@ -20,6 +20,7 @@ $(document).ready(function(){
         },
         error: function(data){
             console.log("validation error");
+            sessionStorage.clear();
             $('.login-signup-bt').css('display', 'block');
             $('.name-mypage-bt').css('display', 'none');
             $('.index_logout_bt').css('display', 'none');

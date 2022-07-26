@@ -89,15 +89,11 @@ function getIndexNotice(){
         url: domain + "notice/main",
         contentType: 'application/json',
         success: function(data){
-            $('#index_notice_title0').html(data[0]['title']);
-            $('#index_notice_content0').html(data[0]['content']);
-            $('#index_notice_date0').html(data[0]['regdate']);
-            $('#index_notice_title1').html(data[1]['title']);
-            $('#index_notice_content1').html(data[1]['content']);
-            $('#index_notice_date1').html(data[1]['regdate']);
-            $('#index_notice_title2').html(data[2]['title']);
-            $('#index_notice_content2').html(data[2]['content']);
-            $('#index_notice_date2').html(data[2]['regdate']);
+            for(var i = 0; i < 3; i++){
+                $('#index_notice_title' + i).html(data[i]['title']);
+                $('#index_notice_content' + i).html(data[i]['content']);
+                $('#index_notice_date' + i).html(data[i]['regdate']);
+            }
         }
     })
 }

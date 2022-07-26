@@ -1,19 +1,19 @@
 var domain = "https://kmma.io/kmma/";
 
-function makeNoticePost(){ 
-    var noticeTitle = $('.post_notice_title').val();
-    var noticeContent = $('#summernote').summernote('code');
+function ArticlePost(){ 
+    var articleTitle = $('.post_notice_title').val();
+    var articleContent = $('#summernote').summernote('code');
 
     $.ajax({
         type: "POST",
-        url: domain + 'image/notice',
+        url: domain + 'image/article',
         data:JSON.stringify({
-            "title": noticeTitle,
-            "content" : noticeContent
-        }), 
+            "title": articleTitle,
+            "content" : articleContent
+        }),
         contentType: 'application/json',
         success: function(data){
-            window.location.href='loadingNotice.html';
+            window.location.href='loadingArticle.html';
         }
     })
 }
@@ -24,7 +24,7 @@ function makeNoticePost(){
 //         url: domain + 'validation/authority',
 //         contentType: 'application/json',
 //         success: function(data){
-//             window.location.href='writeNotice.html';
+//             window.location.href='writeNews.html';
 //         },
 //         error: function(data){
 //             window.location.href='index.html';
@@ -35,4 +35,3 @@ function makeNoticePost(){
 // $(document).ready(function(){
 //     postUser();
 // })
-

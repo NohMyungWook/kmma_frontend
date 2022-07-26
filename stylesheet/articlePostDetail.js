@@ -13,3 +13,25 @@ $(document).ready(function(){
     })
     sessionStorage.removeItem('articleNum');
 })
+
+var articleNum = sessionStorage.getItem('articleNum');
+
+function move_editArticle(){
+    var articleTitle = $('#article_details_title').html();
+    var articleContent = $('.article_details_content').html();
+    sessionStorage.setItem('articleTitle', articleTitle);
+    sessionStorage.setItem('articleContent', articleContent);
+    sessionStorage.setItem('articleNum', articleNum);
+    window.location.href='editArticle.html';
+}
+
+function delete_article(){
+    $.ajax({
+        type: "DELETE",
+        url: domain + 'article/' + articleNum,
+        contentType: 'application/json',
+        success: function(data){
+            window.location.href = 'activityNews.html';
+        }
+    })
+}

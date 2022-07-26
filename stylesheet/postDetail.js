@@ -29,6 +29,32 @@ function getSearchArticlePageNum(){
     })
 }
 
+
+
+var noticeNum = sessionStorage.getItem('noticeNum');
+
+function move_editNotice(){
+    var noticeTitle = $('#post_details_title').html();
+    var noticeContent = $('.post_details_content').html();
+    sessionStorage.setItem('noticeTitle', noticeTitle);
+    sessionStorage.setItem('noticeContent', noticeContent);
+    sessionStorage.setItem('noticeNum', noticeNum);
+    window.location.href='editNotice.html';
+}
+
+function delete_notice(){
+    $.ajax({
+        type: "DELETE",
+        url: domain + 'notice/' + noticeNum,
+        contentType: 'application/json',
+        success: function(data){
+            window.location.href = 'notice.html';
+        }
+    })
+}
+// var noticeTitle = $('.post_notice_title').val();
+// var noticeContent = $('#summernote').summernote('code');
+
 // function showNotice(data){
 //     $.ajax({
 //         type: "GET",
