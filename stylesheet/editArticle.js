@@ -22,7 +22,7 @@ function editArticleUpload(){
         }),
         contentType: 'application/json',
         success: function(data){
-            window.location.href = 'activityNews.html';
+            window.location.href = 'loadingEditNews.html';
         }
     })
 }

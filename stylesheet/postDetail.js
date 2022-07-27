@@ -1,6 +1,7 @@
 var domain = "https://kmma.io/kmma/";
 
 $(document).ready(function(){
+    postUser();
     getSearchArticlePageNum();
     $.ajax({
         type: "GET",
@@ -29,6 +30,22 @@ function getSearchArticlePageNum(){
     })
 }
 
+//관리자 검증
+function postUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+            $('#post_edit_bt').css('display', 'block');
+            $('#post_delete_bt').css('display', 'block');
+        },
+        error: function(data){
+            $('#post_edit_bt').css('display', 'none');
+            $('#post_delete_bt').css('display', 'none');
+        }
+    })
+}
 
 
 var noticeNum = sessionStorage.getItem('noticeNum');
@@ -48,36 +65,8 @@ function delete_notice(){
         url: domain + 'notice/' + noticeNum,
         contentType: 'application/json',
         success: function(data){
-            window.location.href = 'notice.html';
+            window.location.href = 'loadingDeleteNotice.html';
         }
     })
 }
-// var noticeTitle = $('.post_notice_title').val();
-// var noticeContent = $('#summernote').summernote('code');
-
-// function showNotice(data){
-//     $.ajax({
-//         type: "GET",
-//         url: domain + "notice/" + detail,
-//         contentType: 'application/json',
-//         success: function(data){
-//             showNotice(data);
-//         }
-//     })
-// }
-
-// function clickArticle(num){
-//     var articleNum = $('#notice_link' + num + ' div:nth-child(3)').attr('id');
-//     location='news_postDetails.html';
-//     $.ajax({
-//         type: "GET",
-//         url: domain + "article/" + articleNum,
-//         contentType: 'application/json',
-//         success: function(data){
-//             $('#article_details_title').html(data.title);
-//             $('.article_upload_time').html(data.regdate);
-//             $('.article_details_content').html(data.content);
-//         }
-//     })
-// }
 

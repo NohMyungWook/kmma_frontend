@@ -22,7 +22,7 @@ function editNoticeUpload(){
         }),
         contentType: 'application/json',
         success: function(data){
-            window.location.href = 'notice.html';
+            window.location.href = 'loadingEditNotice.html';
         }
     })
 }

@@ -1,6 +1,7 @@
 var domain = "https://kmma.io/kmma/";
 
 $(document).ready(function(){
+    postUser();
     $.ajax({
         type: "GET",
         url: domain + "article/" + sessionStorage.getItem('articleNum'),
@@ -13,6 +14,23 @@ $(document).ready(function(){
     })
     sessionStorage.removeItem('articleNum');
 })
+
+//관리자 검증
+function postUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+            $('#news_post_edit_bt').css('display', 'block');
+            $('#news_post_delete_bt').css('display', 'block');
+        },
+        error: function(data){
+            $('#news_post_edit_bt').css('display', 'none');
+            $('#news_post_delete_bt').css('display', 'none');
+        }
+    })
+}
 
 var articleNum = sessionStorage.getItem('articleNum');
 
@@ -31,7 +49,7 @@ function delete_article(){
         url: domain + 'article/' + articleNum,
         contentType: 'application/json',
         success: function(data){
-            window.location.href = 'activityNews.html';
+            window.location.href = 'loadingDeleteNews.html';
         }
     })
 }
