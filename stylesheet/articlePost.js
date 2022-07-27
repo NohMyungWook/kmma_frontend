@@ -24,7 +24,7 @@ function writeArticleUser(){
         url: domain + 'validation/authority',
         contentType: 'application/json',
         success: function(data){
-            window.location.href='writeArticle.html';
+            window.location.href='writeNews.html';
         },
         error: function(data){
             window.location.href="index.html";
