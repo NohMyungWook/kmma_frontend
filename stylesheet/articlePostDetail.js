@@ -2,6 +2,7 @@ var domain = "https://kmma.io/kmma/";
 
 $(document).ready(function(){
     postUser();
+    beforeAfterPost();
     $.ajax({
         type: "GET",
         url: domain + "article/" + sessionStorage.getItem('articleNum'),
@@ -33,6 +34,47 @@ function postUser(){
 }
 
 var articleNum = sessionStorage.getItem('articleNum');
+
+//이전 게시물 다음 게시물 제목 가져오기
+function beforeAfterPost(){
+    $.ajax({
+        type: "GET",
+        url: domain + "pageinfo/article/" + articleNum,
+        contentType: 'application/json',
+        success: function(data){
+            var beforeTitle, nextTitle;
+            if(data.before == null){
+                $('.before_post_link').css('display', 'none');
+            }else{
+                beforeTitle = data.before;
+                $('.before_post_link').attr('id', data.beforeNo);
+            }
+
+            if(data.after == null){
+                $('.before_post_link').css('border-bottom', '1px solid rgb(184, 184, 184)');
+                $('.next_post_link').css('display', 'none');
+            }else{
+                nextTitle = data.after;
+                $('.next_post_link').attr('id', data.afterNo);
+            }
+
+            $('.before_post_title').html(beforeTitle);
+            $('.next_post_title').html(nextTitle);
+        }
+    })
+}
+
+function moveBefore(){
+    var beforeNo = $('.before_post_link').attr('id');
+    sessionStorage.setItem('articleNum', beforeNo);
+    location.href = "news_postDetails.html";
+}
+
+function moveNext(){
+    var nextNo = $('.next_post_link').attr('id');
+    sessionStorage.setItem('articleNum', nextNo);
+    location.href = "news_postDetails.html";
+}
 
 function move_editArticle(){
     var articleTitle = $('#article_details_title').html();

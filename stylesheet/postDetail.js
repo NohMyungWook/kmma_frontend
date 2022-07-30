@@ -3,6 +3,7 @@ var domain = "https://kmma.io/kmma/";
 $(document).ready(function(){
     postUser();
     getSearchArticlePageNum();
+    beforeAfterPost();
     $.ajax({
         type: "GET",
         url: domain + "notice/" + sessionStorage.getItem('noticeNum'),
@@ -50,6 +51,47 @@ function postUser(){
 
 var noticeNum = sessionStorage.getItem('noticeNum');
 
+//이전 게시물 다음 게시물 제목 가져오기
+function beforeAfterPost(){
+    alert(noticeNum);
+    $.ajax({
+        type: "GET",
+        url: domain + "pageinfo/notice/" + noticeNum,
+        contentType: 'application/json',
+        success: function(data){
+            var beforeTitle, nextTitle;
+            if(data.before == null){
+                $('.before_post_link').css('display', 'none');
+            }else{
+                beforeTitle = data.before;
+                $('.before_post_link').attr('id', data.beforeNo);
+            }
+
+            if(data.after == null){
+                $('.before_post_link').css('border-bottom', '1px solid rgb(184, 184, 184)');
+                $('.next_post_link').css('display', 'none');
+            }else{
+                nextTitle = data.after;
+                $('.next_post_link').attr('id', data.afterNo);
+            }
+            $('.before_post_title').html(beforeTitle);
+            $('.next_post_title').html(nextTitle);
+        }
+    })
+}
+
+function moveBefore(){
+    var beforeNo = $('.before_post_link').attr('id');
+    sessionStorage.setItem('noticeNum', beforeNo);
+    location.href = "postDetails.html";
+}
+
+function moveNext(){
+    var nextNo = $('.next_post_link').attr('id');
+    sessionStorage.setItem('noticeNum', nextNo);
+    location.href = "postDetails.html";
+}
+
 function move_editNotice(){
     var noticeTitle = $('#post_details_title').html();
     var noticeContent = $('.post_details_content').html();
@@ -69,4 +111,3 @@ function delete_notice(){
         }
     })
 }
-

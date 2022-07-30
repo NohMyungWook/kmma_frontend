@@ -16,18 +16,7 @@
     <script src="/stylesheet/mypage.js"></script>
     <script src="/stylesheet/post.js"></script>
     <script src="/stylesheet/ajax.js"></script>
-    <script src="/stylesheet/writeArticle.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#summernote').summernote({
-		      height: 400     
-        });
-      });
-    </script>
+    <script src="/stylesheet/writeData.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -100,18 +89,35 @@
       </nav>
 </header>
   <div>
-    <div class="writeNotice_body">
+    <div class="writeData_body">
       <div class="title_out_wrap">
-        <div class="title_text">활동소식 및 보도자료</div>
+        <div class="title_text">자료실</div>
         <div class="title_under"></div>
       </div>
-      <div class="make_notice_wrap">
-        <div class="make_notice_title">
+      <div class="make_data_wrap">
+        <div class="make_data_title">
           <p>제목 : </p>
-          <input type="text" class="post_notice_title">
+          <input type="text" class="post_data_title">
         </div>
-        <div id="summernote"></div> 
-        <div class="make_notice_bt">
+        <div class="make_data_form">
+            <div class="upload_file">
+                <form id="uploadForm">
+                    <input type="file" name="file" style="
+                    background-color: white;
+                    border: 1px solid black;
+                    padding: 7px 12px;
+                    border-radius: 8px;">
+                </form>
+            </div>
+            <div class="add_upload_file">
+                <button type="button" class="btn btn-outline-dark" onclick="addUpload()">파일 추가하기</button>
+            </div>
+            <div class="upload_content">
+                <p>설명</p>
+                <input type="text">
+            </div>
+        </div>
+        <div class="make_data_bt">
           <button type="button" class="btn btn-outline-dark" onclick="ArticlePost()">등록하기</button>
         </div>
       </div>

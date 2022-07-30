@@ -90,20 +90,6 @@ function getNoticePageNum(num){
     })
 }
 
-//게시물 상세 조회(공지사항)) -> 클릭했을 때 noticeNo 가 뭔지 어케 알아 
-function getNoticeContent(){ 
-    $.ajax({
-        type: "GET",
-        url: domain + "notice/" + noticeNo,
-        contentType: 'application/json',
-        success: function(data){
-            $('#post_details_title').html(data.title);
-            $('.post_details_content').html(data.content);
-            $('.post_upload_time').html(data.regdate);
-        }
-    })
-}
-
 
 $(document).ready(function(){
     postUser();

@@ -33,7 +33,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   협회소개
-                </a>
+                </a>  
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="greetings.html">인사말</a></li>
                   <li><a class="dropdown-item" href="introAssociation.html">협회소개</a></li>
@@ -65,7 +65,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">자료실</a>
+                <a class="nav-link" href="data.html">자료실</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -97,7 +97,13 @@
             <div class="article_details_content_wrap">
                 <div class="article_details_title">
                     <div id="article_details_title" style="font-size: 30px;"></div>
+                    <div style="width: 90%; display: flex; flex-direction:row; justify-content: space-between;">
+                      <div class="article_user_name_picture" style="width:50%;">
+                        <img src="/img/subImage/notice_user_name.png">
+                        <div>관리자</div>
+                      </div>
                     <div class="article_upload_time"></div>
+                    </div>
                 </div>
                 <div class="article_details_content">
                     <div>
@@ -108,39 +114,31 @@
                   <button type='button' class="btn btn-outline-dark" id="news_post_delete_bt" onclick="delete_article()">삭제하기</button>
                 </div>
 
-                <!-- <div class="post_list_link">
+                <div class="post_list_link">
 
-                  <div class="before_post_link">
+                  <div class="before_post_link" onclick="moveBefore();">
                     <div class="before_post_link_bt_wrap">
                       <div class="before_post_link_bt">
                         <img src="/img/subImage/arrow.webp">
                         <div class="before_post_link_name">이전글</div>
                       </div>
                       <div class="before_post_title">
-                        이전글로 이동합니다. 
                       </div>
-                    </div>
-                    <div class="before_post_time">
-                      2022-07-07
                     </div>
                   </div>
                   
-                  <div class="next_post_link">
+                  <div class="next_post_link" onclick="moveNext();">
                     <div class="next_post_link_bt_wrap">
                       <div class="next_post_link_bt">
                         <img src="/img/subImage/arrow.webp">
                         <div class="next_post_link_name">다음글</div>
                       </div>
                       <div class="next_post_title">
-                        다음글로 이동합니다. 
                       </div>
-                    </div>
-                    <div class="next_post_time">
-                      2022-07-09
                     </div>
                   </div>
 
-                </div> -->
+                </div> 
             </div>
 
 
@@ -196,7 +194,7 @@
       <h5 style="font-weight: bold;">협회소식</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
-          <a href="notice.html" class="nav-link p-0 text-muted">공지사항</a>
+          <a href="notice.html" class="nav-link p-0 text-muted">공지사항</a> -->
         </li>
         <li class="nav-item mb-2">
           <a href="activityNews.html" class="nav-link p-0 text-muted">활동소식/보도자료</a>

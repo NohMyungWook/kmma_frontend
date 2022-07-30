@@ -14,20 +14,8 @@
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
-    <script src="/stylesheet/post.js"></script>
     <script src="/stylesheet/ajax.js"></script>
-    <script src="/stylesheet/writeArticle.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#summernote').summernote({
-		      height: 400     
-        });
-      });
-    </script>
+    <script src="/stylesheet/dataDetail.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -100,21 +88,48 @@
       </nav>
 </header>
   <div>
-    <div class="writeNotice_body">
-      <div class="title_out_wrap">
-        <div class="title_text">활동소식 및 보도자료</div>
-        <div class="title_under"></div>
-      </div>
-      <div class="make_notice_wrap">
-        <div class="make_notice_title">
-          <p>제목 : </p>
-          <input type="text" class="post_notice_title">
+    <div class="data_details_body">
+        <div class="data_details_wrap">
+            <div class="title_out_wrap">
+              <div class="title_text">자료실</div>
+              <div class="title_under"></div>
+            </div>
+            <div class="data_details_content_wrap">
+                <div class="data_details_title">
+                    <div id="data_details_title" style="font-size: 30px;"></div>
+                    <div style="width: 90%; display: flex; flex-direction:row; justify-content: space-between;">
+                    <div class="data_user_name_picture" style="width:50%;">
+                      <img src="/img/subImage/notice_user_name.png">
+                      <div>관리자</div>
+                    </div>
+                    <div class="data_upload_time" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="data_details_content">
+                    <div class="data_file">
+                        파일이름1. 확장자 <br>
+                        파일이름1. 확장자 <br>
+                        파일이름1. 확장자 <br>
+                        파일이름1. 확장자 <br>
+                    </div>
+                    <div class="data_content">
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                        어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요어쩌라고요
+                    </div>
+                </div>
+            </div>
+
+            <div class="data_edit_bt">
+                <button type='button' class="btn btn-outline-dark" id="data_delete_bt">삭제하기</button>
+            </div>
+
         </div>
-        <div id="summernote"></div> 
-        <div class="make_notice_bt">
-          <button type="button" class="btn btn-outline-dark" onclick="ArticlePost()">등록하기</button>
-        </div>
-      </div>
     </div>
   </div>
   <!-- footer -->

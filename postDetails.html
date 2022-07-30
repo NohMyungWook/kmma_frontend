@@ -65,7 +65,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">자료실</a>
+                <a class="nav-link" href="data.html">자료실</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -97,7 +97,13 @@
             <div class="post_details_content_wrap">
                 <div class="post_details_title">
                     <div id="post_details_title" style="font-size: 30px;"></div>
-                    <div class="post_upload_time"></div>
+                    <div style="width: 90%; display: flex; flex-direction:row; justify-content: space-between;">
+                    <div class="post_user_name_picture" style="width:50%;">
+                      <img src="/img/subImage/notice_user_name.png">
+                      <div>관리자</div>
+                    </div>
+                    <div class="post_upload_time" style="width: 50%;"></div>
+                    </div>
                 </div>
                 <div class="post_details_content">
                     <div>
@@ -107,40 +113,34 @@
                   <button type='button' class="btn btn-outline-dark" id="post_edit_bt" onclick="move_editNotice()">수정하기</button>
                   <button type='button' class="btn btn-outline-dark" id="post_delete_bt" onclick="delete_notice()">삭제하기</button>
                 </div>
-<!-- 
+
                 <div class="post_list_link">
 
-                  <div class="before_post_link">
+                  <div class="before_post_link" onclick="moveBefore();">
                     <div class="before_post_link_bt_wrap">
                       <div class="before_post_link_bt">
                         <img src="/img/subImage/arrow.webp">
                         <div class="before_post_link_name">이전글</div>
+                        <div style="flex: 0;"></div>
                       </div>
                       <div class="before_post_title">
-                        이전글로 이동합니다. 
                       </div>
-                    </div>
-                    <div class="before_post_time">
-                      2022-07-07
                     </div>
                   </div>
                   
-                  <div class="next_post_link">
+                  <div class="next_post_link" onclick="moveNext();">
                     <div class="next_post_link_bt_wrap">
                       <div class="next_post_link_bt">
                         <img src="/img/subImage/arrow.webp">
                         <div class="next_post_link_name">다음글</div>
+                        <div style="flex: 0;"></div>
                       </div>
                       <div class="next_post_title">
-                        다음글로 이동합니다. 
                       </div>
-                    </div>
-                    <div class="next_post_time">
-                      2022-07-09
                     </div>
                   </div>
 
-                </div> -->
+                </div>
             </div>
 
 

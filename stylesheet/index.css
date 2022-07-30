@@ -101,6 +101,7 @@ header{
     flex-direction: column;
     padding: 15px 30px 0 15px;
     margin: 10px 0;
+    cursor: pointer;
 }
 
 .notice_card_title{

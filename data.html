@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE  html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,20 +14,8 @@
     <link rel="stylesheet" href="stylesheet/introduce.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/stylesheet/mypage.js"></script>
-    <script src="/stylesheet/post.js"></script>
     <script src="/stylesheet/ajax.js"></script>
-    <script src="/stylesheet/writeArticle.js"></script>
-
-    <!-- include summernote css/js-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#summernote').summernote({
-		      height: 400     
-        });
-      });
-    </script>
+    <script src="/stylesheet/data.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
 <body>
@@ -100,21 +88,82 @@
       </nav>
 </header>
   <div>
-    <div class="writeNotice_body">
-      <div class="title_out_wrap">
-        <div class="title_text">활동소식 및 보도자료</div>
-        <div class="title_under"></div>
-      </div>
-      <div class="make_notice_wrap">
-        <div class="make_notice_title">
-          <p>제목 : </p>
-          <input type="text" class="post_notice_title">
+    <div class="data_body">
+        <div class="data_wrap">
+            <div class="title_out_wrap">
+              <div class="title_text">자료실</div>
+              <div class="title_under"></div>
+            </div>
+            <div class="data_content">
+                <div class="data_search">
+                    <div class="data_write_bt_wrap">
+                      <button type="button" class="btn btn-outline-dark" onclick="location.href='writeData.html'">작성하기</button>
+                    </div>
+                </div>
+                <div class="data_list">
+                    <a id="data_link0" onclick="clickData(0)">
+                        <div class="data_list_title" id="data_list_title0"></div>
+                        <div class="data_list_time" id="data_list_time0"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link1" onclick="clickData(1)">
+                        <div class="data_list_title" id="data_list_title1"></div>
+                        <div class="data_list_time" id="data_list_time1"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link2" onclick="clickData(2)">
+                        <div class="data_list_title" id="data_list_title2"></div>
+                        <div class="data_list_time" id="data_list_time2"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link3" onclick="clickData(3)">
+                        <div class="data_list_title" id="data_list_title3"></div>
+                        <div class="data_list_time" id="data_list_time3"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link4" onclick="clickData(4)">
+                        <div class="data_list_title" id="data_list_title4"></div>
+                        <div class="data_list_time" id="data_list_time4"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link5" onclick="clickData(5)">
+                        <div class="data_list_title" id="data_list_title5"></div>
+                        <div class="data_list_time" id="data_list_time5"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link6" onclick="clickData(6)">
+                        <div class="data_list_title" id="data_list_title6"></div>
+                        <div class="data_list_time" id="data_list_time6"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link7" onclick="clickData(7)">
+                        <div class="data_list_title" id="data_list_title7"></div>
+                        <div class="data_list_time" id="data_list_time7"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link8" onclick="clickData(8)">
+                        <div class="data_list_title" id="data_list_title8"></div>
+                        <div class="data_list_time" id="data_list_time8"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                    <a id="data_link9" onclick="clickData(9)">
+                        <div class="data_list_title" id="data_list_title9"></div>
+                        <div class="data_list_time" id="data_list_time9"></div>
+                        <div style="flex: 0;"></div>
+                    </a>
+                </div>
+                <div class="data_page_num">
+                  <nav aria-label="Page navigation example" id="pageNav1">
+                    <ul class="pagination" id="dataPagination">           
+                    </ul>
+                  </nav>
+                  <nav aria-label="Page navigation example" id="pageNav2">
+                    <ul class="pagination" id="dataSearchPagination">
+                    </ul>
+                  </nav>
+                </div>
+            </div>
         </div>
-        <div id="summernote"></div> 
-        <div class="make_notice_bt">
-          <button type="button" class="btn btn-outline-dark" onclick="ArticlePost()">등록하기</button>
-        </div>
-      </div>
     </div>
   </div>
   <!-- footer -->
