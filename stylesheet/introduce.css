@@ -143,6 +143,9 @@
     .second_intro_content{
         margin-top: 30px;
     }
+    .greetings_img img{
+        width: 200px;
+    }
 }
 
 .content_title{

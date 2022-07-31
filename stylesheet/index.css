@@ -43,8 +43,15 @@ header, #body{
     .navbar-nav > li{
         margin-right: 5px;
     }
-    .carousel, .content_part{
+    .carousel, .content_part, .rolling_wrap{
         width: 95%;
+    }
+    .carousel-inner{
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.744);
+    }
+    .carousel-item img{
+        height: 150px;
     }
 }
 
@@ -155,6 +162,7 @@ header, #body{
 .notice_part > nav{
     margin: 10px auto 0;
 }
+
 /* */
 .media_part{
     background-color: rgb(240, 240, 240);
@@ -177,7 +185,7 @@ header, #body{
     .media_part{
         padding: 30px 20px 0 20px;
     }
-    .media_content{
+    .rolling_wrap, .media_content{
         width: 100%;
     }
 }
