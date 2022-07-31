@@ -31,14 +31,20 @@ header, #body{
 .carousel{
     width: 100%;
 }
+@media(max-width: 767px){
+    *{
+        font-size: small;
+    }
+}
 
-@media(max-width: 400px){
+@media(max-width: 767px){
     .navbar>.container-fluid{
         width: 95%;
         margin-left: 0px;
     }
     .navbar-nav{
         font-size: large;
+        margin-left: 0;
     }
     .navbar-nav > li{
         margin-right: 5px;
@@ -48,13 +54,10 @@ header, #body{
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 767px){
     .carousel-inner{
-        height: 200px;
+        height: 180px;
         background-color: rgba(0, 0, 0, 0.744);
-    }
-    .carousel-item img{
-        height: 160px;
     }
 }
 /* main image */
@@ -90,7 +93,15 @@ header, #body{
     width: 100%;
 }
 
-@media(max-width: 700px){
+@media(max-width: 767px){
+    .notice_content_wrap{
+        margin: 0;
+    }
+    .login-signup-bt{
+        font-weight: bold;
+    }
+}
+@media(max-width: 767px){
     .content_part{
         flex-direction: column;
     }
@@ -100,6 +111,7 @@ header, #body{
         padding: 30px 0px 0 0px;
         width: 100%;
     }
+
     .notice_title_wrap{
         padding-left: 15px;
         padding-top: 10px;
@@ -137,7 +149,6 @@ header, #body{
     flex-direction: column;
     flex: 8;
     justify-content: center;
-    margin: 20px 0;
 }
 
 .notice_card{
@@ -174,7 +185,7 @@ header, #body{
     flex-direction: column;
 }
 
-@media(max-width: 700px){
+@media(max-width: 767px){
     .media_part{
         padding: 30px 30px 0 30px;
     }
@@ -183,9 +194,9 @@ header, #body{
     }
 }
 
-@media(max-width: 400px){
+@media(max-width: 767px){
     .media_part{
-        padding: 30px 20px 0 20px;
+        padding: 10px 20px 0 20px;
     }
     .rolling_wrap, .media_content{
         width: 100%;
@@ -301,7 +312,6 @@ header, #body{
     color: gray;
 }
 
-
 .name-mypage-bt{
     padding-top: 20px;
     width: auto;
@@ -326,7 +336,7 @@ header, #body{
     justify-content: flex-start;
 }
 
-@media(max-width: 755px){
+@media(max-width: 767px){
     #footer_img_loco{
         width: 150px;
     }
