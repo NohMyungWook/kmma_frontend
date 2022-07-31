@@ -27,6 +27,5 @@ function deleteData(){
 }
 
 $(document).ready(function(){
-    alert(dataNum);
     getDataPost();
 })

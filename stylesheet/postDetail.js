@@ -53,7 +53,6 @@ var noticeNum = sessionStorage.getItem('noticeNum');
 
 //이전 게시물 다음 게시물 제목 가져오기
 function beforeAfterPost(){
-    alert(noticeNum);
     $.ajax({
         type: "GET",
         url: domain + "pageinfo/notice/" + noticeNum,

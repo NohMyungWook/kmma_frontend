@@ -46,15 +46,17 @@ header, #body{
     .carousel, .content_part, .rolling_wrap{
         width: 95%;
     }
+}
+
+@media(max-width: 500px){
     .carousel-inner{
         height: 200px;
         background-color: rgba(0, 0, 0, 0.744);
     }
     .carousel-item img{
-        height: 150px;
+        height: 160px;
     }
 }
-
 /* main image */
 .carousel-inner{
     background-color: rgba(0, 0, 0, 0.744);
