@@ -22,6 +22,49 @@ function getDataPost(){
     })
 }
 
+function loginCheck(){
+    // 세션 검증
+    $.ajax({
+        type: "GET",
+        url: domain + "validation/session/" + sessionStorage.getItem('loginId'),
+        contentType : "application/json",
+        success: function(data){
+            window.location.href="dataDetail.html";
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
+
+
+function beforeAfterPost(){
+    $.ajax({
+        type: "GET",
+        url: domain + "pageinfo/file/" + dataNum,
+        contentType: 'application/json',
+        success: function(data){
+            var beforeTitle, nextTitle;
+            if(data.before == null){
+                $('.before_post_link').css('display', 'none');
+            }else{
+                beforeTitle = data.before;
+                $('.before_post_link').attr('id', data.beforeNo);
+            }
+
+            if(data.after == null){
+                $('.before_post_link').css('border-bottom', '1px solid rgb(184, 184, 184)');
+                $('.next_post_link').css('display', 'none');
+            }else{
+                nextTitle = data.after;
+                $('.next_post_link').attr('id', data.afterNo);
+            }
+            $('.before_post_title').html(beforeTitle);
+            $('.next_post_title').html(nextTitle);
+        }
+    })
+}
+
 function deleteData(){
     $.ajax({
         type: "DELETE",
@@ -46,5 +89,7 @@ function moveNext(){
 }
 
 $(document).ready(function(){
+    loginCheck();
+    beforeAfterPost();
     getDataPost();
 })

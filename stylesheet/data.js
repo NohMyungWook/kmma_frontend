@@ -19,6 +19,20 @@ function getDataList(){
     })
 }
 
+function loginCheck(){
+    // 세션 검증
+    $.ajax({
+        type: "GET",
+        url: domain + "validation/session/" + sessionStorage.getItem('loginId'),
+        contentType : "application/json",
+        success: function(data){
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
+
 function getDataNum(num){
     $.ajax({
         type: "GET",
@@ -41,38 +55,7 @@ function clickData(num){
 
 
 $(document).ready(function(){
+    loginCheck();
     getDataList();
     getDataNum(1);
 })
-
-// {
-//     "content":[
-//     {"fileNo": 1004, "title": "test", "link": "https://s3.ap-northeast-2.amazonaws.com/kmma.io/file/1659063643897test.txt",…},
-//     {"fileNo": 9, "title": "fffd", "link": "https://s3.ap-northeast-2.amazonaws.com/kmma.io/file/1659062618099cors.txt",…}
-//     ],
-//     "pageable":{
-//     "sort":{
-//     "empty": true,
-//     "sorted": false,
-//     "unsorted": true
-//     },
-//     "offset": 0,
-//     "pageNumber": 0,
-//     "pageSize": 10,
-//     "paged": true,
-//     "unpaged": false
-//     },
-//     "totalPages": 1,
-//     "totalElements": 2,
-//     "last": true,
-//     "size": 10,
-//     "number": 0,
-//     "sort":{
-//     "empty": true,
-//     "sorted": false,
-//     "unsorted": true
-//     },
-//     "numberOfElements": 2,
-//     "first": true,
-//     "empty": false
-//     }
