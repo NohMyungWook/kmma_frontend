@@ -1,7 +1,9 @@
 var domain = "https://kmma.io/kmma/";
 
 function addUpload(){
-    alert($('#uploadForm').attr('class');
+    var className = $('#uploadForm').attr('class');
+    $('#uploadForm').attr('class', className + 1);
+    alert();
     $('#uploadForm').append('<div style="width: 70%; display: flex; flex-direction: row; justify-content: space-between;"><input type="file" name="file" id="formFile" style="width: 90%;background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"><button type="button" class="btn btn-outline-dark" style="width: 8%; margin-top: 10px; height: 50px; margin-left: 0;">X</button></div>');
 }
 
