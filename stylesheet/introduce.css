@@ -2303,7 +2303,7 @@ input:disabled {
 }
 
 .data_file{
-    font-size: 1rem;
+    font-size: smaller;
     text-decoration: underline;
     border: 1.5px solid black;
     margin: 0 auto;
@@ -2313,6 +2313,10 @@ input:disabled {
 
 .data_file a{
     cursor: pointer;
+}
+
+.data_file a:hover{
+    font-weight: bold;
 }
 
 .data_details_content img{
@@ -2329,7 +2333,7 @@ input:disabled {
     flex-direction: row;
     align-items: center;
     padding-left: 0;
-    margin: 30px auto 0px auto;
+    margin: 30px auto;
     justify-content: flex-end;
     width: 80%;
 }

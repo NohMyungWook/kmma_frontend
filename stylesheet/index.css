@@ -317,7 +317,7 @@ header, #body{
 }
 
 .index_logout_bt p{
-    width: 50%;
+    width: 100%;
     display: none;
     cursor: pointer;
     text-align: right;
