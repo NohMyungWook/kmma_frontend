@@ -3,6 +3,7 @@ var domain = "https://kmma.io/kmma/";
 $(document).ready(function(){
     postUser();
     beforeAfterPost();
+    $('.post_details_content img').width( '50%' );
     $.ajax({
         type: "GET",
         url: domain + "article/" + sessionStorage.getItem('articleNum'),

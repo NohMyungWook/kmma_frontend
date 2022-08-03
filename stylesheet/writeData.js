@@ -8,7 +8,7 @@ function addUpload(){
         alert('파일은 최대 5개까지만 첨부 가능합니다.');
     }else{
         formId++;
-        $('#uploadForm').append('<div id="formFile'+formId+'"style="width: 70%; display: flex; flex-direction: row; justify-content: space-between;"><input type="file" name="file" class="formFile" style="width: 90%;background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"><button type="button" onclick="deleteInput('+formId+')" class="btn btn-outline-dark" style="width: 8%; margin-top: 10px; height: 50px; margin-left: 0;">X</button></div>');
+        $('#uploadForm').append('<div id="formFile'+formId+'"style="width: 70%; display: flex; flex-direction: row; justify-content: space-between;"><input type="file" name="file" class="formFile" style="width: 90%;background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"><button type="button" onclick="deleteInput('+formId+')" class="btn btn-outline-dark" style="width: 12%; margin-top: 10px; height: 50px; margin-left: 5px;">X</button></div>');
     }
 }
 
