@@ -1,26 +1,3 @@
-/* @media(max-width: 400px){
-    .navbar>.container-fluid{
-        width: 95%;
-        margin-left: 0px;
-    }
-    .navbar-nav{
-        font-size: large;
-    }
-    .navbar-nav > li{
-        margin-right: 5px;
-    }
-    .carousel, .content_part, .rolling_wrap{
-        width: 95%;
-    }
-    .carousel-inner{
-        height: 200px;
-        background-color: rgba(0, 0, 0, 0.744);
-    }
-    .carousel-item img{
-        height: 150px;
-    }
-} */
-
 /* 협회소개 - 인사말 */
 .greetings_body{
     height: 100%;
@@ -70,12 +47,12 @@
 
 .greetings_content_box{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     width: 80%;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
-    padding: 30px 70px;
+    padding: 70px 100px;
 }
 
 .greetings_img{
@@ -89,19 +66,20 @@
 .greetings_ment{
     height: 90%;
     font-size: 1.3rem;
-    text-align: center;
+    text-align: left;
     font-weight: 300;
-    margin-top: 15px;
+    margin-left: 25px;
 }
 
 .greetings_name{
     height: 10%;
     font-size: 1.2rem;
-    text-align: center;
-    margin-top: 10px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 20px;
 }
 
-@media(max-width: 767px){
+@media(max-width: 1000px){
     .greetings_content_box{
         padding: 50px;
         width: 90%;
@@ -115,9 +93,6 @@
         width: 150px;
     }
 
-    .greetings_ment, .greetings_name{
-        text-align: center;
-    }
     .greetings_ment{
         font-size: 1.3rem;
     }
@@ -136,7 +111,7 @@
     }
 }
 
-@media(max-width: 1138px){
+@media(max-width: 767px){
     .greetings_content_box{
         flex-direction: column;
         align-items: center;
@@ -147,6 +122,7 @@
     }
     .greetings_name{
         margin-top: 15px;
+        text-align: center;
     }
 }
 
@@ -295,7 +271,7 @@
 
 @media(max-width: 767px){
     .organization_content{
-        margin: 20px auto 0 auto;
+        margin: 20px auto 40px auto;
         width: 90%;
     }
     .organization_main_table_name{
@@ -743,6 +719,13 @@
     justify-content: space-between;
 }
 
+.notice_search_area{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .notice_write_bt_wrap{
     width: 10%;
 }
@@ -750,17 +733,10 @@
 .notice_write_bt_wrap button{
     border-radius: 2px;
     width: 80px;
+    height: 30px;
     border: 1px solid rgb(176, 176, 176);
     background-color: white;
 }
-
-.notice_search_wrap{
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
 
 .notice_search_select{
     height: 30px;
@@ -769,6 +745,8 @@
 
 .notice_search_input{
     margin-left: 5px;
+    display: flex;
+    flex-direction: row;
 }
 
 .notice_search_input_box{
@@ -780,6 +758,7 @@
     border-radius: 2px;
     height: 30px;
     width: 60px;
+    margin-left: 5px;
     border: 1px solid rgb(176, 176, 176);
     background-color: white;
 }
@@ -787,6 +766,9 @@
 .notice_list{
     margin-top: 30px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     border-top: 3px solid rgb(86, 86, 86);
 }
 
@@ -841,7 +823,7 @@
         width: 100%;
     }
 
-    .notice_search_wrap{
+    .notice_search_area{
         width: 100%;
         margin-top: 15px;
         display: flex;
@@ -875,7 +857,7 @@
 }
 
 .news_content{
-    margin: 40px auto 0px auto;
+    margin: 40px auto 50px auto;
     width: 90%;
 }
 
