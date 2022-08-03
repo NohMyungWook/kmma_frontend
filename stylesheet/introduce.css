@@ -872,12 +872,12 @@
     height: 100%;
     margin-top: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .registration_first_input{
-    width: 48%;
+    width: 100%;
     padding: 40px;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
@@ -939,13 +939,6 @@
 
 .member_birth h4{
     width: 20%;
-}
-
-.registration_second_input{
-    width: 48%;
-    padding: 40px;
-    border: 1px solid rgba(66, 65, 65, 0.2);
-    box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .member_house_address_wrap, .member_company_address_wrap{
@@ -2273,4 +2266,41 @@ input:disabled {
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
+}
+
+
+.before_regi_wrap{
+    margin: 20px 0;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+.before_regi_text{
+    margin: 20px 0;
+    font-size: large;
+    font-weight: bold;
+}
+
+.before_regi_wrap div{
+    width: 100%;
+    flex-direction: column;
+    vertical-align: middle;
+}
+
+.before_regi_wrap textarea{
+    padding: 15px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 250px;
+    resize: none;
+}
+
+.before_regi_accept, .before_regi_btn{
+    text-align: right;
+}
+
+.before_regi_btn > button{
+    width: 200px;
 }
