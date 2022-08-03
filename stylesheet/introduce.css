@@ -2038,8 +2038,9 @@ input:disabled {
 
 .data_search{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 90%;
+    justify-content: flex-start;
+    margin: 0 auto;
 }
 
 .data_list{
@@ -2197,23 +2198,18 @@ input:disabled {
 }
 
 .make_data_title{
-    width: 60%;
+    width: 90%;
+    font-size: 1.4rem;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.make_data_title p{
-    font-size: 1.6rem;
-    padding-top: 10px;
-    text-align: right;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .make_data_title input{
-    height: 50px;
-    width: 530px;
     font-size: 1.4rem;
+    width: 60%;
 }
 
 .make_data_form {
@@ -2228,6 +2224,7 @@ input:disabled {
     width: 100%;
     height: 100%;
     padding: 15px 15px 0px 15px;
+    font-size: large;
 }
 
 .upload_file form{
@@ -2239,27 +2236,33 @@ input:disabled {
 
 .upload_file input{
     width: 70%;
-    margin-bottom: 10px;
 }
 
 .add_upload_file{
     width: 70%;
     display: flex;
     justify-content: flex-start;
-    margin: 0 auto;
+    margin: 10px auto 0 auto;
+    padding-left: 10px;
 }
 
-.upload_content{
+#upload_content{
     width: 70%;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.upload_content p{
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-size: 1.2rem;
+#uploadForm{
+    font-size: 1.4rem;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#formFile{
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 #upload_content{
@@ -2273,4 +2276,5 @@ input:disabled {
     display: flex;
     justify-content: flex-end;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
