@@ -28,7 +28,7 @@ function loginCheck(){
         success: function(data){
         },
         error: function(data){
-            window.location.href="index.html";
+            alert("회원만 접근 가능합니다.");
         }
     })
 }

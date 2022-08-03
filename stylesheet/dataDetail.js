@@ -29,10 +29,9 @@ function loginCheck(){
         url: domain + "validation/session/" + sessionStorage.getItem('loginId'),
         contentType : "application/json",
         success: function(data){
-            window.location.href="dataDetail.html";
         },
         error: function(data){
-            window.location.href="index.html";
+            alert("회원만 접근 가능합니다.");
         }
     })
 }
