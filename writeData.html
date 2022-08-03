@@ -101,20 +101,17 @@
         </div>
         <div class="make_data_form">
             <div class="upload_file">
-                <form id="uploadForm">
-                    <input type="file" name="file" style="
-                    background-color: white;
-                    border: 1px solid black;
-                    padding: 7px 12px;
-                    border-radius: 8px;">
+                <form id="uploadForm" enctype="multipart/form-data" class="0">
+                  설명<input type="text" name="content" id="upload_content">
+                  <input type="file" name="file" id="formFile" style="
+                  background-color: white;
+                  border: 1px solid black;
+                  padding: 7px 12px;
+                  border-radius: 8px;">
                 </form>
-            </div>
-            <div class="add_upload_file">
-                <button type="button" class="btn btn-outline-dark" onclick="addUpload()">파일 추가하기</button>
-            </div>
-            <div class="upload_content">
-                <p>설명</p>
-                <input type="text">
+                <div class="add_upload_file">
+                    <button type="button" class="btn btn-outline-dark" onclick="addUpload()">파일 추가하기</button>
+                </div>
             </div>
         </div>
         <div class="make_data_bt">

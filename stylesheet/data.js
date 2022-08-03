@@ -10,7 +10,7 @@ function getDataList(){
             for(var i = 0; i < total; i++){
                 $('#data_list_title' + i).html(data.content[i].title);
                 $('#data_list_time' + i).html(data.content[i].regdate);
-                $('#data_link' + i + ' div:nth-child(3)').attr('id', data.content[i].fileNo);
+                $('#data_link' + i + ' div:nth-child(3)').attr('id', data.content[i].fileDetailNo);
             }
             for(var j = total; j < 10; j++){
                 $('#data_link' + j).css('display', 'none');

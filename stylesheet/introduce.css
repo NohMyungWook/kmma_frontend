@@ -93,7 +93,7 @@
     text-align: left;
 }
 
-@media(max-width: 1013px){
+@media(max-width: 767px){
     .greetings_content_box{
         padding: 90px;
         width: 100%;
@@ -110,31 +110,45 @@
     .greetings_ment, .greetings_name{
         text-align: center;
     }
-}
-
-@media(max-width: 500px){
-    .title_out_wrap{
-        padding-top: 50px;
-        padding-bottom: 30px;
-        height: 80px;
-        width: 100%;
-    }
-    .greetings_body{
-        height: 700px;
-    }
-    .greetings_content{
-        height: 600px;
-    }
-}
-
-@media(max-width: 410px){
     .greetings_ment{
         font-size: 1.3rem;
     }
     .greetings_name{
         font-size: 1rem;
     }
+    .title_out_wrap{
+        padding-top: 50px;
+        padding-bottom: 30px;
+        background-image: none;
+        height: 80px;
+        width: 95%;
+        margin: 40px auto 0;
+        min-width: 375px;
+    }
+    
+    .greetings_body{
+        height: 500px;
+    }
+    .greetings_content{
+        height: 350px;
+        min-width: 375px;
+    }
 }
+
+@media(max-width: 1138px){
+    .greetings_content_box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .greetings_ment{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .greetings_name{
+        margin-top: 15px;
+    }
+}
+
 
 /* 협회소개 - 협회소개 */
 .introduce_body{
@@ -143,6 +157,8 @@
 
 .introduce_wrap{
     width: 100%;
+    height: 100%;
+    padding: auto 10px;
 }
 
 .introduce_content{
@@ -165,26 +181,7 @@
 
 .second_intro_content{
     margin-left: 40px;
-}
-
-@media(max-width: 1156px){
-    .introduce_content{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .first_intro_content, .second_intro_content{
-        margin-left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .second_intro_content{
-        margin-top: 30px;
-    }
-    .greetings_img img{
-        width: 200px;
-    }
+    padding: 78px 60px;
 }
 
 .content_title{
@@ -198,6 +195,40 @@
     margin-top: 1rem;
     font-size: 1.5em;
     font-weight: 200;
+}
+
+@media(max-width: 1290px){
+    .introduce_content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .introduce_wrap{
+        width: 100%;
+        height: 100%;
+    }
+    .first_intro_content, .second_intro_content{
+        width: 100%;
+        height: 100%;
+        min-width: 365px;
+        margin: 0 auto;
+    }
+
+    .second_intro_content{
+        margin-top: 30px;
+    }
+    .greetings_img img{
+        width: 200px;
+    }
+}
+
+@media(max-width: 767px){
+    .content_title{
+        font-size: 1.1rem;
+    }
+    .content_body{
+        font-size: 1rem;
+    }
 }
 
 /* 조직도 */
@@ -253,6 +284,7 @@
     font-size: 1.2rem;
     border: 1px solid;
 }
+
 
 /* 정관 */
 .article_wrap{
@@ -1244,7 +1276,7 @@
     color: red;
 }
 
-@media(max-width: 905px){
+@media(max-width: 767px){
     .signup_address_wrap{
         display: flex;
         flex-direction: column;
@@ -1259,9 +1291,6 @@
         width: 100%;
         margin: 10px 0px 0px 0px;
     }
-}
-
-@media(max-width: 620px){
     .signup_wrap{
         background-color: white;
         width: 100%;
@@ -1310,6 +1339,7 @@
         font-size: 1.1rem;
     }
 }
+
 
 /*공지사항 게시물 세부사항 */
 .post_details_body{
@@ -2202,20 +2232,21 @@ input:disabled {
 
 .upload_file form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 .upload_file input{
     width: 70%;
+    margin-bottom: 10px;
 }
 
 .add_upload_file{
     width: 70%;
-    padding-left: 10px;
     display: flex;
     justify-content: flex-start;
+    margin: 0 auto;
 }
 
 .upload_content{
@@ -2227,13 +2258,14 @@ input:disabled {
 
 .upload_content p{
     margin-bottom: 0px;
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 1.2rem;
 }
 
-.upload_content input{
-    height: 300px;
-    width: 100%;
+#upload_content{
+    height: 250px;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .make_data_bt{

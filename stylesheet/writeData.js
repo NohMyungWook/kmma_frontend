@@ -1,24 +1,26 @@
 var domain = "https://kmma.io/kmma/";
 
 function addUpload(){
-    $('.upload_file').append('<form><input type="file" name="file" style="background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"></form>');
+    $('#uploadForm').append('<input type="file" name="file" style="background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;">');
 }
 
 function submitFile(){
     var form = $('#uploadForm')[0];
-    var formData = new FormData(form);
     var fileTitle = $('.post_data_title').val();
 
-    const formData = new FormData();
-    formData.append("image", form.files[0]);
-
+    console.log(form);
+    const formData = new FormData(form);
     $.ajax({
         type: "POST",
         url: domain + 'file/' + fileTitle,
         data: formData,
+        enctype: 'multipart/form-data',
         processData: false,
         contentType: false,
         success: function(data){
+            window.location.href='data.html';
+        },
+        complete: function(data){
         }
     })
 }
