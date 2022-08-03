@@ -320,6 +320,7 @@ header, #body{
     width: 100%;
     display: none;
     cursor: pointer;
+    text-align: right;
 }
 
 #footer_img_wrap{

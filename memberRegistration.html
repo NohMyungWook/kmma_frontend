@@ -17,6 +17,7 @@
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script src="/stylesheet/mypage.js"></script>
     <script src="/stylesheet/ajax.js"></script>
+    <script src="/stylesheet/regi.js"></script>
     <script src="/stylesheet/all.js"></script>
     <title>한국메타버스미디어협회(KMMA)</title>
 </head>
@@ -98,58 +99,66 @@
         </div>
         <div class="registration_wrap">
           <div class="registration_input">
-            <div class="registration_first_input">
-              <div class="member_type">
-                <h4>회원구분</h4>
-                <div class="member_division">
-                  <div class="form-check">
+            <div class="member_type">
+              <h4>회원구분</h4>
+              <div class="member_division">
+                <div style="
+                display: flex;
+                flex-direction: row;">
+                  <div class="form-check" id="division1">
                     <input class="form-check-input" value="정회원" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                       정회원
                     </label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check" id="division2">
                     <input class="form-check-input" value="준회원" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                     <label class="form-check-label" for="flexRadioDefault2">
                       준회원
                     </label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check" id="division3">
                     <input class="form-check-input" value="특별회원" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                     <label class="form-check-label" for="flexRadioDefault3">
                       특별회원
                     </label>
                   </div>
                 </div>
-              </div>
-              <div class="member_name">
-                <h4>성명</h4>
-                <div class="member_name_input">
-                  <input type="text" id="member_name_kor" placeholder="한글">
-                </div>
-              </div>
-              <div class="member_phonenum">
-                <h4>휴대폰번호</h4>
-                <input type="tel" id="member_phonenum" placeholder="휴대폰번호">
-              </div>
-              <div class="member_email">
-                <h4>E-mail</h4>
-                <input type="email" id="member_email" placeholder="이메일">
-              </div>
-              <div class="company_name">
-                <h4>회사명</h4>
-                <input type="text" id="company_name" placeholder="회사명">
-              </div>
-              <div class="member_rank">
-                <h4>직위</h4>
-                <input type="text" id="member_rank" placeholder="직위/직급">
+                <div id="member_type_inform" style="color: red; margin-left: 35px; display:none;">회원구분을 체크해주세요</div>
               </div>
             </div>
-            <div class="registration_sub_bt">
-              <button type="button" id="registration_bt" class="btn btn-outline-dark">회원 등록</button>
+            <div class="member_name">
+              <h4>성명</h4>
+              <div class="member_name_input">
+                <input type="text" id="member_name_kor" placeholder="한글">
+                <div id="member_name_inform" style="color: red; display:none;" >성명을 입력해주세요</div>
+              </div>
             </div>
-            <br>
+            <div class="company_name">
+              <h4>회사명</h4>
+              <div id="member_company_inform" style="color: red; display:none;">회사명을 입력해주세요</div>
+              <input type="text" id="company_name" placeholder="회사명">
+            </div>
+            <div class="member_rank">
+              <h4>직위</h4>
+              <div id="member_rank_inform" style="color: red; display:none;">직위를 입력해주세요</div>
+              <input type="text" id="member_rank" placeholder="직위/직급">
+            </div>
+            <div class="member_phonenum">
+              <h4>휴대폰번호</h4>
+              <div id="member_tel_inform" style="color: red;"></div>
+              <input type="tel" id="member_phonenum" placeholder="휴대폰번호">
+            </div>
+            <div class="member_email">
+              <h4>E-mail</h4>
+              <div id="member_email_inform" style="color: red;"></div>
+              <input type="email" id="member_email" placeholder="이메일">
+            </div>
           </div>
+          <div class="registration_sub_bt">
+            <button type="button" id="registration_bt" class="btn btn-outline-dark" onclick="memberSignup();">회원 등록</button>
+          </div>
+          <br>
         </div>
       </div>
     </div>

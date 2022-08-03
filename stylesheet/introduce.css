@@ -987,40 +987,50 @@
 
 .registration_body_content{
     width: 100%;
+    height: 100%;
+    padding: auto 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+}
+
+.registration_wrap{
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.registration_wrap{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media(max-width: 1160px){
+    .registration_wrap{
+        width: 60%;
+    }
+}
+@media(max-width: 970px){
+    .registration_wrap{
+        width: 70%;
+    }
+}
+@media(max-width: 840px){
+    .registration_wrap{
+        width: 80%;
+    }
 }
 
 .registration_input{
     width: 100%;
-    height: 100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.registration_first_input{
-    width: 100%;
-    padding: 40px;
+    padding: 60px;
+    margin: 30px auto 0px auto;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
 .member_name input, .member_email input, .member_telnum input, .member_phonenum input{
     width: 100%;
-    height: 40px;
+    height: 35px;
     border-radius: 7px;
     border: 1px solid black;
     padding: 0 10px;
@@ -1043,8 +1053,34 @@
 
 .member_division{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
 
+.member_division label{
+    font-size: 1.1rem;
+}
+
+@media(max-width: 650px){
+    .registration_wrap{
+        width: 90%;
+    }
+    .member_type{
+        flex-direction: column;
+    }
+    .member_division{
+        width: 100%;
+        margin-top: 10px;
+    }
+    #division1{
+        margin-left: 0;
+    }
+    #division2, #division3{
+        margin-left: 15px;
+    }
+    .member_division label{
+        font-size: 1rem;
+    }
+    
 }
 .member_name{
     display: flex;
@@ -1059,6 +1095,10 @@
 .member_name_input{
     padding-top: 15px;
     width: 80%;
+}
+
+.member_name input{
+    height: 35px;
 }
 
 #member_name_eng{
@@ -1089,7 +1129,7 @@
 
 .member_house_address_wrap input, .member_company_address_wrap input{
     width: 68%;
-    height: 40px;
+    height: 35px;
     border-radius: 7px;
     border: 1px solid black;
     padding: 0 10px;
@@ -1106,7 +1146,7 @@
 
 .member_birth input{
     width: 80%;
-    height: 40px;
+    height: 35px;
     border-radius: 7px;
     border: 1px solid black;
     padding: 0 10px;
@@ -1123,7 +1163,7 @@
 
 .company_name input, .business_number input, .member_rank input, .member_main_career input{
     width: 100%;
-    height: 40px;
+    height: 35px;
     border-radius: 7px;
     border: 1px solid black;
     padding: 0 10px;
@@ -1131,6 +1171,7 @@
 
 .registration_sub_bt{
     margin-top: 30px;
+    margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1138,8 +1179,8 @@
 
 .registration_sub_bt button{
     width: 30%;
-    height: 50px;
-    font-size: 1.3rem;
+    height: 40px;
+    font-size: 1.2rem;
 }
 
 /* 로그인 */
@@ -2432,7 +2473,7 @@ input:disabled {
     display: flex;
     flex-direction: column;
     min-width: 375px;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .before_regi_text{
