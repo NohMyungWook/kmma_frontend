@@ -2,20 +2,22 @@ var domain = "https://kmma.io/kmma/";
 
 function addUpload(){
     var className = $('#uploadForm').attr('class');
-    $('#uploadForm').attr('class', className + 1);
-    alert();
-    $('#uploadForm').append('<div style="width: 70%; display: flex; flex-direction: row; justify-content: space-between;"><input type="file" name="file" id="formFile" style="width: 90%;background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"><button type="button" class="btn btn-outline-dark" style="width: 8%; margin-top: 10px; height: 50px; margin-left: 0;">X</button></div>');
+    $('#uploadForm').attr('class', parseInt(className) + 1);
+    if ($('#uploadForm').attr('class') >= 5){
+        alert('파일은 최대 5개까지만 첨부 가능합니다.');
+    }else{
+        $('#uploadForm').append('<div style="width: 70%; display: flex; flex-direction: row; justify-content: space-between;"><input type="file" name="file" id="formFile" style="width: 90%;background-color: white;border: 1px solid black;padding: 7px 12px;border-radius: 8px;"><button type="button" class="btn btn-outline-dark" style="width: 8%; margin-top: 10px; height: 50px; margin-left: 0;">X</button></div>');
+    }
 }
 
 function deleteInput(){
-    $(this).closest('.grand-parent-class-name').remove();
+    $(this).closest('#formFile').remove();
 }
 
 function submitFile(){
     var form = $('#uploadForm')[0];
     var fileTitle = $('.post_data_title').val();
 
-    console.log(form);
     const formData = new FormData(form);
     $.ajax({
         type: "POST",
@@ -25,7 +27,7 @@ function submitFile(){
         processData: false,
         contentType: false,
         success: function(data){
-            window.location.href='data.html';
+            window.location.href='loadingData.html';
         },
         complete: function(data){
         }

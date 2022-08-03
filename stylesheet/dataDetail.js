@@ -8,19 +8,16 @@ function getDataPost(){
         contentType: 'application/json',
         success: function(data){
             var length = data.fileName.length;
-            console.log(length);
-            console.log(data.fileName[0]);
-            console.log(data.fileName[1]);
             for(var i = 0; i < length; i++){
+                var split = data.fileName[i].split(' :', 1);
                 if(i !== 0){
                     $('.data_file').append('<br>');
                 }
-                $('.data_file').append(data.fileName[i].substr(18));
+                $('.data_file').append('<a id="' + split + '" onclick="location.href=\''+ domain + 'file/' + split + '\'">'  + data.fileName[i].substr(18) + '</div>');
             }
             $('#data_details_title').html(data.title);
             $('.data_content').html(data.content);
             $('.data_upload_time').html(data.regdate);
-            
         }
     })
 }
@@ -34,6 +31,18 @@ function deleteData(){
             window.location.href='data.html';
         }
     })
+}
+
+function moveBefore(){
+    var beforeNo = $('.before_post_link').attr('id');
+    sessionStorage.setItem('dataNum', beforeNo);
+    location.href = "dataDetail.html";
+}
+
+function moveNext(){
+    var nextNo = $('.next_post_link').attr('id');
+    sessionStorage.setItem('dataNum', nextNo);
+    location.href = "dataDetail.html";
 }
 
 $(document).ready(function(){
