@@ -2418,7 +2418,7 @@ input:disabled {
     align-items: center;
 }
 
-#formFile{
+.formFile{
     font-size: 1rem;
     margin-top: 10px;
 }
