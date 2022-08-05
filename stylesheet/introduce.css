@@ -1537,7 +1537,7 @@
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
     padding: 50px 40px;
-    margin: 60px auto 70px auto;
+    margin: 60px auto 20px auto;
     min-width: 355px;
 }
 
@@ -1554,24 +1554,21 @@
 }
 
 #post_details_title{
-    font-size: 30px;
+    font-size: 25px;
     padding-top: 10px;
 }
 
-@media(max-width: 767px){
-    #post_details_title{
-        font-size: 20px;
-    }
-    .post_details_content_wrap{
-        padding: 40px 10px;
-        margin: 20px auto 70px auto;
-    }
+.post_details_title div{
+    padding: 0px;
 }
 
 .post_upload_time{
     width: 90%;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    padding-bottom: 0px;
 }
 
 .post_user_name_picture{
@@ -1579,6 +1576,10 @@
     flex-direction: row;
 }
 
+.post_user_name_picture div{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
 .post_user_name_picture img{
     width: 20px;
     height: 20px;
@@ -1599,25 +1600,6 @@
     all: unset;
     margin: 0 auto;
 }
-
-.post_edit_bt{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 0;
-    justify-content: space-between;
-    width: 80%;
-}
-
-
-.news_post_edit_bt{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-    margin-top: 30px;
-}
-
 
 .post_list_link{
     width: 90%;
@@ -1707,44 +1689,58 @@
     padding-left: 30px;
 }
 
-@media(max-width: 772px){
-    .before_post_time{
-        display: none;
-    }
-
-    .next_post_time{
-        display: none;
-    }
+.post_edit_bt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 350px;
+    margin: 0 auto 70px auto;
 }
 
-@media(max-width: 585px){
-    .post_user_name{
-        display: none;
-    }
 
+.news_post_edit_bt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 350px;
+    margin: 0 auto 70px auto;
+}
+
+@media(max-width: 767px){
+    .post_details_content_wrap{
+        padding: 15px 10px;
+        margin: 20px auto 20px auto;
+    }
     .post_details_title{
         padding-top: 10px;
+        padding-bottom: 0px;
+    }
+    #post_details_title{
+        font-size: 15px;
+        padding-top: 5px;
+    }
+    .post_user_name_picture img{
+        width: 15px;
+        height: 15px;
+    }
+    .post_user_name_picture{
+        font-size: 8px;
+        margin-top: 5px;
+    }
+    .before_post_link, .next_post_link{
+        padding: 5px;
+    }
+    .before_post_link_name, .next_post_link_name{
+        padding-top: 5px;
+    }
+    .before_post_title, .next_post_title{
+        padding-top: 5px;
     }
 }
-
-@media(max-width: 575px){
-    .before_post_link{
-        justify-content: center;
-    }
-
-    .before_post_title{
-        display: none;
-    }
-
-    .next_post_link{
-        justify-content: center;
-    }
-
-    .next_post_title{
-        display: none;
-    }
-}
-
 
 /* 활동소식 게시글 세부사항 */
 
@@ -1756,8 +1752,8 @@
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
     padding: 50px 40px;
-    margin: 60px auto 70px auto;
-    min-width: 375px;
+    margin: 60px auto 20px auto;
+    min-width: 350px;
 }
 
 .article_details_title{
@@ -1777,15 +1773,7 @@
     font-size: 30px;
     padding-top: 10px;
 }
-@media(max-width: 767px){
-    #article_details_title{
-        font-size: 20px;
-    }
-    .article_details_content_wrap{
-        padding: 40px 10px;
-        margin: 20px auto 70px auto;
-    }
-}
+
 .article_upload_time{
     width: 90%;
     display: flex;
@@ -1813,6 +1801,28 @@
     padding-bottom: 100px;
 }
 
+@media(max-width: 767px){
+    .article_details_content_wrap{
+        padding: 15px 10px;
+        margin: 20px auto 20px auto;
+    }
+    .article_details_title{
+        padding-top: 10px;
+        padding-bottom: 0px;
+    }
+    #article_details_title{
+        font-size: 15px;
+        padding-top: 5px;
+    }
+    .article_user_name_picture img{
+        width: 15px;
+        height: 15px;
+    }
+    .article_user_name_picture{
+        font-size: 8px;
+        margin-top: 5px;
+    }
+}
 /* 마이페이지 */
 
 .mypage_body{
@@ -1825,11 +1835,12 @@
 }
 
 .mypage_body_content{
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 20px auto 70px auto;
+    min-width: 350px;
 }
 
 .mypage_body_title{
@@ -1846,7 +1857,8 @@
     height: 100%;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
-    margin-top: 40px;
+    margin: 20px auto 70px auto;
+    min-width: 350px;
     padding: 40px;
 }
 
@@ -1871,16 +1883,37 @@
 }
 
 .mypage_content{
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 340px;
 }
 
 .mypage_email_name{
     margin-top: 30px;
     font-size: 1.3rem;
+}
+
+@media(max-width: 767px){
+    .mypage_basic_information{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mypage_member_img img{
+        width: 50px;
+        margin: 0 auto;
+        padding-right: 0px;
+    }
+    .mypage_member_name{
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    .mypage_content{
+        width: 80%;
+        padding: 20px;
+    }
 }
 
 .mypage_phone_name, .mypage_department_name, .mypage_department_name, .mypage_address_name, .mypage_companyYn_name{
@@ -2123,11 +2156,11 @@ input:disabled {
 }
 
 .checkPw_body_content{
-    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-width: 375px;
 }
 
 .checkPw_body_title{
@@ -2144,8 +2177,8 @@ input:disabled {
     height: 100%;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
-    margin-top: 40px;
-    padding: 60px 50px;
+    margin: 20px auto 70px auto;
+    padding: 60px 0px;
 }
 
 .checkPw_title{
@@ -2219,6 +2252,10 @@ input:disabled {
 .post_details_content img{
     width: 5px;
     padding: 0;
+}
+
+@media(max-width: 767px){
+
 }
 
 /* 자료실 */

@@ -18,20 +18,19 @@ function ArticlePost(){
     })
 }
 
-// function postUser(){
-//     $.ajax({
-//         type: 'GET',
-//         url: domain + 'validation/authority',
-//         contentType: 'application/json',
-//         success: function(data){
-//             window.location.href='writeNews.html';
-//         },
-//         error: function(data){
-//             window.location.href='index.html';
-//         }
-//     })
-// }
+function postUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
 
-// $(document).ready(function(){
-//     postUser();
-// })
+$(document).ready(function(){
+    postUser();
+})

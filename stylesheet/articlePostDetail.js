@@ -3,7 +3,6 @@ var domain = "https://kmma.io/kmma/";
 $(document).ready(function(){
     postUser();
     beforeAfterPost();
-    $('.post_details_content img').width( '50%' );
     $.ajax({
         type: "GET",
         url: domain + "article/" + sessionStorage.getItem('articleNum'),
@@ -12,6 +11,11 @@ $(document).ready(function(){
             $('#article_details_title').html(data.title);
             $('.article_upload_time').html(data.regdate);
             $('.article_details_content').html(data.content);
+            $('.article_details_content img').css('width', '80%');
+            $('.article_details_content img').css('height', '80%');
+            $('.article_details_content img').css('margin-top', '10px');
+            $('.article_details_content p').css('display', 'flex');
+            $('.article_details_content p').css('flex-direction', 'column');
         }
     })
     sessionStorage.removeItem('articleNum');

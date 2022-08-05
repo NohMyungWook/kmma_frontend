@@ -1,6 +1,9 @@
 var domain = "https://kmma.io/kmma/";
 var formId = 2;
 
+$(document).ready(function(){
+    postUser();
+})
 function addUpload(){
     var className = $('#uploadForm').attr('class');
     $('#uploadForm').attr('class', parseInt(className) + 1);
@@ -17,6 +20,18 @@ function deleteInput(deleteFormId){
     formId--;
 }
 
+function postUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
 function submitFile(){
     var form = $('#uploadForm')[0];
     var fileTitle = $('.post_data_title').val();

@@ -38,7 +38,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="greetings.html">인사말</a></li>
                   <li><a class="dropdown-item" href="introAssociation.html">협회소개</a></li>
-                  <li><a class="dropdown-item" href="organization.html">조직도</a></li>
+                  <li><a class="dropdown-item" href="organization.html">임원명단</a></li>
                   <li><a class="dropdown-item" href="article.html">정관</a></li>
                   <li><a class="dropdown-item" href="route.html">오시는 길</a></li>
                 </ul>
@@ -99,20 +99,16 @@
                 <div class="post_details_title">
                     <div id="post_details_title"></div>
                     <div style="width: 90%; display: flex; flex-direction:row; justify-content: space-between;">
-                    <div class="post_user_name_picture" style="width:50%; margin-top: 10px;">
+                    <div class="post_user_name_picture" style="width:50%;">
                       <img src="/img/subImage/notice_user_name.png">
-                      <div style="padding-bottom: 10px;">관리자</div>
+                      <div style="padding-bottom: 5px;">관리자</div>
                     </div> 
-                    <div class="post_upload_time" style="width: 50%; margin-top: 10px;"></div>
+                    <div class="post_upload_time" style="width: 50%; padding-bottom: 0px;"></div>
                     </div>
                 </div>
                 <div class="post_details_content">
                     <div>
                     </div>
-                </div>
-                <div class="post_edit_bt">
-                  <button type='button' class="btn btn-outline-dark" id="post_edit_bt" onclick="move_editNotice()">수정하기</button>
-                  <button type='button' class="btn btn-outline-dark" id="post_delete_bt" onclick="delete_notice()">삭제하기</button>
                 </div>
 
                 <div class="post_list_link">
@@ -143,6 +139,10 @@
 
                 </div>
             </div>
+            <div class="post_edit_bt">
+              <button type='button' class="btn btn-outline-dark" id="post_edit_bt" onclick="move_editNotice()">수정하기</button>
+              <button type='button' class="btn btn-outline-dark" id="post_delete_bt" onclick="delete_notice()">삭제하기</button>
+            </div>
 
 
         </div>
@@ -169,7 +169,7 @@
           <a href="introAssociation.html" class="nav-link p-0 text-muted">협회소개</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="organization.html" class="nav-link p-0 text-muted">조직도</a>
+          <a href="organization.html" class="nav-link p-0 text-muted">임원명단</a>
         </li>
         <li class="nav-item mb-2">
           <a href="article.html" class="nav-link p-0 text-muted">정관</a>
