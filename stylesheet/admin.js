@@ -228,7 +228,7 @@ function deletePromotion(num){
         url: domain + 'promotion/' + num,
         contentType: 'application/json',
         success: function(data){
-            alert('삭제 완료');
+            alert('삭제가 완료되었습니다.');
         }
     })
 }
@@ -240,8 +240,7 @@ function getPromotion(){
         contentType: 'application.json',
         success: function(data){
             var length = data.length;
-            console.log(data);
-            for(var i = 0; i < length; i++){
+            for(var i = (length - 1); i >= 0; i--){
                 $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "' style='width: 100px; display: flex; flex-direction:column; margin-right: 15px;'><img style='width:100px; height: 130px;' src='" + data[i].link + "'><button type='button' id='" + data[i].no + "' style='margin-top:5px;' onclick='deletePromotion(" + data[i].no + ")'>삭제하기</button></div>");
             }
         }
@@ -260,7 +259,6 @@ function postPromotion(){
         processData: false,
         contentType: false,
         success: function(data){
-            alert('good');
         },
         complete: function(data){
         }
@@ -268,7 +266,7 @@ function postPromotion(){
 }
 
 $(document).ready(function(){
-    // postUser();
+    postUser();
     getPromotion();
     getUnapprovedUser();
     getOutstandingUer();

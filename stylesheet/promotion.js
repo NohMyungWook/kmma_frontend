@@ -7,9 +7,8 @@ function getPromotion(){
         contentType: 'application.json',
         success: function(data){
             var length = data.length;
-            console.log(data);
-            for(var i = 0; i < length; i++){
-                    $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "'><img src='" + data[i].link + "'></div>");
+            for(var i = (length - 1); i >=0; i--){
+                $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "'><img src='" + data[i].link + "'></div>");
             }
         }
     })
