@@ -178,6 +178,9 @@ function postUser(){
 
 function changeYoutubeLink(){
     var link = $('.linkUrl').val();
+    if(!link.includes('https://youtu.be/') && !link.includes('https://www.youtube.com/watch?v=')){
+        alert('유효하지 않은 주소입니다.');
+    }
     $.ajax({
         type: 'PUT',
         url: domain + 'youtube?link=' + link,
