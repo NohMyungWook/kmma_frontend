@@ -1,5 +1,12 @@
 var domain = "https://kmma.io/kmma/";
 
+function moveMypage(){
+    if(sessionStorage.getItem('loginId') == 'admin'){
+        window.location.href='kmmaAdmin.html';
+    }else{
+        window.location.href='mypage.html';
+    }
+}
 
 $(document).ready(function(){
 

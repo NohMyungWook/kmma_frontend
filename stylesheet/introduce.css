@@ -159,8 +159,12 @@
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
 }
 
+.first_intro_content{
+    margin-right: 20px;
+}
+
 .second_intro_content{
-    margin-left: 40px;
+    margin-left: 20px;
     padding: 78px 60px;
 }
 
