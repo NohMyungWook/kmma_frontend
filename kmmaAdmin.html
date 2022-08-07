@@ -199,11 +199,25 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="tab3">
                 <br>
                 <h2>메인 화면 유튜브 링크 변경</h2>
-                <div class="table-responsive">
+                <div class="table-responsive" style="margin-top: 15px;">
                     유튜브 링크 : <input type="text" class="linkUrl" style="width: 400px;"/>
                     <button type="button" class="link_change" onclick="changeYoutubeLink()">변경하기</button>
                 </div>
-                
+                <br>
+                <br>
+                <h2>현재 홍보 포스터</h2>
+                <div class="promotion_content" style="display: flex; flex-direction: row;"></div>
+                <br>
+                <br>
+                <h2>홍보 포스터 추가</h2>
+                <div style="display: flex; flex-direction: row;">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file"id="fomrFile1">
+                    </form>
+                    <button type="button" onclick="postPromotion()">추가하기</button>
+                </div>
+            </div>
+
             </main>
         </div>
     </div>

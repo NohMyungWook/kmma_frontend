@@ -667,7 +667,7 @@
     flex-wrap: wrap;
 }
 
-#promotion_img{
+.promotion_img{
     width: 24%; 
     margin: 20px 5px 0px 5px;
     padding: 20px;
@@ -687,7 +687,7 @@
 }
 
 @media(max-width: 767px){
-    #promotion_img{
+    .promotion_img{
         width: 40%; 
         margin: 20px 5px 0px 5px;
         padding: 20px;

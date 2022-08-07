@@ -186,12 +186,61 @@ function changeYoutubeLink(){
         url: domain + 'youtube?link=' + link,
         contentType: 'application/json',
         success: function(data){
-            window.location.href='index.html';
+            alert('주소 변경이 완료되었습니다.');
+        },
+        error: function(err){
+            alert('주소 변경을 실패했습니다.');
         }
     })
 }
+function deletePromotion(num){
+    $.ajax({
+        type: "DELETE",
+        url: domain + 'promotion/' + num,
+        contentType: 'application/json',
+        success: function(data){
+            alert('삭제 완료');
+        }
+    })
+}
+
+function getPromotion(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'promotion',
+        contentType: 'application.json',
+        success: function(data){
+            var length = data.length;
+            console.log(data);
+            for(var i = 0; i < length; i++){
+                $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "' style='width: 100px; display: flex; flex-direction:column; margin-right: 15px;'><img style='width:100px; height: 130px;' src='" + data[i].link + "'><button type='button' id='" + data[i].no + "' onclick='deletePromotion(" + data[i].no + ")'>삭제하기</button></div>");
+            }
+        }
+    })
+}
+
+
+function postPromotion(){
+    var form = $('#uploadForm')[0];
+    const formData = new FormData(form);
+    $.ajax({
+        type: "POST",
+        url: domain + 'promotion',
+        data: formData,
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('good');
+        },
+        complete: function(data){
+        }
+    })
+}
+
 $(document).ready(function(){
     // postUser();
+    getPromotion();
     getUnapprovedUser();
     getOutstandingUer();
     getAllUser();
