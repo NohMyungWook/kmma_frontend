@@ -6,7 +6,7 @@ var last;
 var interval;
 
 $(document).ready(function(){
-    changeYoutubeLink();
+    getYoutubeLink();
     $(".rolling_wrap a").each(function(){
         $(this).css("left", banner_left);
         banner_left += $(this).width()+30;
@@ -21,9 +21,27 @@ $(document).ready(function(){
         function() {startAction();});
 });
 
-function changeYoutubeLink(){
-    var link = sessionStorage.getItem('link');
-    $('#kmma_youtube').attr('src', link);
+function parsingLink(link){
+    if(link.includes('https://youtu.be/')){
+        var real = link.substr(17);
+        var realLink = 'https://www.youtube.com/embed/' + real;
+        $('#kmma_youtube').attr('src', realLink);
+    }
+    if(link.includes('https://www.youtube.com/watch?v=')){
+        var real = link.substr(32);
+        var realLink = 'https://www.youtube.com/embed/' + real;
+        $('#kmma_youtube').attr('src', realLink);
+    }
+}
+function getYoutubeLink(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'youtube',
+        contentType: 'application/json',
+        success: function(data){
+            parsingLink(data);
+        }
+    })
 }
 
 function startAction(){

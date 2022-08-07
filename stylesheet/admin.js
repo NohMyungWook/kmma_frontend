@@ -163,23 +163,36 @@ function getPaymentUser(){
     })
 }
 
+function postUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + 'validation/authority',
+        contentType: 'application/json',
+        success: function(data){
+        },
+        error: function(data){
+            window.location.href="index.html";
+        }
+    })
+}
+
+function changeYoutubeLink(){
+    var link = $('.linkUrl').val();
+    $.ajax({
+        type: 'PUT',
+        url: domain + 'youtube?link=' + link,
+        contentType: 'application/json',
+        success: function(data){
+            window.location.href='index.html';
+        }
+    })
+}
 $(document).ready(function(){
+    // postUser();
     getUnapprovedUser();
     getOutstandingUer();
     getAllUser();
     getPaymentUser();
 });
-
-function changeYoutube(){
-    var linkUrl = $('.linkUrl').val();
-    var originUrl = $('#kmma_youtube').attr('src');
-    if(linkUrl != ''){
-        alert(linkUrl);
-        sessionStorage.setItem('link', linkUrl);
-        window.location.href='index.html';
-    } else{
-        sessionStorage.setItem('link', originUrl);
-    }
-}
 
 
