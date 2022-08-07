@@ -251,22 +251,24 @@ function getPromotion(){
 function postPromotion(){
     var form = $('#uploadForm')[0];
     const formData = new FormData(form);
-    $.ajax({
-        type: "POST",
-        url: domain + 'promotion',
-        data: formData,
-        enctype: 'multipart/form-data',
-        processData: false,
-        contentType: false,
-        success: function(data){
-        },
-        complete: function(data){
-        }
-    })
+    alert(formData);
+    // $.ajax({
+    //     type: "POST",
+    //     url: domain + 'promotion',
+    //     data: formData,
+    //     enctype: 'multipart/form-data',
+    //     processData: false,
+    //     contentType: false,
+    //     success: function(data){
+    //         alert(formData);
+    //     },
+    //     complete: function(data){
+    //     }
+    // })
 }
 
 $(document).ready(function(){
-    postUser();
+    // postUser();
     getPromotion();
     getUnapprovedUser();
     getOutstandingUer();
