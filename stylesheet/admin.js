@@ -242,7 +242,7 @@ function getPromotion(){
             var length = data.length;
             console.log(data);
             for(var i = 0; i < length; i++){
-                $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "' style='width: 100px; display: flex; flex-direction:column; margin-right: 15px;'><img style='width:100px; height: 130px;' src='" + data[i].link + "'><button type='button' id='" + data[i].no + "' onclick='deletePromotion(" + data[i].no + ")'>삭제하기</button></div>");
+                $('.promotion_content').append("<div class='promotion_img' id='" + data[i].no + "' style='width: 100px; display: flex; flex-direction:column; margin-right: 15px;'><img style='width:100px; height: 130px;' src='" + data[i].link + "'><button type='button' id='" + data[i].no + "' style='margin-top:5px;' onclick='deletePromotion(" + data[i].no + ")'>삭제하기</button></div>");
             }
         }
     })
