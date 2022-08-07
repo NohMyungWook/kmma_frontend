@@ -1,5 +1,4 @@
 var domain = "https://kmma.io/kmma/";
-document.write('<script src="/stylesheet/tab.js"></script>');
 
 function approval_btn(approval_mem){
     $.ajax({
@@ -77,8 +76,7 @@ function deleteUser_btn(delete_userId){
         url: domain + "user/" + delete_userId,
         contentType: 'application/json',
         success: function(data){
-            location.reload();
-            onDisplay(2);
+            getAllUser();
         },
         error: function(data){
             alert("요청에 실패하였습니다.");
@@ -180,6 +178,7 @@ function getPaymentUser(){
 }
 
 function getAllUser(){
+    $('#userList').empty();
     $.ajax({
         type: 'GET',
         url: domain + "alluser",
@@ -216,6 +215,7 @@ function changeYoutubeLink(){
         contentType: 'application/json',
         success: function(data){
             alert('주소 변경이 완료되었습니다.');
+            $('.linkUrl').val('');
         },
         error: function(err){
             alert('주소 변경을 실패했습니다.');
@@ -229,11 +229,13 @@ function deletePromotion(num){
         contentType: 'application/json',
         success: function(data){
             alert('삭제가 완료되었습니다.');
+            getPromotion();
         }
     })
 }
 
 function getPromotion(){
+    $('.promotion_content').empty();
     $.ajax({
         type: "GET",
         url: domain + 'promotion',
@@ -259,6 +261,9 @@ function postPromotion(){
         processData: false,
         contentType: false,
         success: function(data){
+            alert("등록이 완료되었습니다.");
+            getPromotion();
+            $('#uploadForm').val('');
         },
         complete: function(data){
         }
