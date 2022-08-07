@@ -183,6 +183,25 @@
                     </form>
                     <button type="button" onclick="postPromotion()">추가하기</button>
                 </div>
+                <br>
+                <br>
+                <h2>인사말 수정하기</h2>
+                <div style="display: flex; flex-direction:row;">
+                    <textarea id="greetings_ment" style="width: 400px; height: 150px;"></textarea>
+                    <button type="button" style="margin-left: 10px;" onclick="editGreetings();">수정하기</button>
+                </div>
+                <br>
+                <br>
+                <h2>협회소개 수정하기</h2>
+                <div style="display: flex; flex-direction:row; margin-right: 7px;">
+                    <div style="display: flex; flex-direction:column;">
+                        설립 취지<textarea id="effect_ment" style="width: 400px; height: 150px;"></textarea>
+                    </div>
+                    <div style="display: flex; flex-direction:column; margin-left: 7px;">
+                        MISSION<textarea id="mission_ment" style="width: 400px; height: 150px;"></textarea>
+                    </div>
+                    <button type="button" style="margin-top: 24px; margin-left: 7px;" onclick="editIntro();">수정하기</button>
+                </div>
             </div>
 
             </main>

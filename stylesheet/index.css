@@ -307,6 +307,7 @@ header, #body{
     padding-top: 20px;
     width: auto;
     display: none;
+    cursor: pointer;
 }
 
 .index_logout_bt{
@@ -314,6 +315,7 @@ header, #body{
     justify-content: flex-end;
     font-size: 1rem;
     display: none;
+    cursor: pointer;
 }
 
 .index_logout_bt p{
@@ -321,6 +323,7 @@ header, #body{
     display: none;
     cursor: pointer;
     text-align: right;
+    cursor: pointer;
 }
 
 #footer_img_wrap{

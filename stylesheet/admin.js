@@ -185,7 +185,7 @@ function getAllUser(){
         contentType: 'application/json',
         success: function(data){
             for(var i=0; i<data.length; i++){
-                $("#userList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+data[i].id+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td>'+data[i].department+'</td><td>'+data[i].address + " " + data[i].address_detail+'</td><td>'+data[i].companyYn+'</td><td class="approval_btn"><button onclick="deleteUser_btn('+data[i].id+')">탈퇴처리</button></td></tr>');
+                $("#userList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+data[i].id+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td>'+data[i].department+'</td><td>'+data[i].address + " " + data[i].address_detail+'</td><td>'+data[i].companyYn+'</td><td class="approval_btn"><button onclick="deleteUser_btn(\''+data[i].id+'\')">탈퇴처리</button></td></tr>');
             }
         }
     })
@@ -222,6 +222,7 @@ function changeYoutubeLink(){
         }
     })
 }
+
 function deletePromotion(num){
     $.ajax({
         type: "DELETE",
@@ -249,7 +250,6 @@ function getPromotion(){
     })
 }
 
-
 function postPromotion(){
     var form = $('#uploadForm')[0];
     const formData = new FormData(form);
@@ -267,6 +267,49 @@ function postPromotion(){
                 $("input[name='file']").val() = '';
             },
             complete: function(data){
+            }
+        })
+    }
+}
+
+function editGreetings(){
+    var ment = $('#greetings_ment').val();
+    var realMent = ment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    if(ment != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'greetings?greetings=' + realMent,
+            contentType: 'application/json',
+            success: function(data){
+                alert('인사말이 수정되었습니다.');
+            }
+        })
+    }
+}
+
+function editIntro(){
+    var effectment = $('#effect_ment').val();
+    var effectRealMent = effectment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    var missionment = $('#mission_ment').val();
+    var missionRealMent = missionment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    if(effectment == ''){
+        alert('설립 취지를 입력해주세요');
+    }
+    if(missionment == ''){
+        alert('MISSION을 입력해주세요');
+    }
+
+    if(effectment != '' && missionRealMent != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'introduce',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                'MISSION': missionRealMent,
+                '설립취지' : effectRealMent
+            }),
+            success: function(data){
+                alert('협회소개가 수정되었습니다.');
             }
         })
     }
