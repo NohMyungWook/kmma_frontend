@@ -6,6 +6,7 @@ var last;
 var interval;
 
 $(document).ready(function(){
+    changeYoutubeLink();
     $(".rolling_wrap a").each(function(){
         $(this).css("left", banner_left);
         banner_left += $(this).width()+30;
@@ -19,6 +20,11 @@ $(document).ready(function(){
         function() {stopAction();},
         function() {startAction();});
 });
+
+function changeYoutubeLink(){
+    var link = sessionStorage.getItem('link');
+    $('#kmma_youtube').attr('src', link);
+}
 
 function startAction(){
     interval = setInterval(function(){

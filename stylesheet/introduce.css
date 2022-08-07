@@ -654,22 +654,17 @@
 }
 
 .promotion_content{
-    margin-top: 40px;
+    margin: 10px auto 50px auto;
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.firstPro, .secondPro{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-}
-
-.promotion1, .promotion2, .promotion3, .promotion4{
-    width: 48%; 
-    margin: 0px 5px 0px 5px;
+.promotion_content div{
+    width: 24%; 
+    margin: 20px 5px 0px 5px;
     padding: 20px;
     border: 1px solid rgba(66, 65, 65, 0.2);
     box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
@@ -681,16 +676,12 @@
 }
 
 @media(max-width: 767px){
-    .promotion_content{
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-    .firstPro, .secondPro{
-        width: 95%;
-    }
-    .secondPro{
-        margin-top: 10px;
+    .promotion_content div{
+        width: 40%; 
+        margin: 20px 5px 0px 5px;
+        padding: 20px;
+        border: 1px solid rgba(66, 65, 65, 0.2);
+        box-shadow: 7px 7px 7px 1px rgba(157, 156, 156, 0.2);
     }
 }
 
