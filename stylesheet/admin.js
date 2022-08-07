@@ -320,7 +320,8 @@ function getEditContent(){
         url: domain + 'greetings',
         contentType: 'application/json',
         success: function(data){
-            $('#greetings_ment').val(data);
+            var newData = data.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+            $('#greetings_ment').val(newData);
         }
     })
     $.ajax({
@@ -329,7 +330,7 @@ function getEditContent(){
         contentType: 'application/json',
         success: function(data){
             $('#mission_ment').val(data.MISSION);
-            $('effect_ment').val(data.설립취지);
+            $('#effect_ment').val(data.설립취지);
         }
     })
 }
