@@ -1,4 +1,5 @@
 var domain = "https://kmma.io/kmma/";
+document.write('<script src="/stylesheet/tab.js"></script>');
 
 function approval_btn(approval_mem){
     $.ajax({
@@ -70,6 +71,21 @@ function outstanding_btn(outstanding_mem){
     })
 }
 
+function deleteUser_btn(delete_userId){
+    $.ajax({
+        type: 'DELETE',
+        url: domain + "user/" + delete_userId,
+        contentType: 'application/json',
+        success: function(data){
+            location.reload();
+            onDisplay(2);
+        },
+        error: function(data){
+            alert("요청에 실패하였습니다.");
+        }
+    })
+}
+
 function getUnapprovedUser(){
     $.ajax({
         type: 'GET',
@@ -117,7 +133,7 @@ function getOutstandingUer(){
     })
 }
 
-function getAllUser(){
+function getAllMember(){
     $.ajax({
         type: 'GET',
         url: domain + "member/all",
@@ -134,7 +150,7 @@ function getAllUser(){
                 else{
                     memeber = "특별회원";
                 }
-                $("#userList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+member+'</td><td>'+data[i].name+'</td><td>'+data[i].company+'</td><td>'+data[i].position+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td class="approval_btn"><button onclick="cancle_btn('+data[i].memberNo+')">승인취소</button></td></tr>');
+                $("#memberList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+member+'</td><td>'+data[i].name+'</td><td>'+data[i].company+'</td><td>'+data[i].position+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td class="approval_btn"><button onclick="cancle_btn('+data[i].memberNo+')">승인취소</button></td></tr>');
             }
         }
     })
@@ -158,6 +174,19 @@ function getPaymentUser(){
                     memeber = "특별회원";
                 }
                 $("#paymentList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+member+'</td><td>'+data[i].name+'</td><td>'+data[i].company+'</td><td>'+data[i].position+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td class="approval_btn"><button onclick="outstanding_btn('+data[i].memberNo+')">미납부처리</button></td></tr>');
+            }
+        }
+    })
+}
+
+function getAllUser(){
+    $.ajax({
+        type: 'GET',
+        url: domain + "alluser",
+        contentType: 'application/json',
+        success: function(data){
+            for(var i=0; i<data.length; i++){
+                $("#userList").append('<tr><th scope="row">'+(i+1)+'</th><td>'+data[i].id+'</td><td>'+data[i].phone+'</td><td>'+data[i].email+'</td><td>'+data[i].department+'</td><td>'+data[i].address + " " + data[i].address_detail+'</td><td>'+data[i].companyYn+'</td><td class="approval_btn"><button onclick="deleteUser_btn('+data[i].id+')">탈퇴처리</button></td></tr>');
             }
         }
     })
@@ -243,8 +272,9 @@ $(document).ready(function(){
     getPromotion();
     getUnapprovedUser();
     getOutstandingUer();
-    getAllUser();
+    getAllMember();
     getPaymentUser();
+    getAllUser();
 });
 
 
