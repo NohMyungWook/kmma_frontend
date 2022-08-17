@@ -3,7 +3,12 @@ var banner_left = 0;
 var img_cnt = 0;
 var first = 1;
 var last;
-var interval;
+var interval, interval2;
+
+var banner2_left = 0;
+var img2_cnt = 0;
+var imgFirst = 1;
+var lastImg;
 
 $(document).ready(function(){
     getYoutubeLink();
@@ -14,7 +19,16 @@ $(document).ready(function(){
         $(this).attr("id", "content"+(++img_cnt));
     });
 
+
+    $(".index_img_wrap img").each(function(){
+        $(this).css("left", banner2_left);
+        banner2_left += $(this).width()+30;
+        $(this).attr("id", "content");
+    });
+
+    lastImg = img2_cnt;
     last = img_cnt;
+    startAction2();
     startAction();
 
     $(".content").hover(
@@ -44,6 +58,25 @@ function getYoutubeLink(){
             parsingLink(data);
         }
     })
+}
+
+function startAction2(){
+    interval2 = setInterval(function(){
+        $(".index_img_wrap img").each(function(){
+            $(this).css("left", $(this).position().left-1);
+        });
+        
+        var first_content = $("#content"+imgFirst);
+        var last_content = $("#content"+lastImg);
+
+        if(first_content.position().left < "-"+$(first_content).width()){
+            first_content.css("left", last_content.position().left+last_content.width()+30);
+            imgFirst++;
+            lastImg++;
+            if(lastImg > img2_cnt) { lastImg = 1; }
+            if(imgFirst > img2_cnt) { imgFirst = 1; }
+        }
+    }, 15);
 }
 
 function startAction(){
@@ -136,7 +169,7 @@ function getIndexImage(){
         contentType: 'application/json',
         success: function(data){
             for(var i = 0; i < 4; i++){
-                $('.index_img_wrap').append('<img src = "'+data[i]['link']+'">');
+                $('.index_img_wrap').append('<img class="content2" src = "'+data[i]['link']+'">');
             }
         }
     })
