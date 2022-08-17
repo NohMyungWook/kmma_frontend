@@ -316,6 +316,31 @@ function editIntro(){
     }
 }
 
+
+function getEditContent(){
+    $('#greetings_ment').val('');
+    $('#effect_ment').val('');
+    $('#mission_ment').val('');
+    $.ajax({
+        type: "GET",
+        url: domain + 'greetings',
+        contentType: 'application/json',
+        success: function(data){
+            var newData = data.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+            $('#greetings_ment').val(newData);
+        }
+    })
+    $.ajax({
+        type: "GET",
+        url: domain + 'introduce',
+        contentType: 'application/json',
+        success: function(data){
+            $('#mission_ment').val(data.MISSION);
+            $('#effect_ment').val(data.설립취지);
+        }
+    })
+}
+
 $(document).ready(function(){
     // postUser();
     getPromotion();
