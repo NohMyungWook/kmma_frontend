@@ -1609,6 +1609,7 @@
 
 .post_details_content img{
     all: unset;
+    width: 80%;
     margin: 0 auto;
 }
 

@@ -12,6 +12,11 @@ $(document).ready(function(){
             $('#post_details_title').html(data.title);
             $('.post_upload_time').html(data.regdate);
             $('.post_details_content').html(data.content);
+            $('.post_details_content img').css('width', '100%');
+            $('.post_details_content img').css('height', '100%');
+            $('.post_details_content img').css('margin-top', '10px');
+            $('.post_details_content p').css('display', 'flex');
+            $('.post_details_content p').css('flex-direction', 'column');
         }
     })
     sessionStorage.removeItem('noticeNum');

@@ -264,7 +264,7 @@ function postPromotion(){
             success: function(data){
                 alert("등록이 완료되었습니다.");
                 getPromotion();
-                $("input[name='file']").val() = '';
+                $("#promote_file").val('');
             },
             complete: function(data){
             }
@@ -282,6 +282,7 @@ function editGreetings(){
             contentType: 'application/json',
             success: function(data){
                 alert('인사말이 수정되었습니다.');
+                getEditContent();
             }
         })
     }
@@ -293,13 +294,6 @@ function editIntro(){
     var missionment = $('#mission_ment').val();
     var missionRealMent = missionment.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
-    if(effectment == ''){
-        alert('설립 취지를 입력해주세요');
-    }
-    if(missionment == ''){
-        alert('MISSION을 입력해주세요');
-    }
-    
     if(effectment != '' && missionRealMent != ''){
         $.ajax({
             type: "PUT",
@@ -311,11 +305,11 @@ function editIntro(){
             }),
             success: function(data){
                 alert('협회소개가 수정되었습니다.');
+                getEditContent();
             }
         })
     }
 }
-
 
 function getEditContent(){
     $('#greetings_ment').val('');
@@ -342,12 +336,12 @@ function getEditContent(){
 }
 
 $(document).ready(function(){
-    // postUser();
+    postUser();
     getPromotion();
     getUnapprovedUser();
     getOutstandingUer();
     getAllMember();
     getPaymentUser();
     getAllUser();
+    getEditContent();
 });
-

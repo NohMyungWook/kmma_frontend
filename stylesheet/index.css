@@ -154,6 +154,11 @@ header, #body{
     cursor: pointer;
 }
 
+.notice_card_content{
+    height: 130px;
+    overflow: hidden;
+}
+
 .notice_card_title{
     font-weight: bold;
 }
@@ -168,6 +173,18 @@ header, #body{
 
 .notice_part > nav{
     margin: 10px auto 0;
+}
+
+.index_img_wrap{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.index_img_wrap img{
+    width: 150px;
+    height: 160px;
+    margin-right: 20px;
 }
 
 /* */
