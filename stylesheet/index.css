@@ -85,7 +85,10 @@ header, #body{
     }
     .main_text{
         font-weight: bold;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
+    }
+    .carousel-caption > p{
+        font-size: 0.8rem;
     }
 }
 /* content part */
