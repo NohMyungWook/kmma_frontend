@@ -7,6 +7,7 @@ var interval;
 
 $(document).ready(function(){
     getYoutubeLink();
+    getIndexImage();
     $(".rolling_wrap a").each(function(){
         $(this).css("left", banner_left);
         banner_left += $(this).width()+30;
@@ -18,7 +19,8 @@ $(document).ready(function(){
 
     $(".content").hover(
         function() {stopAction();},
-        function() {startAction();});
+        function() {startAction();}
+    );
 });
 
 function parsingLink(link){
@@ -126,3 +128,23 @@ $(document).ready(function(){
     getIndexNotice();
     getNotice(1);
 })
+
+function getIndexImage(){
+    $.ajax({
+        type: "GET",
+        url: domain + "promotion",
+        contentType: 'application/json',
+        success: function(data){
+            for(var i = 0; i < 4; i++){
+                $('.index_img_wrap').append('<img src = "'+data[i]['link']+'">');
+            }
+        }
+    })
+}
+
+function showQRpopup(){
+    var url = "qr_popup.html";
+    var name = "QR 자세히 보기";
+    var option = "width = 520, height = 520, top = 100, left = 50, location = no";
+    window.open(url, name, option);
+}

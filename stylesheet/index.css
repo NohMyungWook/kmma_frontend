@@ -364,3 +364,26 @@ header, #body{
         width: 100%;
     }
 }
+
+.main_qr{
+    display: flex;
+}
+
+.main_qr > img{
+    cursor: pointer;
+}
+
+.qr_content{
+    font-size: small;
+    align-items: center;
+    margin-left: 10px;
+}
+
+@media(max-width: 767px){
+    .qr_element{
+        display: none;
+    }
+    .index_img_wrap{
+        display: none;
+    }
+}
