@@ -441,13 +441,13 @@ function changeMainImg(){
     if($("input[name='file']").val() != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'organization',
+            url: domain + 'main',
             data: formData,
             enctype: 'multipart/form-data',
             processData: false,
             contentType: false,
             success: function(data){
-                alert('임원명단 표 이미지가 변경되었습니다.');
+                alert(number + ' 번째 메인 사진이 변경되었습니다.');
             }
         })
     }
