@@ -335,8 +335,126 @@ function getEditContent(){
     })
 }
 
+//이미지 링크를 보낼라나요..? src를??
+function changeQRImg(){
+    var form = $('#QR_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'qr',
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('QR 이미지가 변경되었습니다.');
+            }
+        })
+    }
+}
+
+function changeQRLink(){
+    var url = $('.qrUrl').val();
+    $.ajax({
+        type: "PUT",
+        url: domain + 'qrLink',
+        data: {
+            'url': url
+        },
+        contentType: 'application/json',
+        success: function(data){
+            alert('QR 링크가 변경되었습니다.');
+        }
+    })
+}
+
+function changeGreetingsImg(){
+    var form = $('#greetings_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'greetings',
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('인사말 사진이 변경되었습니다.');
+            }
+        })
+    }
+}
+
+function changeOrganizationImg(){
+    var form = $('#organization_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'organization',
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('임원명단 표 이미지가 변경되었습니다.');
+            }
+        })
+    }
+}
+
+function getAboutMemberContent(){
+    $('.about_member_ment').val('');
+    $.ajax({
+        type: "GET",
+        url: domain + 'aboutMember',
+        contentType: 'application/json',
+        success: function(data){
+            var newData = data.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+            $('.about_member_ment').val(newData);
+        }
+    })
+}
+
+function editAboutMent(){
+    var ment = $('#aboutMember_ment').val();
+    var realMent = ment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    if(ment != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'aboutMembers?aboutMember=' + realMent,
+            contentType: 'application/json',
+            success: function(data){
+                alert('가입안내 글이 수정되었습니다.');
+                getAboutMemberContent();
+            }
+        })
+    }
+}
+
+function changeMainImg(){
+    var number = $('.mainNumber').val();
+    var form = $('#mainImg_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'organization',
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('임원명단 표 이미지가 변경되었습니다.');
+            }
+        })
+    }
+}
+
 $(document).ready(function(){
-    postUser();
+    // postUser();
     getPromotion();
     getUnapprovedUser();
     getOutstandingUer();
@@ -344,4 +462,5 @@ $(document).ready(function(){
     getPaymentUser();
     getAllUser();
     getEditContent();
+    getAboutMemberContent();
 });

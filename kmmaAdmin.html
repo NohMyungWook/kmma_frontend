@@ -172,6 +172,22 @@
                 </div>
                 <br>
                 <br>
+                <h2>메인 화면 이미지 변경</h2>
+                <div class="mainThreeImg">
+                    <div style="display: flex; flex-direction: row;">
+                        <select class="mainNumber">
+                            <option value="1">첫 번째</option>
+                            <option value="2">두 번째</option>
+                            <option value="3">세 번째</option>
+                        </select>
+                        <form id="mainImg_uploadForm" enctype="multipart/form-data" style="margin-left: 10px;">
+                        <input type="file" name="file" id="mainImg_file">
+                        </form>
+                        <button type="button" onclick="changeMainImg()">변경하기</button>
+                    </div>
+                </div>
+                <br>
+                <br>
                 <h2>현재 홍보 포스터</h2>
                 <div class="promotion_content" style="display: flex; flex-direction: row;"></div>
                 <br>
@@ -185,10 +201,33 @@
                 </div>
                 <br>
                 <br>
+                <h2>QR 이미지 및 링크 변경</h2>
+                <div style="display: flex; flex-direction: row;">
+                    QR 이미지 : <form id="QR_uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="QrImg_file">
+                    </form>
+                    <button type="button" onclick="changeQRImg()">변경하기</button>
+                </div>
+                <br>
+                <div>
+                    QR 링크 : <input type="text" class="qrUrl" style="width: 340px;"/>
+                    <button type="button" class="qrUrlChange" onclick="changeQRLink()">변경하기</button>
+                </div>
+                <br>
+                <br>
                 <h2>인사말 수정하기</h2>
                 <div style="display: flex; flex-direction:row;">
                     <textarea id="greetings_ment" style="width: 400px; height: 150px;"></textarea>
                     <button type="button" style="margin-left: 10px;" onclick="editGreetings();">수정하기</button>
+                </div>
+                <br>
+                <br>
+                <h2>인사말 페이지 사진 수정하기</h2>
+                <div style="display: flex; flex-direction: row;">
+                    <form id="greetings_uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="greetings_file">
+                    </form>
+                    <button type="button" onclick="changeGreetingsImg()">변경하기</button>
                 </div>
                 <br>
                 <br>
@@ -202,7 +241,24 @@
                     </div>
                     <button type="button" style="margin-top: 24px; margin-left: 7px;" onclick="editIntro();">수정하기</button>
                 </div>
-                <br><br>
+                <br>
+                <br>
+                <h2>임원명단 표 이미지 수정하기</h2>
+                <div style="display: flex; flex-direction: row;">
+                    QR 이미지 : <form id="organization_uploadForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="organization_file">
+                    </form>
+                    <button type="button" onclick="changeOrganizationImg()">변경하기</button>
+                </div>
+                <br>
+                <br>
+                <h2>가입안내 글 수정하기</h2>
+                <div style="display: flex; flex-direction:row; margin-right: 7px;">
+                    <textarea id="aboutMember_ment" style="width: 400px; height: 150px;"></textarea>
+                    <button type="button" style="margin-left: 7px; height: 150px;" onclick="editAboutMent();">수정하기</button>
+                </div>
+                <br>
+                <br> 
             </div>
 
             </main>
