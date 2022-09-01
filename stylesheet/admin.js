@@ -353,7 +353,7 @@ function changeQRImgLink(){
             success: function(data){
                 alert('QR 이미지와 링크가 변경되었습니다.');
                 getQr();
-                $("#qrImgLink").val('');
+                $("#QrImg_file").val('');
             }
         })
     }
@@ -446,7 +446,7 @@ function addMainImg(){
             success: function(data){
                 alert('메인 사진이 추가되었습니다.');
                 getMainImg();
-                $('#mainImg_file').val();
+                $('#mainImg_file').val('');
             }
         })
     }
@@ -480,7 +480,6 @@ function getGreetingsMent(){
 }
 
 function getQr(){
-    $('#qrImg').empty();
     $('#qrImgLink').empty();
     $('#qrImgContent').empty();
     $.ajax({
@@ -512,6 +511,7 @@ function changeQRContent(){
         success: function(data){
             alert('QR 안내글이 변경되었습니다.');
             getQr();
+
         }
     })
 }
