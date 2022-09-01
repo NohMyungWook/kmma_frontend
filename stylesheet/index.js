@@ -128,6 +128,8 @@ function getIndexNotice(){
 $(document).ready(function(){
     getIndexNotice();
     getNotice(1);
+    getQr();
+    getMainImg();
 })
 
 function getIndexImage(){
@@ -143,9 +145,39 @@ function getIndexImage(){
     })
 }
 
-// function showQRpopup(){
-//     var url = "qr_popup.html";
-//     var name = "QR 자세히 보기";
-//     var option = "width = 520, height = 520, top = 100, left = 50, location = no";
-//     window.open(url, name, option);
-// }
+function getMainImg(){
+    var innerMent = '<div class="carousel-caption"><div class="main_text">KMMA</div><p>Korea Metaverse Media Assoication</p><p>어서오세요. 한국메타버스미디어협회 입니다.</p></div>';
+    $.ajax({
+        type:"GET",
+        url: domain + 'main/image',
+        contentType: 'application/json',
+        success: function(data){
+            var num = data.length;
+            if(num > 0){
+                $('.carousel-indicators').html('<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>');
+                $('.carousel-inner').html('<div class="carousel-item active"><img id="main_1" src="' + data[0]['link'] + '" class="d-block w-100" alt="">' + innerMent + '</div>');
+                for(var i = 1; i < num; i++){
+                    $('.carousel-indicators').append('<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="' + i + '" aria-label="Slide ' + i + '"></button>');
+                    $('.carousel-inner').append('<div class="carousel-item"><img id="main_' + (i+1) + '" src="' + data[i]['link'] + '" class="d-block w-100" alt="">' + innerMent + '</div>');
+                }
+            }
+        }
+    })
+}
+
+function getQr(){
+    $.ajax({
+        type:"GET",
+        url: domain + 'qr',
+        contentType: 'application/json',
+        success: function(data){
+            $('#qr_img').attr('src', data[0]['link']);
+            $('#qr_img').attr('onclick', 'window.open("' + data[1]['link'] + '")');
+            $('.qr_content').html(data[2]['link']);
+        }
+    })
+}
+
+function putMainImgLink(data){
+
+}

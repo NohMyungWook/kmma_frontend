@@ -174,16 +174,18 @@
                 <br>
                 <h2>메인 화면 이미지 변경</h2>
                 <div class="mainThreeImg">
-                    <div style="display: flex; flex-direction: row;">
-                        <select class="mainNumber">
-                            <option value="1">첫 번째</option>
-                            <option value="2">두 번째</option>
-                            <option value="3">세 번째</option>
-                        </select>
-                        <form id="mainImg_uploadForm" enctype="multipart/form-data" style="margin-left: 10px;">
-                        <input type="file" name="file" id="mainImg_file">
-                        </form>
-                        <button type="button" onclick="changeMainImg()">변경하기</button>
+                    <div id="mainImgList" style="display: flex; flex-direction: row;">
+                    </div>
+                    <br>
+                    <br>
+                    <div style="display: flex; flex-direction: column;">
+                        <h2>파일 추가 하기</h2>
+                        <div style="display: flex; flex-direction: row;">
+                            <form id="mainImg_uploadForm" enctype="multipart/form-data" style="margin-left: 10px;">
+                            <input type="file" name="file" id="mainImg_file">
+                            </form>
+                            <button type="button" onclick="addMainImg()">추가하기</button>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -202,32 +204,38 @@
                 <br>
                 <br>
                 <h2>QR 이미지 및 링크 변경</h2>
-                <div style="display: flex; flex-direction: row;">
-                    QR 이미지 : <form id="QR_uploadForm" enctype="multipart/form-data">
-                    <input type="file" name="file" id="QrImg_file">
-                    </form>
-                    <button type="button" onclick="changeQRImg()">변경하기</button>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: column;">
+                        QR 이미지<img id="qrImg" src="" style="width: 160px;">
+                        <form id="QR_uploadForm" enctype="multipart/form-data">
+                            <input type="file" name="file" id="QrImg_file">
+                        </form>
+                        <br>
+                        QR 연결 링크<input id="qrImgLink" type="text"  style="width: 500px;">
+                        <button type="button" onclick="changeQRImgLink()" style="margin-top: 10px; width: 500px;">변경하기</button>
+                    </div>
+                    <br>
+                    <div style="display: flex; flex-direction: column;">                        
+                        QR 안내글<textarea id="qrImgContent" type="text" style="width: 500px; height: 200px;"></textarea>
+                        <button type="button" class="qrContentChange" style="width: 500px; margin-top: 10px;" onclick="changeQRContent()">수정하기</button>
+                    </div>
                 </div>
-                <br>
-                <div>
-                    QR 링크 : <input type="text" class="qrUrl" style="width: 340px;"/>
-                    <button type="button" class="qrUrlChange" onclick="changeQRLink()">변경하기</button>
-                </div>
-                <br>
                 <br>
                 <h2>인사말 수정하기</h2>
-                <div style="display: flex; flex-direction:row;">
-                    <textarea id="greetings_ment" style="width: 400px; height: 150px;"></textarea>
-                    <button type="button" style="margin-left: 10px;" onclick="editGreetings();">수정하기</button>
-                </div>
-                <br>
-                <br>
-                <h2>인사말 페이지 사진 수정하기</h2>
                 <div style="display: flex; flex-direction: row;">
-                    <form id="greetings_uploadForm" enctype="multipart/form-data">
-                    <input type="file" name="file" id="greetings_file">
-                    </form>
-                    <button type="button" onclick="changeGreetingsImg()">변경하기</button>
+                    <div class="greetings_img" style="display: flex; flex-direction: column;">
+                        <img src="" style="width: 160px;">
+                        <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                            <form id="greetings_uploadForm" enctype="multipart/form-data">
+                                <input type="file" name="file" id="greetingsImg_file">
+                            </form>
+                            <button type="button" class="greetingsImgChange" style="width: 160px; margin-top: 10px;" onclick="changeGreetingsImg()">변경하기</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <textarea id="greetings_ment" style="width: 400px; height: 200px;"></textarea>
+                        <button type="button" style="margin-top: 10px;" onclick="editGreetings();">수정하기</button>
+                    </div>
                 </div>
                 <br>
                 <br>
@@ -244,11 +252,12 @@
                 <br>
                 <br>
                 <h2>임원명단 표 이미지 수정하기</h2>
-                <div style="display: flex; flex-direction: row;">
-                    QR 이미지 : <form id="organization_uploadForm" enctype="multipart/form-data">
+                <div style="display: flex; flex-direction: column;">
+                    <img id="organImg" src="" style="width: 400px;">
+                    <form id="organization_uploadForm" enctype="multipart/form-data">
                     <input type="file" name="file" id="organization_file">
                     </form>
-                    <button type="button" onclick="changeOrganizationImg()">변경하기</button>
+                    <button type="button" onclick="changeOrganizationImg()" style="margin-top: 10px; width: 400px;">변경하기</button>
                 </div>
                 <br>
                 <br>

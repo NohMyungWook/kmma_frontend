@@ -240,7 +240,7 @@ function getPromotion(){
     $.ajax({
         type: "GET",
         url: domain + 'promotion',
-        contentType: 'application.json',
+        contentType: 'application/json',
         success: function(data){
             var length = data.length;
             for(var i = (length - 1); i >= 0; i--){
@@ -253,7 +253,7 @@ function getPromotion(){
 function postPromotion(){
     var form = $('#uploadForm')[0];
     const formData = new FormData(form);
-    if($("input[name='file']").val() != ''){
+    if($("#uploadForm input[name='file']").val() != ''){
         $.ajax({
             type: "POST",
             url: domain + 'promotion',
@@ -278,8 +278,11 @@ function editGreetings(){
     if(ment != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'greetings?greetings=' + realMent,
+            url: domain + 'greetings',
             contentType: 'application/json',
+            data: JSON.stringify({
+                'content' : realMent
+            }),
             success: function(data){
                 alert('인사말이 수정되었습니다.');
                 getEditContent();
@@ -335,47 +338,33 @@ function getEditContent(){
     })
 }
 
-//이미지 링크를 보낼라나요..? src를??
-function changeQRImg(){
+function changeQRImgLink(){
     var form = $('#QR_uploadForm')[0];
+    var qrLink = $('#qrImgLink').val();
     const formData = new FormData(form);
-    if($("input[name='file']").val() != ''){
+    if($("#QR_uploadForm input[name='file']").val() != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'qr',
+            url: domain + 'qr?link=' + qrLink,
             data: formData,
             enctype: 'multipart/form-data',
             processData: false,
             contentType: false,
             success: function(data){
-                alert('QR 이미지가 변경되었습니다.');
+                alert('QR 이미지와 링크가 변경되었습니다.');
+                getQr();
             }
         })
     }
 }
 
-function changeQRLink(){
-    var url = $('.qrUrl').val();
-    $.ajax({
-        type: "PUT",
-        url: domain + 'qrLink',
-        data: {
-            'url': url
-        },
-        contentType: 'application/json',
-        success: function(data){
-            alert('QR 링크가 변경되었습니다.');
-        }
-    })
-}
-
 function changeGreetingsImg(){
     var form = $('#greetings_uploadForm')[0];
     const formData = new FormData(form);
-    if($("input[name='file']").val() != ''){
+    if($("#greetings_uploadForm input[name='file']").val() != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'greetings',
+            url: domain + 'greetings/image',
             data: formData,
             enctype: 'multipart/form-data',
             processData: false,
@@ -390,7 +379,7 @@ function changeGreetingsImg(){
 function changeOrganizationImg(){
     var form = $('#organization_uploadForm')[0];
     const formData = new FormData(form);
-    if($("input[name='file']").val() != ''){
+    if($("#organization_uploadForm input[name='file']").val() != ''){
         $.ajax({
             type: "PUT",
             url: domain + 'organization',
@@ -400,6 +389,7 @@ function changeOrganizationImg(){
             contentType: false,
             success: function(data){
                 alert('임원명단 표 이미지가 변경되었습니다.');
+                getOrganImg();
             }
         })
     }
@@ -424,33 +414,149 @@ function editAboutMent(){
     if(ment != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'aboutMembers?aboutMember=' + realMent,
+            url: domain + 'about/member',
             contentType: 'application/json',
+            data: JSON.stringify({
+                'content' : realMent
+            }),
             success: function(data){
                 alert('가입안내 글이 수정되었습니다.');
-                getAboutMemberContent();
+                getAboutMember();
             }
         })
     }
 }
 
-function changeMainImg(){
+function addMainImg(){
     var number = $('.mainNumber').val();
     var form = $('#mainImg_uploadForm')[0];
     const formData = new FormData(form);
-    if($("input[name='file']").val() != ''){
+    if($("#mainImg_uploadForm input[name='file']").val() != ''){
         $.ajax({
-            type: "PUT",
-            url: domain + 'main',
+            type: "POST",
+            url: domain + 'main/image',
             data: formData,
             enctype: 'multipart/form-data',
             processData: false,
             contentType: false,
             success: function(data){
-                alert(number + ' 번째 메인 사진이 변경되었습니다.');
+                alert('메인 사진이 추가되었습니다.');
+                getMainImg();
             }
         })
     }
+}
+
+function getGreetingsImg(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'greetings',
+        contentType: 'application/json',
+        success: function(data){
+            $('.greetings_img img').attr("src", data[1]['link']);
+        }
+    })
+}
+
+function getGreetingsMent(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'greetings',
+        contentType: 'application/json',
+        success: function(data){
+            var qrgreetingsMent = data[0]['link'];
+            qrgreetingsMent = qrgreetingsMent.replace(/<br>/ig, '\n');
+            qrgreetingsMent = qrgreetingsMent.replace(/<\/br>/ig, '\n');
+            qrgreetingsMent = qrgreetingsMent.replace(/<br \/>/ig, '\n');
+            $('#greetings_ment').val(qrgreetingsMent);
+        }
+    })
+}
+
+function getQr(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'qr',
+        contentType: 'application/json',
+        success: function(data){
+            var qrImgContent = data[2]['link'];
+            qrImgContent = qrImgContent.replace(/<br>/ig, '\n');
+            qrImgContent = qrImgContent.replace(/<\/br>/ig, '\n');
+            qrImgContent = qrImgContent.replace(/<br \/>/ig, '\n');
+            $('#qrImg').attr('src', data[0]['link']);
+            $('#qrImgLink').val(data[1]['link']);
+            $('#qrImgContent').val(qrImgContent);
+        }
+    })
+}
+
+function changeQRContent(){
+    var qrContent = $('#qrImgContent').val();
+    var qrRealContent = qrContent.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    $.ajax({
+        type: "PUT",
+        url: domain + 'qr/content',
+        data: JSON.stringify({
+            'content' : qrRealContent
+        }),
+        contentType: 'application/json',
+        success: function(data){
+            alert('QR 안내글이 변경되었습니다.');
+            getQr();
+        }
+    })
+}
+
+function getAboutMember(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'about/member',
+        contentType: 'application/json',
+        success: function(data){
+            data = data.replace(/<br>/ig, '\n');
+            data = data.replace(/<\/br>/ig, '\n');
+            data = data.replace(/<br \/>/ig, '\n');
+            $('#aboutMember_ment').val(data);
+        }
+    })
+}
+
+function getOrganImg(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'organization',
+        contentType: 'application/json',
+        success: function(data){
+            $('#organImg').attr('src', data);
+        }
+    })
+}
+ 
+function getMainImg(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'main/image',
+        contentType: 'application/json',
+        success: function(data){
+            var num = data.length;
+            for(var i = 0; i < num; i++){
+                $('#mainImgList').append('<div style="display: flex; flex-direction: column;"><img id="' + data[i]['no'] + '" src="' + data[i]['link'] + '" style="width: 150px; height: 100px; margin-right: 15px;"><button type="button" onclick="deleteMainImg(' + data[i]['no'] + ')" style="width: 80px; margin-top: 10px;">삭제하기</button></div>');
+            }
+        }
+
+    })
+}
+
+function deleteMainImg(num){
+    $.ajax({
+        type: "DELETE",
+        url: domain + 'main/image/' + num,
+        contentType: 'application/json',
+        success: function(data){
+            alert('선택한 메인 이미지가 삭제되었습니다.');
+            getMainImg();
+        }
+    })
 }
 
 $(document).ready(function(){
@@ -463,4 +569,10 @@ $(document).ready(function(){
     getAllUser();
     getEditContent();
     getAboutMemberContent();
+    getGreetingsImg();
+    getGreetingsMent();
+    getQr();
+    getAboutMember();
+    getOrganImg();
+    getMainImg();
 });

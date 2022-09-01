@@ -5,8 +5,9 @@ function getGreetings(){
         type: "GET",
         url: domain + 'greetings',
         contentType: 'application/json',
-        success: function(data){
-            $('.greetings_ment').html(data);
+        success: function(data){ 
+            $('.greetings_ment').html(data[0]['link']);
+            $('.greetings_img img').attr('src', data[1]['link']);
         }
     })
 }
