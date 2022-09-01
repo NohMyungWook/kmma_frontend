@@ -285,7 +285,7 @@ function editGreetings(){
             }),
             success: function(data){
                 alert('인사말이 수정되었습니다.');
-                getEditContent();
+                getGreetingsMent();
             }
         })
     }
@@ -353,6 +353,7 @@ function changeQRImgLink(){
             success: function(data){
                 alert('QR 이미지와 링크가 변경되었습니다.');
                 getQr();
+                $("#qrImgLink").val('');
             }
         })
     }
@@ -371,6 +372,8 @@ function changeGreetingsImg(){
             contentType: false,
             success: function(data){
                 alert('인사말 사진이 변경되었습니다.');
+                getGreetingsImg();
+                $("#greetingsImg_file").val('');
             }
         })
     }
@@ -390,6 +393,7 @@ function changeOrganizationImg(){
             success: function(data){
                 alert('임원명단 표 이미지가 변경되었습니다.');
                 getOrganImg();
+                $('#organization_file').val('');
             }
         })
     }
@@ -442,6 +446,7 @@ function addMainImg(){
             success: function(data){
                 alert('메인 사진이 추가되었습니다.');
                 getMainImg();
+                $('#mainImg_file').val();
             }
         })
     }
@@ -459,6 +464,7 @@ function getGreetingsImg(){
 }
 
 function getGreetingsMent(){
+    $('#greetings_ment').empty();
     $.ajax({
         type: "GET",
         url: domain + 'greetings',
@@ -474,6 +480,9 @@ function getGreetingsMent(){
 }
 
 function getQr(){
+    $('#qrImg').empty();
+    $('#qrImgLink').empty();
+    $('#qrImgContent').empty();
     $.ajax({
         type: "GET",
         url: domain + 'qr',
@@ -508,6 +517,7 @@ function changeQRContent(){
 }
 
 function getAboutMember(){
+    $('#aboutMember_ment').empty();
     $.ajax({
         type: "GET",
         url: domain + 'about/member',
@@ -533,6 +543,7 @@ function getOrganImg(){
 }
  
 function getMainImg(){
+    $('#mainImgList').empty();
     $.ajax({
         type: "GET",
         url: domain + 'main/image',
