@@ -359,6 +359,69 @@ function changeQRImgLink(){
     }
 }
 
+function changeEducationFirstImg(){
+    var num = $('#educationFirstImg').attr('class');
+    var form = $('#educationFirst_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("#educationFirst_uploadForm input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'education/image/' + num,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                getEducationImg();
+                $("#educationFirst_file").val('');
+            }
+        })
+    }
+}
+
+function changeEducationSecondImg(){
+    var num = $('#educationSecondImg').attr('class');
+    var form = $('#educationSecond_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("#educationSecond_uploadForm input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'education/image/' + num,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                getEducationImg();
+                $("#educationSecond_file").val('');
+            }
+        })
+    }
+}
+
+function changeEducationThirdImg(){
+    var num = $('#educationThirdImg').attr('class');
+    var form = $('#educationSecond_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("#educationThird_uploadForm input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'education/image/' + num,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                getEducationImg();
+                $("#educationThird_file").val('');
+            }
+        })
+    }
+}
+
 function changeGreetingsImg(){
     var form = $('#greetings_uploadForm')[0];
     const formData = new FormData(form);
@@ -459,6 +522,22 @@ function getGreetingsImg(){
         contentType: 'application/json',
         success: function(data){
             $('.greetings_img img').attr("src", data[1]['link']);
+        }
+    })
+}
+
+function getEducationImg(){
+    $.ajax({
+        type: "GET",
+        url: domain + 'education/image',
+        contentType: 'application/json',
+        success: function(data){
+            $('#educationFirstImg').attr("src", data[0]['link']);
+            $('#educationFirstImg').attr("class", data[0]['no']);
+            $('#educationSecondImg').attr("src", data[1]['link']);
+            $('#educationSecondImg').attr("class", data[1]['no']);
+            $('#educationThirdImg').attr("src", data[2]['link']);
+            $('#educationThirdImg').attr("class", data[2]['no']);
         }
     })
 }
@@ -586,4 +665,5 @@ $(document).ready(function(){
     getAboutMember();
     getOrganImg();
     getMainImg();
+    getEducationImg();
 });

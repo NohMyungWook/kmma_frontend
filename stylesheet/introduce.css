@@ -500,6 +500,12 @@
     width: 90%;
 }
 
+#educationSecondImg, #educationThirdImg{
+    margin-top: 30px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
 .research_fellow_content{
     display: flex;
     flex-direction: column;
