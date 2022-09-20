@@ -393,7 +393,7 @@ function changeEducationSecondImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                alert('연구위원 사진이 변경되었습니다.');
                 getEducationImg();
                 $("#educationSecond_file").val('');
             }
@@ -414,7 +414,7 @@ function changeEducationThirdImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                alert('연구위원 조직 사진이 변경되었습니다.');
                 getEducationImg();
                 $("#educationThird_file").val('');
             }
