@@ -403,7 +403,7 @@ function changeEducationSecondImg(){
 
 function changeEducationThirdImg(){
     var num = $('#educationThirdImg').attr('class');
-    var form = $('#educationSecond_uploadForm')[0];
+    var form = $('#educationThird_uploadForm')[0];
     const formData = new FormData(form);
     if($("#educationThird_uploadForm input[name='file']").val() != ''){
         $.ajax({
