@@ -442,6 +442,26 @@ function changeGreetingsImg(){
     }
 }
 
+function changeMainLogoImg(){
+    var form = $('#mainLogo_uploadForm')[0];
+    const formData = new FormData(form);
+    if($("#mainLogo_uploadForm input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'logo/1',
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('로고가 변경되었습니다.');
+                getLogoImg();
+                $("#mainLogo_file").val('');
+            }
+        })
+    }
+}
+
 function changeOrganizationImg(){
     var form = $('#organization_uploadForm')[0];
     const formData = new FormData(form);
@@ -649,6 +669,17 @@ function deleteMainImg(num){
     })
 }
 
+function getMainLogo(){
+    $.ajax({
+        type: "GET",
+        url: domain + "main/logo",
+        contentType: "application/json",
+        success: function(data){
+            $('#navbar-img').attr('src', data);
+        }
+    })
+}
+
 $(document).ready(function(){
     // postUser();
     getPromotion();
@@ -666,4 +697,5 @@ $(document).ready(function(){
     getOrganImg();
     getMainImg();
     getEducationImg();
+    getMainLogo();
 });

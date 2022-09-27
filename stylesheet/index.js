@@ -130,6 +130,7 @@ $(document).ready(function(){
     getNotice(1);
     getQr();
     getMainImg();
+    getRollingImg();
 })
 
 function getIndexImage(){
@@ -178,6 +179,20 @@ function getQr(){
     })
 }
 
-function putMainImgLink(data){
+function getRollingImg(){
+    $.ajax({
+        type: "GET",
+        url: domain + "logos",
+        contentType: "application/json",
+        success: function(data){
+            var imgLength = data.length;
+            for(var j = 0; j < 5; j++){
+                for(var i = 1; i < data.length; i++){
+                    
+                }
+
+            }
+        }
+    })
 
 }

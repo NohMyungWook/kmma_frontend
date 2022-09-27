@@ -181,10 +181,24 @@
                     <div style="display: flex; flex-direction: column;">
                         <h2>메인 화면 이미지 추가 하기</h2>
                         <div style="display: flex; flex-direction: row;">
-                            <form id="mainImg_uploadForm" enctype="multipart/form-data" style="margin-left: 10px;">
+                            <form id="mainImg_uploadForm" enctype="multipart/form-data">
                             <input type="file" name="file" id="mainImg_file">
                             </form>
                             <button type="button" onclick="addMainImg()">추가하기</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h2>메인 로고 수정하기</h2>
+                <div style="display: flex; flex-direction: row;">
+                    <div style="display: flex; flex-direction: column;">
+                        <img id="navbar-img" src="" style="width: 160px;">
+                        <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                            <form id="mainLogo_uploadForm" enctype="multipart/form-data">
+                                <input type="file" name="file" id="mainLogo_file">
+                            </form>
+                            <button type="button" style="width: 160px; margin-top: 10px;" onclick="changeMainLogoImg()">변경하기</button>
                         </div>
                     </div>
                 </div>
