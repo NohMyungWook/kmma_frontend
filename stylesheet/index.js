@@ -182,7 +182,7 @@ function getRollingImg(){
         success: function(data){
             for(var j = 0; j < 5; j++){
                 for(var i = 0; i < data.length; i++){
-                    $('.rolling_wrap').append('<a href="' + data[i]['link'] + '"target="_blank" class="content"><img src="' + data[i]['link'] + '" alt=""></a>')
+                    $('.rolling_wrap').append('<a href="' + data[i]['homepage'] + '"target="_blank" class="content"><img src="' + data[i]['link'] + '" alt=""></a>')
                 }
 
             }
