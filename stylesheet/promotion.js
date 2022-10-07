@@ -14,6 +14,21 @@ function getPromotion(){
     })
 }
 
+function getPromotionPageNum(num){
+    $.ajax({
+        type: "GET",
+        url: domain + "promotion/list?page=" + num,
+        contentType: 'application/json',
+        success: function(data){
+            var pageNum = data.totalPages + 1;
+            for(var i = 1; i < pageNum; i++){
+                $('#noticePagination').append('<li class="page-item"><a class="page-link" id="promotionPage' + i + '" onclick="getNotice(' + i + ')">' + i + '</a></li>');
+            }
+        }
+    })
+}
+
 $(document).ready(function(){
     getPromotion();
+    getPromotionPageNum(1);
 })

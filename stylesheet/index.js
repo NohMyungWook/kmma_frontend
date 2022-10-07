@@ -6,16 +6,9 @@ var last;
 var interval;
 
 $(document).ready(function(){
+    getRollingImg();
     getYoutubeLink();
     getIndexImage();
-    $(".rolling_wrap a").each(function(){
-        $(this).css("left", banner_left);
-        banner_left += $(this).width()+30;
-        $(this).attr("id", "content"+(++img_cnt));
-    });
-
-    last = img_cnt;
-    startAction();
 
     $(".content").hover(
         function() {stopAction();},
@@ -36,6 +29,7 @@ function parsingLink(link){
         $('#kmma_youtube').attr('src', realLink);
     }
 }
+
 function getYoutubeLink(){
     $.ajax({
         type: "GET",
@@ -57,7 +51,7 @@ function startAction(){
         var last_content = $("#content"+last);
 
         if(first_content.position().left < "-"+$(first_content).width()){
-            first_content.css("left", last_content.position().left+last_content.width()+30);
+            first_content.css("left", last_content.position().left+last_content.width()+60);
             first++;
             last++;
             if(last > img_cnt) { last = 1; }
@@ -130,7 +124,6 @@ $(document).ready(function(){
     getNotice(1);
     getQr();
     getMainImg();
-    getRollingImg();
 })
 
 function getIndexImage(){
@@ -139,7 +132,11 @@ function getIndexImage(){
         url: domain + "promotion",
         contentType: 'application/json',
         success: function(data){
-            for(var i = 0; i < 4; i++){
+            var length = data.length;
+            if (length > 5){
+
+            }
+            for(var i = length; i < 0; i--){
                 $('.index_img_wrap').append('<img src = "'+data[i]['link']+'">');
             }
         }
@@ -185,14 +182,20 @@ function getRollingImg(){
         url: domain + "logos",
         contentType: "application/json",
         success: function(data){
-            var imgLength = data.length;
             for(var j = 0; j < 5; j++){
-                for(var i = 1; i < data.length; i++){
-                    
+                for(var i = 0; i < data.length; i++){
+                    $('.rolling_wrap').append('<a href="' + data[i]['link'] + '"target="_blank" class="content"><img src="' + data[i]['link'] + '" alt=""></a>')
                 }
 
             }
+            $(".rolling_wrap a").each(function(){
+                $(this).css("left", banner_left);
+                banner_left += $(this).width()+30;
+                $(this).attr("id", "content"+(++img_cnt));
+            });
+        
+            last = img_cnt;
+            startAction();
         }
     })
-
 }

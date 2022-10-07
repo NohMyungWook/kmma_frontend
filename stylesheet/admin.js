@@ -680,6 +680,75 @@ function getMainLogo(){
     })
 }
 
+function getCompanyLogo(){
+    $.ajax({
+        type: "GET",
+        url: domain + "logos",
+        contentType: "application/json",
+        success: function(data){
+            for(var i = 0; i < data.length; i++){
+                $('.companyLogoList').append('<div style="display: flex; flex-direction: column;"><div style="display: flex; flex-direction: row;"><img id="' + data[i]['no'] + '" src="' + data[i]['link'] + '" style="width: 200px; height: 70px;"><button type="button" style="width: 50px; height:70px; margin-left: 20px;" onclick="deleteCompanyLogoImg(' + data[i]['no'] + ')">삭제하기</button></div><br/><form id="companyLogo_uploadForm' + data[i]['no'] + '" enctype="multipart/form-data"><input type="file" name="file" id="companyLogo_file' + data[i]['no'] + '"></form><div style="display: flex; flex-direction: row; margin-top: 5px;"><input type="text" class="companyInput' + data[i]['no'] + '" style="width: 400px;"/><button type="button" style="width: 100px; margin-left: 10px;" onclick="changeCompanyImg(' + data[i]['no'] + ')">변경하기</button></div><br/><br/>');
+            }
+            for(var i = 0; i < data.length; i++){
+                $('.companyInput'+data[i]['no']).val(data[i]['link']);
+            }
+        }
+    })
+}
+function deleteCompanyLogoImg(data){
+    $.ajax({
+        type: "DELETE",
+        url: domain + 'logo/' + data,
+        contentType: "application/json",
+        success: function(data){
+            alert('성공적으로 삭제되었습니다.');
+            getCompanyLogo();
+        }
+    })
+}
+
+function changeCompanyImg(data){
+    var form = $('#companyLogo_uploadForm' + data)[0];
+    const formData = new FormData(form);
+    console.log(formData);
+    var formLink = $('.companyInput' + data).val();
+    if($("#companyLogo_uploadForm" + data +  " input[name='file']").val() != ''){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'logo/' + data + '/' + formLink,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                alert('사진과 링크가 변경되었습니다.');
+                getCompanyLogo();
+                $("#companyLogo_file" + data).val('');
+            }
+        })
+    }
+}
+
+function addCompanyLogoImg(){
+    var link = $('#newCompanyLogoLink').val();
+    var form = $('#newCompanyLogo_uploadForm')[0];
+    const formData = new FormData(form);
+    $.ajax({
+        type: "POST",
+        url: domain + 'logo/' + link,
+        data: formData,
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert('후원사가 추가되었습니다.');
+            $("#newCompanyLogo_file" + data).val('');
+            $('#newCompanyLogoLink').val('');
+            getCompanyLogo();
+        }
+    })
+}
+
 $(document).ready(function(){
     // postUser();
     getPromotion();
@@ -698,4 +767,5 @@ $(document).ready(function(){
     getMainImg();
     getEducationImg();
     getMainLogo();
+    getCompanyLogo();
 });
