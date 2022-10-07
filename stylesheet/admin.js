@@ -710,12 +710,11 @@ function deleteCompanyLogoImg(data){
 function changeCompanyImg(data){
     var form = $('#companyLogo_uploadForm' + data)[0];
     const formData = new FormData(form);
-    console.log(formData);
     var formLink = $('.companyInput' + data).val();
     if($("#companyLogo_uploadForm" + data +  " input[name='file']").val() != ''){
         $.ajax({
             type: "PUT",
-            url: domain + 'logo/' + data + '/' + formLink,
+            url: domain + 'logo/' + data + '?link=' + formLink,
             data: formData,
             enctype: 'multipart/form-data',
             processData: false,
@@ -735,7 +734,7 @@ function addCompanyLogoImg(){
     const formData = new FormData(form);
     $.ajax({
         type: "POST",
-        url: domain + 'logo/' + link,
+        url: domain + 'logo?link=' + link,
         data: formData,
         enctype: 'multipart/form-data',
         processData: false,

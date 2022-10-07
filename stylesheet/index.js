@@ -124,20 +124,18 @@ $(document).ready(function(){
     getNotice(1);
     getQr();
     getMainImg();
+    getPromotionImage();
 })
 
-function getIndexImage(){
+function getPromotionImage(){
     $.ajax({
         type: "GET",
         url: domain + "promotion",
         contentType: 'application/json',
         success: function(data){
-            var length = data.length;
-            if (length > 5){
-
-            }
-            for(var i = length; i < 0; i--){
-                $('.index_img_wrap').append('<img src = "'+data[i]['link']+'">');
+            var length = data.length - 1;
+            for(var i = 0; i < length; i++){
+                $('.index_img_wrap').append('<img src = "'+data[length - i]['link']+'">');
             }
         }
     })
