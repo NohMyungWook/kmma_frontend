@@ -32,6 +32,13 @@
     background-color: black;
 }
 
+.title_under2{
+    margin-top: 15px;
+    height: 2px;
+    width: 150px;
+    background-color: black;
+}
+
 .greetings_content{
     margin-top: 90px;
     margin-bottom: 100px;
@@ -118,11 +125,9 @@
     }
     .greetings_ment{
         margin-top: 20px;
-        text-align: center;
     }
     .greetings_name{
         margin-top: 15px;
-        text-align: center;
     }
 }
 

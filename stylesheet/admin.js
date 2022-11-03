@@ -690,6 +690,7 @@ function getCompanyLogo(){
             console.log(data);
             for(var i = 0; i < data.length; i++){
                 $('.companyLogoList').append('<div style="display: flex; flex-direction: column;"><div style="display: flex; flex-direction: row;"><img id="' + data[i]['no'] + '" src="' + data[i]['link'] + '" style="width: 200px; height: 70px;"><button type="button" style="width: 50px; height:70px; margin-left: 20px;" onclick="deleteCompanyLogoImg(' + data[i]['no'] + ')">삭제하기</button></div><br/><form id="companyLogo_uploadForm' + data[i]['no'] + '" enctype="multipart/form-data"><input type="file" name="file" id="companyLogo_file' + data[i]['no'] + '"></form><div style="display: flex; flex-direction: row; margin-top: 5px;"><input type="text" class="companyInput' + data[i]['no'] + '" style="width: 400px;"/><button type="button" style="width: 100px; margin-left: 10px;" onclick="changeCompanyImg(' + data[i]['no'] + ')">변경하기</button></div><br/><br/>');
+                $('#' + data).css('border', '1px solid black');
             }
             for(var i = 0; i < data.length; i++){
                 $('.companyInput'+data[i]['no']).val(data[i]['homepage']);
@@ -697,6 +698,7 @@ function getCompanyLogo(){
         }
     })
 }
+
 function deleteCompanyLogoImg(data){
     $.ajax({
         type: "DELETE",
