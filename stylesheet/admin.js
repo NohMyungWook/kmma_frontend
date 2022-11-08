@@ -214,11 +214,13 @@ function changeYoutubeLink(){
         url: domain + 'youtube?link=' + link,
         contentType: 'application/json',
         success: function(data){
-            alert('주소 변경이 완료되었습니다.');
+            const result = window.confirm('정말 변경하시겠습니까?');
+            if(result){
+                alert('성공적으로 변경되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
             $('.linkUrl').val('');
-        },
-        error: function(err){
-            alert('주소 변경을 실패했습니다.');
         }
     })
 }
@@ -229,7 +231,13 @@ function deletePromotion(num){
         url: domain + 'promotion/' + num,
         contentType: 'application/json',
         success: function(data){
-            alert('삭제가 완료되었습니다.');
+            const result = window.confirm('정말 삭제하시겠습니까?');
+            if(result){
+                alert('성공적으로 삭제되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
+            $('.linkUrl').val('');
             getPromotion();
         }
     })
@@ -262,9 +270,15 @@ function postPromotion(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert("등록이 완료되었습니다.");
-                getPromotion();
-                $("#promote_file").val('');
+                const result = window.confirm('정말 등록하시겠습니까?');
+                if(result){
+                    alert("등록이 완료되었습니다.");
+                    getPromotion();
+                    $("#promote_file").val('');
+                }else{
+                    getPromotion();
+                    $("#promote_file").val('');
+                }
             },
             complete: function(data){
             }
@@ -284,8 +298,14 @@ function editGreetings(){
                 'content' : realMent
             }),
             success: function(data){
-                alert('인사말이 수정되었습니다.');
-                getGreetingsMent();
+                const result = window.confirm('정말 수정하시겠습니까?');
+                if(result){
+                    alert('성공적으로 수정되었습니다.');
+                    getGreetingsMent();
+                    $('.linkUrl').val('');
+                }else{
+                    $('.linkUrl').val('');
+                }
             }
         })
     }
@@ -307,7 +327,10 @@ function editIntro(){
                 '설립취지' : effectRealMent
             }),
             success: function(data){
-                alert('협회소개가 수정되었습니다.');
+                const result = window.confirm('정말 수정하시겠습니까?');
+                if(result){
+                    alert('성공적으로 수정되었습니다.');
+                }
                 getEditContent();
             }
         })
@@ -351,7 +374,12 @@ function changeQRImgLink(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('QR 이미지와 링크가 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getQr();
                 $("#QrImg_file").val('');
             }
@@ -372,7 +400,12 @@ function changeEducationFirstImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('협회 부설 연구소 조직 사진이 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getEducationImg();
                 $("#educationFirst_file").val('');
             }
@@ -393,7 +426,12 @@ function changeEducationSecondImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('연구위원 사진이 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getEducationImg();
                 $("#educationSecond_file").val('');
             }
@@ -414,7 +452,12 @@ function changeEducationThirdImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('연구위원 조직 사진이 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getEducationImg();
                 $("#educationThird_file").val('');
             }
@@ -434,7 +477,12 @@ function changeGreetingsImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('인사말 사진이 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getGreetingsImg();
                 $("#greetingsImg_file").val('');
             }
@@ -454,7 +502,12 @@ function changeMainLogoImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('로고가 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getLogoImg();
                 $("#mainLogo_file").val('');
             }
@@ -474,7 +527,12 @@ function changeOrganizationImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('임원명단 표 이미지가 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getOrganImg();
                 $('#organization_file').val('');
             }
@@ -507,7 +565,12 @@ function editAboutMent(){
                 'content' : realMent
             }),
             success: function(data){
-                alert('가입안내 글이 수정되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getAboutMember();
             }
         })
@@ -527,7 +590,12 @@ function addMainImg(){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('메인 사진이 추가되었습니다.');
+                const result = window.confirm('정말 추가하시겠습니까?');
+                if(result){
+                    alert('성공적으로 추가되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getMainImg();
                 $('#mainImg_file').val('');
             }
@@ -608,7 +676,12 @@ function changeQRContent(){
         }),
         contentType: 'application/json',
         success: function(data){
-            alert('QR 안내글이 변경되었습니다.');
+            const result = window.confirm('정말 변경하시겠습니까?');
+            if(result){
+                alert('성공적으로 변경되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
             getQr();
 
         }
@@ -663,7 +736,12 @@ function deleteMainImg(num){
         url: domain + 'main/image/' + num,
         contentType: 'application/json',
         success: function(data){
-            alert('선택한 메인 이미지가 삭제되었습니다.');
+            const result = window.confirm('정말 삭제하시겠습니까?');
+            if(result){
+                alert('성공적으로 삭제되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
             getMainImg();
         }
     })
@@ -687,10 +765,10 @@ function getCompanyLogo(){
         contentType: "application/json",
         success: function(data){
             $('.companyLogoList').html('');
-            console.log(data);
+            console.log(data.length);
             for(var i = 0; i < data.length; i++){
+                console.log(data[i]['no']);
                 $('.companyLogoList').append('<div style="display: flex; flex-direction: column;"><div style="display: flex; flex-direction: row;"><img id="' + data[i]['no'] + '" src="' + data[i]['link'] + '" style="width: 200px; height: 70px;"><button type="button" style="width: 50px; height:70px; margin-left: 20px;" onclick="deleteCompanyLogoImg(' + data[i]['no'] + ')">삭제하기</button></div><br/><form id="companyLogo_uploadForm' + data[i]['no'] + '" enctype="multipart/form-data"><input type="file" name="file" id="companyLogo_file' + data[i]['no'] + '"></form><div style="display: flex; flex-direction: row; margin-top: 5px;"><input type="text" class="companyInput' + data[i]['no'] + '" style="width: 400px;"/><button type="button" style="width: 100px; margin-left: 10px;" onclick="changeCompanyImg(' + data[i]['no'] + ')">변경하기</button></div><br/><br/>');
-                $('#' + data).css('border', '1px solid black');
             }
             for(var i = 0; i < data.length; i++){
                 $('.companyInput'+data[i]['no']).val(data[i]['homepage']);
@@ -705,7 +783,12 @@ function deleteCompanyLogoImg(data){
         url: domain + 'logo/' + data,
         contentType: "application/json",
         success: function(data){
-            alert('성공적으로 삭제되었습니다.');
+            const result = window.confirm('정말 삭제하시겠습니까?');
+            if(result){
+                alert('성공적으로 삭제되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
             location.reload();
             getCompanyLogo();
         }
@@ -725,7 +808,12 @@ function changeCompanyImg(data){
             processData: false,
             contentType: false,
             success: function(data){
-                alert('사진과 링크가 변경되었습니다.');
+                const result = window.confirm('정말 변경하시겠습니까?');
+                if(result){
+                    alert('성공적으로 변경되었습니다.');
+                }else{
+                    alert('취소되었습니다.');
+                }
                 getCompanyLogo();
                 $("#companyLogo_file" + data).val('');
             }
@@ -745,7 +833,12 @@ function addCompanyLogoImg(){
         processData: false,
         contentType: false,
         success: function(data){
-            alert('후원사가 추가되었습니다.');
+            const result = window.confirm('정말 추가하시겠습니까?');
+            if(result){
+                alert('성공적으로 추가되었습니다.');
+            }else{
+                alert('취소되었습니다.');
+            }
             $("#newCompanyLogo_file" + data).val('');
             $('#newCompanyLogoLink').val('');
             getCompanyLogo();
