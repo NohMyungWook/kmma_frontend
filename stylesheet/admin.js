@@ -209,38 +209,44 @@ function changeYoutubeLink(){
     if(!link.includes('https://youtu.be/') && !link.includes('https://www.youtube.com/watch?v=')){
         alert('유효하지 않은 주소입니다.');
     }
-    $.ajax({
-        type: 'PUT',
-        url: domain + 'youtube?link=' + link,
-        contentType: 'application/json',
-        success: function(data){
-            const result = window.confirm('정말 변경하시겠습니까?');
-            if(result){
+    const result = window.confirm('정말 변경하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: 'PUT',
+            url: domain + 'youtube?link=' + link,
+            contentType: 'application/json',
+            success: function(data){
                 alert('성공적으로 변경되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                $('.linkUrl').val('');
+            },
+            error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            $('.linkUrl').val('');
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 function deletePromotion(num){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'promotion/' + num,
-        contentType: 'application/json',
-        success: function(data){
-            const result = window.confirm('정말 삭제하시겠습니까?');
-            if(result){
+    const result = window.confirm('정말 삭제하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'promotion/' + num,
+            contentType: 'application/json',
+            success: function(data){
                 alert('성공적으로 삭제되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                $('.linkUrl').val('');
+                getPromotion();
+            },
+            error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            $('.linkUrl').val('');
-            getPromotion();
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 function getPromotion(){
@@ -261,53 +267,57 @@ function getPromotion(){
 function postPromotion(){
     var form = $('#uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 등록하시겠습니까?');
     if($("#uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "POST",
-            url: domain + 'promotion',
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 등록하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "POST",
+                url: domain + 'promotion',
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert("등록이 완료되었습니다.");
                     getPromotion();
                     $("#promote_file").val('');
-                }else{
-                    getPromotion();
-                    $("#promote_file").val('');
+                },
+                error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-            },
-            complete: function(data){
-            }
-        })
+                
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
 function editGreetings(){
     var ment = $('#greetings_ment').val();
     var realMent = ment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    const result = window.confirm('정말 수정하시겠습니까?');
     if(ment != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'greetings',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                'content' : realMent
-            }),
-            success: function(data){
-                const result = window.confirm('정말 수정하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'greetings',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    'content' : realMent
+                }),
+                success: function(data){
                     alert('성공적으로 수정되었습니다.');
                     getGreetingsMent();
                     $('.linkUrl').val('');
-                }else{
-                    $('.linkUrl').val('');
+                },
+                error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -316,24 +326,29 @@ function editIntro(){
     var effectRealMent = effectment.replace(/(?:\r\n|\r|\n)/g, '<br />');
     var missionment = $('#mission_ment').val();
     var missionRealMent = missionment.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    
+    const result = window.confirm('정말 수정하시겠습니까?');
 
     if(effectment != '' && missionRealMent != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'introduce',
-            contentType: 'application/json',
-            data: JSON.stringify({
-                'MISSION': missionRealMent,
-                '설립취지' : effectRealMent
-            }),
-            success: function(data){
-                const result = window.confirm('정말 수정하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'introduce',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    'MISSION': missionRealMent,
+                    '설립취지' : effectRealMent
+                }),
+                success: function(data){
                     alert('성공적으로 수정되었습니다.');
+                    getEditContent();
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getEditContent();
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -365,25 +380,27 @@ function changeQRImgLink(){
     var form = $('#QR_uploadForm')[0];
     var qrLink = $('#qrImgLink').val();
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#QR_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'qr?link=' + qrLink,
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'qr?link=' + qrLink,
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getQr();
+                    $("#QrImg_file").val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getQr();
-                $("#QrImg_file").val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -391,25 +408,27 @@ function changeEducationFirstImg(){
     var num = $('#educationFirstImg').attr('class');
     var form = $('#educationFirst_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#educationFirst_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'education/image/' + num,
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'education/image/' + num,
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getEducationImg();
+                    $("#educationFirst_file").val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getEducationImg();
-                $("#educationFirst_file").val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -417,25 +436,27 @@ function changeEducationSecondImg(){
     var num = $('#educationSecondImg').attr('class');
     var form = $('#educationSecond_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#educationSecond_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'education/image/' + num,
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'education/image/' + num,
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getEducationImg();
+                    $("#educationSecond_file").val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getEducationImg();
-                $("#educationSecond_file").val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -443,100 +464,108 @@ function changeEducationThirdImg(){
     var num = $('#educationThirdImg').attr('class');
     var form = $('#educationThird_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#educationThird_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'education/image/' + num,
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'education/image/' + num,
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getEducationImg();
+                    $("#educationThird_file").val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getEducationImg();
-                $("#educationThird_file").val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
 function changeGreetingsImg(){
     var form = $('#greetings_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#greetings_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'greetings/image',
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'greetings/image',
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
-                }
-                getGreetingsImg();
-                $("#greetingsImg_file").val('');
+                    getGreetingsImg();
+                    $("#greetingsImg_file").val('');
+                }, error: function(data){
+                        alert('오류가 발생하였습니다. 다시 시도해주세요.');
+                    }
+                })
+            }else{
+                alert('취소되었습니다.');
             }
-        })
     }
 }
 
 function changeMainLogoImg(){
     var form = $('#mainLogo_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#mainLogo_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'logo/1',
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'logo/1',
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getLogoImg();
+                    $("#mainLogo_file").val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getLogoImg();
-                $("#mainLogo_file").val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
 function changeOrganizationImg(){
     var form = $('#organization_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#organization_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'organization',
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'organization',
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getOrganImg();
+                    $('#organization_file').val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getOrganImg();
-                $('#organization_file').val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -556,7 +585,8 @@ function getAboutMemberContent(){
 function editAboutMent(){
     var ment = $('#aboutMember_ment').val();
     var realMent = ment.replace(/(?:\r\n|\r|\n)/g, '<br />');
-    if(ment != ''){
+    const result = window.confirm('정말 변경하시겠습니까?');
+    if((ment != '') && (result == true)){
         $.ajax({
             type: "PUT",
             url: domain + 'about/member',
@@ -565,15 +595,14 @@ function editAboutMent(){
                 'content' : realMent
             }),
             success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
-                    alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
-                }
+                alert('성공적으로 변경되었습니다.');
                 getAboutMember();
+            }, error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
         })
+    }else{
+        alert('취소되었습니다.');
     }
 }
 
@@ -581,25 +610,27 @@ function addMainImg(){
     var number = $('.mainNumber').val();
     var form = $('#mainImg_uploadForm')[0];
     const formData = new FormData(form);
+    const result = window.confirm('정말 추가하시겠습니까?');
     if($("#mainImg_uploadForm input[name='file']").val() != ''){
-        $.ajax({
-            type: "POST",
-            url: domain + 'main/image',
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 추가하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "POST",
+                url: domain + 'main/image',
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 추가되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getMainImg();
+                    $('#mainImg_file').val('');
+                }, error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getMainImg();
-                $('#mainImg_file').val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
@@ -668,24 +699,25 @@ function getQr(){
 function changeQRContent(){
     var qrContent = $('#qrImgContent').val();
     var qrRealContent = qrContent.replace(/(?:\r\n|\r|\n)/g, '<br />');
-    $.ajax({
-        type: "PUT",
-        url: domain + 'qr/content',
-        data: JSON.stringify({
-            'content' : qrRealContent
-        }),
-        contentType: 'application/json',
-        success: function(data){
-            const result = window.confirm('정말 변경하시겠습니까?');
-            if(result){
+    const result = window.confirm('정말 변경하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: "PUT",
+            url: domain + 'qr/content',
+            data: JSON.stringify({
+                'content' : qrRealContent
+            }),
+            contentType: 'application/json',
+            success: function(data){
                 alert('성공적으로 변경되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                getQr();
+            },error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            getQr();
-
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 function getAboutMember(){
@@ -731,20 +763,22 @@ function getMainImg(){
 }
 
 function deleteMainImg(num){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'main/image/' + num,
-        contentType: 'application/json',
-        success: function(data){
-            const result = window.confirm('정말 삭제하시겠습니까?');
-            if(result){
+    const result = window.confirm('정말 삭제하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'main/image/' + num,
+            contentType: 'application/json',
+            success: function(data){
                 alert('성공적으로 삭제되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                getMainImg();
+            }, error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            getMainImg();
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 function getMainLogo(){
@@ -778,72 +812,78 @@ function getCompanyLogo(){
 }
 
 function deleteCompanyLogoImg(data){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'logo/' + data,
-        contentType: "application/json",
-        success: function(data){
-            const result = window.confirm('정말 삭제하시겠습니까?');
-            if(result){
+    const result = window.confirm('정말 삭제하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'logo/' + data,
+            contentType: "application/json",
+            success: function(data){
                 alert('성공적으로 삭제되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                location.reload();
+                getCompanyLogo();
+            },error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            location.reload();
-            getCompanyLogo();
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 function changeCompanyImg(data){
     var form = $('#companyLogo_uploadForm' + data)[0];
     const formData = new FormData(form);
     var formLink = $('.companyInput' + data).val();
+    const result = window.confirm('정말 변경하시겠습니까?');
     if($("#companyLogo_uploadForm" + data +  " input[name='file']").val() != ''){
-        $.ajax({
-            type: "PUT",
-            url: domain + 'logo/' + data + '?link=' + formLink,
-            data: formData,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(data){
-                const result = window.confirm('정말 변경하시겠습니까?');
-                if(result){
+        if(result){
+            $.ajax({
+                type: "PUT",
+                url: domain + 'logo/' + data + '?link=' + formLink,
+                data: formData,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(data){
                     alert('성공적으로 변경되었습니다.');
-                }else{
-                    alert('취소되었습니다.');
+                    getCompanyLogo();
+                    $("#companyLogo_file" + data).val('');
+                },error: function(data){
+                    alert('오류가 발생하였습니다. 다시 시도해주세요.');
                 }
-                getCompanyLogo();
-                $("#companyLogo_file" + data).val('');
-            }
-        })
+            })
+        }else{
+            alert('취소되었습니다.');
+        }
     }
 }
 
 function addCompanyLogoImg(){
     var link = $('#newCompanyLogoLink').val();
     var form = $('#newCompanyLogo_uploadForm')[0];
+    const result = window.confirm('정말 추가하시겠습니까?');
     const formData = new FormData(form);
-    $.ajax({
-        type: "POST",
-        url: domain + 'logo?link=' + link,
-        data: formData,
-        enctype: 'multipart/form-data',
-        processData: false,
-        contentType: false,
-        success: function(data){
-            const result = window.confirm('정말 추가하시겠습니까?');
-            if(result){
+    if(result){
+        $.ajax({
+            type: "POST",
+            url: domain + 'logo?link=' + link,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
                 alert('성공적으로 추가되었습니다.');
-            }else{
-                alert('취소되었습니다.');
+                $("#newCompanyLogo_file" + data).val('');
+                $('#newCompanyLogoLink').val('');
+                getCompanyLogo();
+            },error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
             }
-            $("#newCompanyLogo_file" + data).val('');
-            $('#newCompanyLogoLink').val('');
-            getCompanyLogo();
-        }
-    })
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
 }
 
 $(document).ready(function(){
