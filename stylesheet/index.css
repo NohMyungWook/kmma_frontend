@@ -420,10 +420,10 @@ header, #body{
     #footer_img_loco{
         width: 150px;
     }
-    .col-1{
+    .col-2{
         display: none;
     }
-    .col-4{
+    .col-3{
         margin: 0 auto;
         width: 100%;
     }

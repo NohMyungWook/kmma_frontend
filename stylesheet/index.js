@@ -5,18 +5,6 @@ var first = 1;
 var last;
 var interval;
 
-$(document).ready(function(){
-    getRollingImg();
-    getYoutubeLink();
-    getIndexImage();
-
-    $(".content").hover(
-        function() {stopAction();},
-        function() {startAction();}
-    );
-
-});
-
 function parsingLink(link){
     if(link.includes('https://youtu.be/')){
         var real = link.substr(17);
@@ -188,12 +176,23 @@ function getRollingImg(){
             }
             $(".rolling_wrap a").each(function(){
                 $(this).css("left", banner_left);
+                $(this).css("cursor", "pointer");
                 banner_left += $(this).width()+30;
                 $(this).attr("id", "content"+(++img_cnt));
             });
         
             last = img_cnt;
             startAction();
+            $(".content").hover(
+                function() {stopAction();},
+                function() {startAction();}
+            );
         }
     })
 }
+
+$(document).ready(function(){
+    getRollingImg();
+    getYoutubeLink();
+    getIndexImage();
+});
