@@ -8,6 +8,7 @@ function getPromotionPageNum(num){
         success: function(data){
             /* promotion body */
             $('.promotion_content').empty();
+            $('#promotionPagination').empty();
             var length = data.content.length;
             for(var i = 0; i < length; i++){
                 $('.promotion_content').append("<div class='promotion_img' id='" + data.content[i].no + "'><img src='" + data.content[i].link + "'></div>");
