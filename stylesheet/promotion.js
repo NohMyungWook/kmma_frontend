@@ -15,7 +15,7 @@ function getPromotionPageNum(num){
             /* promotion pagination */
             var pageNum = data.totalPages + 1;
             for(var i = 1; i < pageNum; i++){
-                $('#promotionPagination').append('<li class="page-item"><a class="page-link" id="promotionPage' + i + '" onclick="getPromotion(' + i + ')">' + i + '</a></li>');
+                $('#promotionPagination').append('<li class="page-item"><a class="page-link" id="promotionPage' + i + '" onclick="getPromotionPageNum(' + i + ')">' + i + '</a></li>');
             }
         }
     })
