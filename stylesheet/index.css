@@ -207,9 +207,10 @@ header, #body{
 
 .index_img_wrap{
     display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+    margin-top: 30px;
+    align-items: center;
     width: 100%;
+    justify-content: space-between;
     overflow: hidden;
 }
 
