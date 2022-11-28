@@ -1,4 +1,3 @@
-const pageMax = 3; //notice 최대 page
 var idx = 1;    //현재 page 번호
 var page = 1;   //시작 page 번호
 
