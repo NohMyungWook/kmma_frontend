@@ -122,16 +122,20 @@ function editMyPageComplete(){
 
 
 function deleteMyInfo(){
-    var userId = $('#editPage_id').text();
-    $.ajax({
-        type: "DELETE",
-        url: domain + "user/" + userId,
-        contentType: 'application.json',
-        success: function(data){
-            logout();
-            window.location.href="index.html";
-        }
-    })
+    let check_delete_myinfo = confirm("정말로 삭제하시겠습니까?");
+    if(check_delete_myinfo){
+        var userId = $('#editPage_id').text();
+        $.ajax({
+            type: "DELETE",
+            url: domain + "user/" + userId,
+            contentType: 'application.json',
+            success: function(data){
+                logout();
+                window.location.href="index.html";
+            }
+        })
+    }
+    else    return;
 }
 
 $(document).ready(function(){

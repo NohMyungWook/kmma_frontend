@@ -65,14 +65,18 @@ function beforeAfterPost(){
 }
 
 function deleteData(){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'file/' + dataNum,
-        contentType: 'application/json',
-        success: function(data){
-            window.location.href='data.html';
-        }
-    })
+    let check_delete_data = confirm("정말로 삭제하시겠습니까?");
+    if(check_delete_data){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'file/' + dataNum,
+            contentType: 'application/json',
+            success: function(data){
+                window.location.href='data.html';
+            }
+        })
+    }
+    else    return;
 }
 
 function moveBefore(){

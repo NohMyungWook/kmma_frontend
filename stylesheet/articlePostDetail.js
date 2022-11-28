@@ -91,12 +91,16 @@ function move_editArticle(){
 }
 
 function delete_article(){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'article/' + articleNum,
-        contentType: 'application/json',
-        success: function(data){
-            window.location.href = 'loadingDeleteNews.html';
-        }
-    })
+    let check_delete_article = confirm("정말로 삭제하시겠습니까?");
+    if(check_delete_article){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'article/' + articleNum,
+            contentType: 'application/json',
+            success: function(data){
+                window.location.href = 'loadingDeleteNews.html';
+            }
+        })
+    }
+    else    return;
 }

@@ -33,23 +33,27 @@ function postUser(){
     })
 }
 function submitFile(){
-    var form = $('#uploadForm')[0];
-    var fileTitle = $('.post_data_title').val();
+    let check_post_article = confirm("정말로 등록하시겠습니까?");
+    if(check_post_article){
+        var form = $('#uploadForm')[0];
+        var fileTitle = $('.post_data_title').val();
 
-    const formData = new FormData(form);
-    $.ajax({
-        type: "POST",
-        url: domain + 'file/' + fileTitle,
-        data: formData,
-        enctype: 'multipart/form-data',
-        processData: false,
-        contentType: false,
-        success: function(data){
-            window.location.href='loadingData.html';
-        },
-        complete: function(data){
-        }
-    })
+        const formData = new FormData(form);
+        $.ajax({
+            type: "POST",
+            url: domain + 'file/' + fileTitle,
+            data: formData,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                window.location.href='loadingData.html';
+            },
+            complete: function(data){
+            }
+        })
+    }
+    else    return;
 }
 
 

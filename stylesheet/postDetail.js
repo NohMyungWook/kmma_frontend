@@ -106,12 +106,16 @@ function move_editNotice(){
 }
 
 function delete_notice(){
-    $.ajax({
-        type: "DELETE",
-        url: domain + 'notice/' + noticeNum,
-        contentType: 'application/json',
-        success: function(data){
-            window.location.href = 'loadingDeleteNotice.html';
-        }
-    })
+    let check_delete_notice = confirm("정말로 삭제하시겠습니까?");
+    if(check_delete_notice){
+        $.ajax({
+            type: "DELETE",
+            url: domain + 'notice/' + noticeNum,
+            contentType: 'application/json',
+            success: function(data){
+                window.location.href = 'loadingDeleteNotice.html';
+            }
+        })
+    }
+    else return;
 }
