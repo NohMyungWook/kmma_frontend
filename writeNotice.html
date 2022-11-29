@@ -111,7 +111,9 @@
           제목
           <input type="text" class="post_notice_title">
         </div>
-        <div id="summernote" name="content"></div> 
+        <form method="post">
+          <textarea id="summernote" name="editordata"></textarea>
+        </form>
         <div class="make_notice_bt">
           <button type="button" class="btn btn-outline-dark" onclick="makeNoticePost()">등록하기</button>
         </div>
