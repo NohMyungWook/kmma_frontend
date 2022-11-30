@@ -55,36 +55,3 @@ function submitFile(){
     }
     else    return;
 }
-
-
-// function upload() {
-//     const imageInput = $("#imageInput")[0];
-//     // 파일을 여러개 선택할 수 있으므로 files 라는 객체에 담긴다.
-//     console.log("imageInput: ", imageInput.files)
-  
-//     if(imageInput.files.length === 0){
-//       alert("파일은 선택해주세요");
-//       return;
-//     }
-  
-//     const formData = new FormData();
-//     formData.append("image", imageInput.files[0]);
-  
-  
-//     $.ajax({
-//       type:"POST",
-//       url: "/temp/api/upload/image/v1",
-//       processData: false,
-//       contentType: false,
-//       data: formData,
-//       success: function(rtn){
-//         const message = rtn.data.values[0];
-//         console.log("message: ", message)
-//         $("#resultUploadPath").text(message.uploadFilePath)
-//       },
-//       err: function(err){
-//         console.log("err:", err)
-//       }
-//     })
-//   }
-    
