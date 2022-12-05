@@ -19,17 +19,17 @@ function getDataList(num){
             if(pageNum > 10){
                 for(startNum; startNum < 10; startNum++){
                     $('#data_list_title' + startNum).html(data.content[startNum]['title']);
-                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);s
+                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);
                     $('#data_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['fileDetailNo']));
                 }
             }else{
                 for(startNum; startNum < pageNum; startNum++){
                     $('#data_list_title' + startNum).html(data.content[startNum]['title']);
-                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);s
+                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);
                     $('#data_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['fileDetailNo']));
                 }
                 for(pageNum; pageNum < 10; pageNum++){
-                    $('#notice_link'+ pageNum).css('display', 'none');
+                    $('#data_link'+ pageNum).css('display', 'none');
                 }
             }
         }
