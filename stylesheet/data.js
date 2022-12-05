@@ -1,9 +1,9 @@
 var domain = "https://kmma.io/kmma/";
 
-function getDataList(){
+function getDataList(num){
     $.ajax({
         type: "GET",
-        url: domain + 'filelist?page',
+        url: domain + 'filelist?page='+num,
         contentType: 'application/json',
         success: function(data){
             var total = data.totalElements;
@@ -41,7 +41,7 @@ function getDataNum(num){
         success: function(data){
             var pageNum = data.totalPages + 1;
             for(var i = 1; i < pageNum; i++){
-                $('#dataPagination').append('<li class="page-item"><a class="page-link" id="dataPage' + i + '" onclick="getData(' + i + ')">' + i + '</a></li>');
+                $('#dataPagination').append('<li class="page-item"><a class="page-link" id="dataPage' + i + '" onclick="getDataList(' + i + ')">' + i + '</a></li>');
             }
         }
     })
@@ -56,6 +56,6 @@ function clickData(num){
 
 $(document).ready(function(){
     loginCheck();
-    getDataList();
+    getDataList(1);
     getDataNum(1);
 })
