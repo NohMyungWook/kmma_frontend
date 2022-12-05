@@ -1,6 +1,12 @@
 var domain = "https://kmma.io/kmma/";
 
 function getDataList(num){
+    window.scrollTo(0,0);
+    for(var i = 0; i < 10; i++){
+        $('#data_link' + i).removeAttr('style');
+    }
+    $('#dataPagination a').css('background-color', 'white');
+    $('#dataPage' + num).css('background-color', 'rgb(214, 214, 214)');
     $.ajax({
         type: "GET",
         url: domain + 'filelist?page='+num,
