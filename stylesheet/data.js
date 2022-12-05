@@ -12,14 +12,25 @@ function getDataList(num){
         url: domain + 'filelist?page='+num,
         contentType: 'application/json',
         success: function(data){
-            var total = data.totalElements;
-            for(var i = 0; i < total; i++){
-                $('#data_list_title' + i).html(data.content[i].title);
-                $('#data_list_time' + i).html(data.content[i].regdate);
-                $('#data_link' + i + ' div:nth-child(3)').attr('id', data.content[i].fileDetailNo);
-            }
-            for(var j = total; j < 10; j++){
-                $('#data_link' + j).css('display', 'none');
+            var totalPage = data.totalElements;
+            var startNum = 0;
+            var pageNum = totalPage - 10*(num-1);
+
+            if(pageNum > 10){
+                for(startNum; startNum < 10; startNum++){
+                    $('#data_list_title' + startNum).html(data.content[startNum]['title']);
+                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);s
+                    $('#data_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['fileDetailNo']));
+                }
+            }else{
+                for(startNum; startNum < pageNum; startNum++){
+                    $('#data_list_title' + startNum).html(data.content[startNum]['title']);
+                    $('#data_list_time' + startNum).html(data.content[startNum]['regdate']);s
+                    $('#data_link' + startNum +' div:nth-child(3)').attr("id", (data.content[startNum]['fileDetailNo']));
+                }
+                for(pageNum; pageNum < 10; pageNum++){
+                    $('#notice_link'+ pageNum).css('display', 'none');
+                }
             }
         }
     })
