@@ -19,6 +19,20 @@ function getMainLogo(){
     })
 }
 
+function getFooter(){
+    $.ajax({
+        type: "GET",
+        url: domain + "footer",
+        contentType: "application/json",
+        success: function(data){
+            const arr = data.split("$");
+            document.getElementById("footer_email_and_tel").innerHTML=arr[0]+"<br>"+arr[1];
+            document.getElementById("footer_addr").innerHTML=arr[2];
+        }
+    })
+}
+
 $(document).ready(function(){
     getMainLogo();
+    getFooter();
 })

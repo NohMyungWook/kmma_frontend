@@ -228,6 +228,44 @@ function changeYoutubeLink(){
     }
 }
 
+function changeFooter(){
+    var linkAddr = $('.linkAddr').val();
+    var linkEmail = $('.linkEmail').val();
+    var linkTel = $('.linkTel').val();
+    var link = linkEmail + "$" + linkTel + "$" + linkAddr;
+    const result = window.confirm('정말 변경하시겠습니까?');
+    if(result){
+        $.ajax({
+            type: 'PUT',
+            url: domain + 'footer?link=' + link,
+            contentType: 'application/json',
+            success: function(data){
+                alert('성공적으로 변경되었습니다.');
+                getAdminFooter();
+            },
+            error: function(data){
+                alert('오류가 발생하였습니다. 다시 시도해주세요.');
+            }
+        })
+    }else{
+        alert('취소되었습니다.');
+    }
+}
+
+function getAdminFooter(){
+    $.ajax({
+        type: "GET",
+        url: domain + "footer",
+        contentType: "application/json",
+        success: function(data){
+            const arr = data.split("$");
+            $('.linkEmail').val(arr[0]);
+            $('.linkTel').val(arr[1]);
+            $('.linkAddr').val(arr[2]);
+        }
+    })
+}
+
 function deletePromotion(num){
     const result = window.confirm('정말 삭제하시겠습니까?');
     if(result){
@@ -905,4 +943,5 @@ $(document).ready(function(){
     getEducationImg();
     getMainLogo();
     getCompanyLogo();
+    getAdminFooter();
 });
